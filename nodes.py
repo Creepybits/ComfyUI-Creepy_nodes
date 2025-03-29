@@ -210,6 +210,127 @@ class Textswitch:
         else:
             return (None, show_help,)  # Handle invalid input (return None model)
 
+class DynamicConditioning:
+
+    def __init__(self):
+        pass
+
+    CATEGORY = "dynamic_switch"
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {},
+            "optional": {
+                "conditioning1": ("CONDITIONING",),
+                "conditioning2": ("CONDITIONING",),
+                "conditioning3": ("CONDITIONING",),
+            }
+        }
+
+    RETURN_TYPES = ("CONDITIONING", "STRING",)
+    RETURN_NAMES = ("CONDITIONING", "show_help",)
+    FUNCTION = "dynamic_switch"
+
+    def dynamic_switch(self, **kwargs):
+        show_help = "Proverb of the day: Freedom means the right to yell, “THEATRE!” in a crowded fire."
+        cond = None  # Initialize model to None
+
+        if "conditioning1" in kwargs and kwargs["conditioning1"] is not None: #Check the kwarg model1 exists
+            conditioning = kwargs["conditioning1"]  # Use model1 if it exists
+
+        elif "conditioning2" in kwargs and kwargs["conditioning2"] is not None: #Check the kwarg model2 exists, to use the model
+            conditioning = kwargs["conditioning2"]  # Use model2 if model1 is missing
+
+        elif "conditioning3" in kwargs and kwargs["conditioning3"] is not None: #Check the kwarg model2 exists, to use the model
+            conditioning = kwargs["conditioning3"]  # Use model2 if model1 is missing
+
+        if conditioning is not None:  # Return the model if a valid one was found
+            return (conditioning, show_help,)
+        else:
+            return (None, show_help,)  # Return None if no valid models were provided
+
+
+class DynamicLatentSwitch:
+
+    def __init__(self):
+        pass
+
+    CATEGORY = "dynamic_switch"
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {},
+            "optional": {
+                "latent1": ("LATENT",),
+                "latent2": ("LATENT",),
+                "latent3": ("LATENT",),
+            }
+        }
+
+    RETURN_TYPES = ("LATENT", "STRING",)
+    RETURN_NAMES = ("LATENT", "show_help",)
+    FUNCTION = "dynamic_switch"
+
+    def dynamic_switch(self, **kwargs):
+        show_help = "Proverb of the day: Freedom means the right to yell, “THEATRE!” in a crowded fire."
+        latent = None  # Initialize model to None
+
+        if "latent1" in kwargs and kwargs["latent1"] is not None: #Check the kwarg model1 exists
+            latent = kwargs["latent1"]  # Use model1 if it exists
+
+        elif "latent2" in kwargs and kwargs["latent2"] is not None: #Check the kwarg model2 exists, to use the model
+            latent = kwargs["latent2"]  # Use model2 if model1 is missing
+
+        elif "latent3" in kwargs and kwargs["latent3"] is not None: #Check the kwarg model2 exists, to use the model
+            latent = kwargs["latent3"]  # Use model2 if model1 is missing
+
+        if latent is not None:  # Return the model if a valid one was found
+            return (latent, show_help,)
+        else:
+            return (None, show_help,)  # Return None if no valid models were provided
+
+
+class DynamicVAESwitch:
+
+    def __init__(self):
+        pass
+
+    CATEGORY = "dynamic_switch"
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {},
+            "optional": {
+                "vae1": ("VAE",),
+                "vae2": ("VAE",),
+                "vae3": ("VAE",),
+            }
+        }
+
+    RETURN_TYPES = ("VAE", "STRING",)
+    RETURN_NAMES = ("VAE", "show_help",)
+    FUNCTION = "dynamic_switch"
+
+    def dynamic_switch(self, **kwargs):
+        show_help = "Proverb of the day: Freedom means the right to yell, “THEATRE!” in a crowded fire."
+        vae = None  # Initialize model to None
+
+        if "vae1" in kwargs and kwargs["vae1"] is not None: #Check the kwarg model1 exists
+            vae = kwargs["vae1"]  # Use model1 if it exists
+
+        elif "vae2" in kwargs and kwargs["vae2"] is not None: #Check the kwarg model2 exists, to use the model
+            vae = kwargs["vae2"]  # Use model2 if model1 is missing
+
+        elif "vae3" in kwargs and kwargs["vae3"] is not None: #Check the kwarg model2 exists, to use the model
+            vae = kwargs["vae3"]  # Use model2 if model1 is missing
+
+        if vae is not None:  # Return the model if a valid one was found
+            return (vae, show_help,)
+        else:
+            return (None, show_help,)  # Return None if no valid models were provided
 
 
 NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
@@ -219,6 +340,9 @@ NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
     "DynamicModelswitch": DynamicModelswitch,
     "DynamicClipswitch": DynamicClipswitch,
     "Textswitch": Textswitch,
+    "DynamicConditioning": DynamicConditioning,
+    "DynamicLatentSwitch": DynamicLatentSwitch,
+    "DynamicVAESwitch": DynamicVAESwitch,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -228,4 +352,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "DynamicModelswitch": "Dynamic Model Switch (Creepybits)",
     "DynamicClipswitch": "Dynamic Clip Switch (Creepybits)",# <---Outdent these lines
     "Textswitch": "Text Switch (Creepybits)",
+    "DynamicConditioning": "Dynamic Conditioning (Creepybits)",
+    "DynamicLatentSwitch": "Dynamic Latent Switch (Creepybits)",
+    "DynamicVAESwitch": "Dynamic VAE Switch (Creepybits)",
 }
