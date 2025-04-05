@@ -1,4 +1,10 @@
 from inspect import cleandoc
+import folder_paths  # Import folder_paths
+import comfy.sd
+import comfy.utils
+import os
+
+
 class Modelswitch:
 
     def __init__(self):
@@ -332,6 +338,44 @@ class DynamicVAESwitch:
         else:
             return (None, show_help,)  # Return None if no valid models were provided
 
+class SystemPrompt:
+
+    def __init__(self):
+        # Get the directory of the current script (systemprompt.py)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        # Construct the full path to the text file
+        filepath = os.path.join(script_dir, "system_prompt.txt")  # or "path/to/your/textfile.txt" if it's in a subdirectory
+
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                self.fixed_text = f.read()
+        except FileNotFoundError:
+            print(f"Error: system_prompt.txt not found at {filepath}")
+            self.fixed_text = "ERROR: Prompt file not found."  # Provide a fallback
+        except Exception as e:
+            print(f"Error reading system_prompt.txt: {e}")
+            self.fixed_text = "ERROR: Could not read prompt file."  # Provide a fallback
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "text_2": ("STRING", {"multiline": True}),
+            },
+        }
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("text",)
+
+    FUNCTION = "concat_texts"
+
+    CATEGORY = "Creepybits/Prompt"
+
+    def concat_texts(self, text_2):
+        combined_text = self.fixed_text + text_2
+        return (combined_text,)
+
+
 
 NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
     "Modelswitch": Modelswitch, #Corrected Node name
@@ -343,6 +387,7 @@ NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
     "DynamicConditioning": DynamicConditioning,
     "DynamicLatentSwitch": DynamicLatentSwitch,
     "DynamicVAESwitch": DynamicVAESwitch,
+    "SystemPromp": SystemPrompt,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -355,4 +400,5 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "DynamicConditioning": "Dynamic Conditioning (Creepybits)",
     "DynamicLatentSwitch": "Dynamic Latent Switch (Creepybits)",
     "DynamicVAESwitch": "Dynamic VAE Switch (Creepybits)",
+    "SystemPromp": "System Prompt (Creepybits)",
 }
