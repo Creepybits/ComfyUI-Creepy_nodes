@@ -4,6 +4,7 @@ import comfy.sd
 import comfy.utils
 import os
 import time
+import re
 
 
 class Modelswitch:
@@ -433,6 +434,118 @@ class DelayTextNode:
         return (text,)
 
 
+class SanitizeFilename:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "text": ("STRING", {"multiline": True}),
+            },
+        }
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("sanitized_text",)
+    FUNCTION = "sanitize"
+    CATEGORY = "Utilities"
+
+    def sanitize(self, text):
+        """
+        Sanitizes a filename by removing or replacing invalid characters.
+
+        Args:
+            text (str): The text to sanitize.
+
+        Returns:
+            str: The sanitized text.
+        """
+        # Replace newline characters with an empty string
+        text = text.replace('\n', '')
+        # Replace or remove other invalid characters (example)
+        text = re.sub(r'[\\/*?:"<>|]', "", text)  # Remove invalid characters
+        # Remove leading/trailing whitespace
+        text = text.strip()
+        return (text,)
+
+
+class EvaluaterNode:
+    def __init__(self):
+        # Get the directory of the current script (systemprompt.py)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        # Construct the full path to the text file
+        filepath = os.path.join(script_dir, "evaluate.txt")
+
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                self.fixed_text = f.read()
+        except FileNotFoundError:
+            print(f"Error: evaluate.txt not found at {filepath}")
+            self.fixed_text = "ERROR: Prompt file not found."  # Provide a fallback
+        except Exception as e:
+            print(f"Error reading evaluate.txt: {e}")
+            self.fixed_text = "ERROR: Could not read prompt file."  # Provide a fallback
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+               #No inputs
+            },
+            "optional": {
+                "optional_input": ("*",) #This is added because ALL nodes has to have an input.
+            }
+        }
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("text",)
+    FUNCTION = "load_prompt"
+    CATEGORY = "Creepybits/Prompt"
+
+    def load_prompt(self, optional_input=None): #Changed the name
+        return (self.fixed_text,)
+
+
+
+class DynamicImageSwitch:
+
+    def __init__(self):
+        pass
+
+    CATEGORY = "dynamic_switch"
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {},
+            "optional": {
+                "image1": ("IMAGE",),
+                "image2": ("IMAGE",),
+                "image3": ("IMAGE",),
+            }
+        }
+
+    RETURN_TYPES = ("IMAGE", "STRING",)
+    RETURN_NAMES = ("IMAGE", "show_help",)
+    FUNCTION = "dynamic_switch"
+
+    def dynamic_switch(self, **kwargs):
+        show_help = "Proverb of the day: Freedom means the right to yell, “THEATRE!” in a crowded fire."
+        latent = None  # Initialize model to None
+
+        if "image1" in kwargs and kwargs["image1"] is not None: #Check the kwarg model1 exists
+            image = kwargs["image1"]  # Use model1 if it exists
+
+        elif "image2" in kwargs and kwargs["image2"] is not None: #Check the kwarg model2 exists, to use the model
+            image = kwargs["image2"]  # Use model2 if model1 is missing
+
+        elif "image3" in kwargs and kwargs["image3"] is not None: #Check the kwarg model2 exists, to use the model
+            image = kwargs["image3"]  # Use model2 if model1 is missing
+
+        if image is not None:  # Return the model if a valid one was found
+            return (image, show_help,)
+        else:
+            return (None, show_help,)  # Return None if no valid models were provided
+
+
 
 NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
     "Modelswitch": Modelswitch, #Corrected Node name
@@ -447,6 +560,9 @@ NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
     "SystemPromp": SystemPrompt,
     "DelayNode": DelayNode,
     "DelayTextNode": DelayTextNode,
+    "SanitizeFilename": SanitizeFilename,
+    "EvaluaterNode": EvaluaterNode,
+    "DynamicImageSwitch": DynamicImageSwitch,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -462,4 +578,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "SystemPromp": "System Prompt (Creepybits)",
     "DelayNode": "Delay Image Node (Creepybits)",
     "DelayTextNode": "Delay Text Node (Creepybits)",
+    "SanitizeFilename": "Sanitize Filename (Creepybits)",
+    "EvaluaterNode": "Evaluater Node (Creepybits)",
+    "DynamicImageSwitch": "Dynamic Image Switch (Creepybits)",
 }
