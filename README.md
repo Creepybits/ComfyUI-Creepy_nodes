@@ -13,9 +13,10 @@ You can also install from [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-
 
 Restart ComfyUI
 
-## NODES
+## SWITCHES
 
-![image](https://github.com/user-attachments/assets/0cf7d4fe-f039-4844-bdfe-d168a7b1e167)
+![image](https://github.com/user-attachments/assets/1d4b9449-95ff-4afc-ade1-01c122ae8152)
+
 
 
 
@@ -32,6 +33,7 @@ These nodes works as you might expect them to. You can connect 3 different input
 * Dynamic VAE switch
 * Dynamic Conditioning switch
 * Dynamic Latent Switch
+* Dynamic Image Switch
 
 These nodes works differently. The node will check input 1 and if there is a valid input in that slot it will forward it, if there is no input or an invalid input in the first input slot it will move on to the second one. If there's a valid input in the second slot it will use that one, else it will move to the third one. If no valid inputs are presented, the node will do nothing.
 
@@ -41,6 +43,16 @@ These nodes will delay the execution of the node following the delay node by x s
 
 ![image](https://github.com/user-attachments/assets/11d43693-0ada-435b-aded-a7ffc0a42fff)
 
+
+## SPECIAL NODES
+
+* Evaluater Node
+* Sanitize Filename
+
+The _Evaluater Node_ fetches and forwards a system prompt to [Gemini 2.0 Flash Experimental](https://github.com/ShmuelRonen/ComfyUI-Gemini_Flash_2.0_Exp) node for evaluating and grading images.  
+The _Sanitize Filename_ node will make sure that no invalid characters are forwarded to the _save image_ node.
+
+![image](https://github.com/user-attachments/assets/e1abae98-4414-4355-bb0a-962c237af037)
 
 
 ## SYSTEM PROMPT
