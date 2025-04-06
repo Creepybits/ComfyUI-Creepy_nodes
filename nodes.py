@@ -3,6 +3,7 @@ import folder_paths  # Import folder_paths
 import comfy.sd
 import comfy.utils
 import os
+import time
 
 
 class Modelswitch:
@@ -376,6 +377,62 @@ class SystemPrompt:
         return (combined_text,)
 
 
+class DelayNode:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "seconds": ("FLOAT", {"default": 1.0, "min": 0.1, "step": 0.1}),
+                "image": ("IMAGE",),  # Specific input type for images
+            },
+        }
+
+    RETURN_TYPES = ("IMAGE",)  # Specific return type for images
+    RETURN_NAMES = ("image",)
+    FUNCTION = "delay"
+    CATEGORY = "Utilities"
+
+    def delay(self, seconds, image):
+        """
+        Delays execution for the specified number of seconds.
+
+        Args:
+            seconds (float): The number of seconds to delay (minimum 0.1, step 0.1).
+            image (torch.Tensor): The input image.
+
+        Returns:
+            torch.Tensor: The input image after the delay.
+        """
+        if seconds < 0.1:
+            seconds = 0.1 #Enforce minimum value.
+
+        time.sleep(seconds)
+        return (image,)
+
+
+class DelayTextNode:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "seconds": ("FLOAT", {"default": 1.0, "min": 0.1, "step": 0.1}),
+                "text": ("STRING",),  # Text input
+            },
+        }
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("text",)
+    FUNCTION = "delay"
+    CATEGORY = "Utilities"
+
+    def delay(self, seconds, text):
+        time.sleep(seconds)
+        return (text,)
+
+
 
 NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
     "Modelswitch": Modelswitch, #Corrected Node name
@@ -388,6 +445,8 @@ NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
     "DynamicLatentSwitch": DynamicLatentSwitch,
     "DynamicVAESwitch": DynamicVAESwitch,
     "SystemPromp": SystemPrompt,
+    "DelayNode": DelayNode,
+    "DelayTextNode": DelayTextNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -401,4 +460,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "DynamicLatentSwitch": "Dynamic Latent Switch (Creepybits)",
     "DynamicVAESwitch": "Dynamic VAE Switch (Creepybits)",
     "SystemPromp": "System Prompt (Creepybits)",
+    "DelayNode": "Delay Image Node (Creepybits)",
+    "DelayTextNode": "Delay Text Node (Creepybits)",
 }
