@@ -15,7 +15,8 @@ Restart ComfyUI
 
 ## NODES
 
-![image](https://github.com/user-attachments/assets/8ffac049-a897-40b2-be2b-a6c76d65cda5)
+![image](https://github.com/user-attachments/assets/0cf7d4fe-f039-4844-bdfe-d168a7b1e167)
+
 
 
 
@@ -33,6 +34,14 @@ These nodes works as you might expect them to. You can connect 3 different input
 * Dynamic Latent Switch
 
 These nodes works differently. The node will check input 1 and if there is a valid input in that slot it will forward it, if there is no input or an invalid input in the first input slot it will move on to the second one. If there's a valid input in the second slot it will use that one, else it will move to the third one. If no valid inputs are presented, the node will do nothing.
+
+## DELAY NODES 
+
+These nodes will delay the execution of the node following the delay node by x seconds.
+
+![image](https://github.com/user-attachments/assets/11d43693-0ada-435b-aded-a7ffc0a42fff)
+
+
 
 ## SYSTEM PROMPT
 
