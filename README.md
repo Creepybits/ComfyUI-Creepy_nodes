@@ -48,14 +48,34 @@ These nodes will delay the execution of the node following the delay node by x s
 
 * Evaluater Node
 * Sanitize Filename
+* People Evaluation Node
 
-The _Evaluater Node_ fetches and forwards a system prompt to [Gemini 2.0 Flash Experimental](https://github.com/ShmuelRonen/ComfyUI-Gemini_Flash_2.0_Exp) node for evaluating and grading images.  
 The _Sanitize Filename_ node will make sure that no invalid characters are forwarded to the _save image_ node.
+The _Evaluater Node_ fetches and forwards a system prompt to [Gemini 2.0 Flash Experimental](https://github.com/ShmuelRonen/ComfyUI-Gemini_Flash_2.0_Exp) node for evaluating and grading images.  
+The _People Evaluation Node_ I made just for fun, and it will rate the attractiveness/sexiness of people in images. It currently has 4 settings:  
 
-![image](https://github.com/user-attachments/assets/e1abae98-4414-4355-bb0a-962c237af037)
+* attractiveness_nice
+* attractiveness_rude
+* attractiveness_x
+* attractiveness_xx
+
+![image](https://github.com/user-attachments/assets/0bc774d9-2b5a-40f3-8915-88328740fe2e)
+
+## Attractiveness_nice
+  ![image](https://github.com/user-attachments/assets/72dc83dc-8503-4002-86c6-29c0452e9797)
 
 
-## SYSTEM PROMPT
+## Attractiveness_rude
+ ![image](https://github.com/user-attachments/assets/893dbbfb-a299-49ea-a599-df8cad39b29d)
+
+ ## Attractiveness_x 
+![image](https://github.com/user-attachments/assets/10e327d6-2c43-4e46-968a-5b910491785c)
+
+ ## Attractiveness_xx
+ ![image](https://github.com/user-attachments/assets/95f6d82e-0fba-4e2f-acfe-2b6d6dea1ca2)  
+
+   
+# SYSTEM PROMPT
 
 ![image](https://github.com/user-attachments/assets/92509bbc-3bd3-4409-b28b-81a227073782)
 
