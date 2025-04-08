@@ -1,0 +1,40 @@
+class Modelswitch:
+
+    def __init__(self):
+        pass
+    CATEGORY = "switch"
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "Input": ("INT", {"default": 1, "min": 1, "max": 3}),
+            },
+            "optional": {
+                "model1": ("MODEL",),
+                "model2": ("MODEL",),
+                "model3": ("MODEL",),
+            }
+        }
+
+    RETURN_TYPES = ("MODEL", "STRING", )
+    RETURN_NAMES = ("MODEL", "show_help", )
+    FUNCTION = "switch"
+
+    def switch(self, Input, model1=None, model2=None, model3=None):
+        show_help = "Proverb of the day: Everyone has the right to do stupid things, but you’re abusing that privilege."
+        if Input == 1:
+            return (model1, show_help,)
+        elif Input == 2:  # Corrected indentation
+            return (model2, show_help,)
+        elif Input == 3:  # Corrected indentation
+            return (model3, show_help,)
+        else:
+            return (None, show_help,)  # Handle invalid input (return None model)
+
+NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
+      "Modelswitch": Modelswitch, #Corrected Node name
+}
+
+NODE_DISPLAY_NAME_MAPPINGS = {
+      "Modelswitch": "Multi Model Switch (Creepybits)",
+}
