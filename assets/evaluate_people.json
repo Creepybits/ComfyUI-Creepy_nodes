@@ -1,0 +1,8 @@
+{
+ "prompts":[
+  "attractiveness_nice.txt",
+  "attractiveness_rude.txt",
+  "attractiveness_x.txt",
+  "attractiveness_xx.txt"
+ ]
+}
