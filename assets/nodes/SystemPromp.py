@@ -1,3 +1,9 @@
+import os
+import sys
+import comfy.sd
+import comfy.utils
+import re
+
 class SystemPrompt:
 
     def __init__(self):
