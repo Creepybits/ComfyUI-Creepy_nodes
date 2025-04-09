@@ -50,8 +50,10 @@ These nodes will delay the execution of the node following the delay node by x s
 * Sanitize Filename
 * People Evaluation Node
 
-The _Sanitize Filename_ node will make sure that no invalid characters are forwarded to the _save image_ node.
+The _Sanitize Filename_ node will make sure that no invalid characters are forwarded to the _save image_ node.  
+  
 The _Evaluater Node_ fetches and forwards a system prompt to [Gemini 2.0 Flash Experimental](https://github.com/ShmuelRonen/ComfyUI-Gemini_Flash_2.0_Exp) node for evaluating and grading images.  
+  
 The _People Evaluation Node_ I made just for fun, and it will rate the attractiveness/sexiness of people in images. It currently has 4 settings:  
 
 * attractiveness_nice
