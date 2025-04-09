@@ -7,10 +7,12 @@ import re
 class SystemPrompt:
 
     def __init__(self):
-        # Get the directory of the current script (systemprompt.py)
+        # Get the directory of the current script (SystemPromp.py)
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        # Construct the full path to the text file
-        filepath = os.path.join(script_dir, "assets/prompts/system_prompt.txt")  # or "path/to/your/textfile.txt" if it's in a subdirectory
+
+        # Construct the full path to the text file: up one level, then into "assets/prompts"
+        assets_dir = os.path.dirname(script_dir) # go up to assets
+        filepath = os.path.join(assets_dir, "prompts", "system_prompt.txt")
 
         try:
             with open(filepath, "r", encoding="utf-8") as f:
