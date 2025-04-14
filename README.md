@@ -83,7 +83,7 @@ The _People Evaluation Node_ I made just for fun, and it will rate the attractiv
 
 This node will automatically load a predetermined system prompt to the [Gemini 2.0 Experimental node](https://github.com/ShmuelRonen/ComfyUI-Gemini_Flash_2.0_Exp) and transform even short and inexact prompts to prompts that are suitable for Flux and Shuttle 3.1 together with the T5-XXL Clip. I created this node to make workflows a little bit less confusing, now there's no need to worry about the system prompt or wonder where to write the instructions to Gemini.
 
-The current system prompt is written to work for both Text to image and image to image workflows. It's created to work with Gemini 2.0 Flash Experimental. It might work with other LLM's, but that's nothing I can guarantee. If you want to alter the actual system prompt, it is located in `/custom_nodes/creepy_nodes/system_prompt.txt`
+The current system prompt is written to work for both Text to image and image to image workflows. It's created to work with Gemini 2.0 Flash Experimental. It might work with other LLM's, but that's nothing I can guarantee. If you want to alter the actual system prompt, it is located in `/custom_nodes/creepy_nodes/assets/prompts/system_prompt.txt`
 
 ### EXAMPLE
 ![image](https://github.com/user-attachments/assets/e4746af1-55be-4363-b420-f271615ab7ac)
