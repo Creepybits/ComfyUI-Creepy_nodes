@@ -46,14 +46,30 @@ These nodes will delay the execution of the node following the delay node by x s
 
 ## SPECIAL NODES
 
-* Evaluater Node
 * Sanitize Filename
+* Evaluater Node
 * People Evaluation Node
 
-The _Sanitize Filename_ node will make sure that no invalid characters are forwarded to the _save image_ node.  
+### Sanitize Filename  
+The _Sanitize Filename_ node will make sure that no invalid characters are forwarded to the _save image_ node.    
   
+![image](https://github.com/user-attachments/assets/e0e55b39-efe2-460e-b25b-62c130680a30)
+
+### Evaluater Node    
 The _Evaluater Node_ fetches and forwards a system prompt to [Gemini 2.0 Flash Experimental](https://github.com/ShmuelRonen/ComfyUI-Gemini_Flash_2.0_Exp) node for evaluating and grading images.  
-  
+
+It will give a short answer with just a number between 1-10 when using _evaluate_img.txt_ 
+
+![Skärmbild 2025-04-18 061747](https://github.com/user-attachments/assets/64f53f5f-8832-4003-9234-81f52c8241fe)
+
+
+
+It will give a longer explanation to the reasoning behind the grading when using _evaluate_img_long.txt_
+
+![Skärmbild 2025-04-18 061809](https://github.com/user-attachments/assets/84606ff9-33a2-42fe-8553-ae703894f230)
+
+
+### People Evaluation Node
 The _People Evaluation Node_ I made just for fun, and it will rate the attractiveness/sexiness of people in images. It currently has 4 settings:  
 
 * attractiveness_nice
