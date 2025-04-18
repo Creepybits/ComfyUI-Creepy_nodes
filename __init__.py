@@ -1,5 +1,8 @@
 import os
 import sys
+import subprocess
+import argostranslate.package
+import argostranslate.translate
 
 # Add the path to your custom nodes directory to the Python path
 # If this isn't done, Python won't be able to find your custom node modules
@@ -23,6 +26,7 @@ from .assets.nodes.SanitizeFilename import NODE_CLASS_MAPPINGS as SanitizeFilena
 from .assets.nodes.DynamicImageSwitch import NODE_CLASS_MAPPINGS as DynamicImageSwitch_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicImageSwitch_NODE_DISPLAY_NAMES
 from .assets.nodes.EvaluaterNode import NODE_CLASS_MAPPINGS as EvaluaterNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as EvaluaterNode_NODE_DISPLAY_NAMES
 from .assets.nodes.PeopleEvaluationNode import NODE_CLASS_MAPPINGS as PeopleEvaluationNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PeopleEvaluationNode_NODE_DISPLAY_NAMES
+from .assets.nodes.ArgosTranslateNode import NODE_CLASS_MAPPINGS as ArgosTranslateNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ArgosTranslateNode_NODE_DISPLAY_NAMES
 
 import comfy.sd
 import comfy.utils
@@ -54,6 +58,7 @@ NODE_CLASS_MAPPINGS = {
     **DynamicImageSwitch_NODE_MAPPINGS,
     **EvaluaterNode_NODE_MAPPINGS,
     **PeopleEvaluationNode_NODE_MAPPINGS,
+    **ArgosTranslateNode_NODE_MAPPINGS,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -73,9 +78,10 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **DynamicImageSwitch_NODE_DISPLAY_NAMES,
     **EvaluaterNode_NODE_DISPLAY_NAMES,
     **PeopleEvaluationNode_NODE_DISPLAY_NAMES,
+    **ArgosTranslateNode_NODE_DISPLAY_NAMES,
 }
 
-__version__ = "1.2.0"
+__version__ = "1.1.2"
 
 # Define the web directory for ComfyUI to find our JavaScript files
 WEB_DIRECTORY = "./web"
