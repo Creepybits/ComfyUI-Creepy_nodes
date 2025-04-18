@@ -1,3 +1,5 @@
+import re
+
 class SanitizeFilename:
     @classmethod
     def INPUT_TYPES(cls):
