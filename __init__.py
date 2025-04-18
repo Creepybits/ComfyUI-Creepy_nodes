@@ -81,7 +81,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **ArgosTranslateNode_NODE_DISPLAY_NAMES,
 }
 
-__version__ = "1.1.2"
+__version__ = "2.0.0"
 
 # Define the web directory for ComfyUI to find our JavaScript files
 WEB_DIRECTORY = "./web"
