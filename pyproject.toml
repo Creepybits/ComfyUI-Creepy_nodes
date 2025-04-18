@@ -1,7 +1,7 @@
 [project]
 name = "comfyui_creepy_nodes"
 description = "A collection of switch nodes for ComfyUI"
-version = "1.2.0"
+version = "2.0.0"
 license = {file = "LICENSE"}
 
 [project.urls]
