@@ -1,13 +1,15 @@
 # ComfyUI-Creepy_nodes
 A collection of switch nodes for ComfyUI
 
-This set of nodes contains a set of easy switch nodes, and they don't require any extra installations. 
+This set of nodes contains a set of easy switch nodes as well as other special nodes and utilities. 
 
 ### Installing
 
 Open a command prompt from your custom_nodes folder and type:  
 
 `git clone https://github.com/Creepybits/ComfyUI-Creepy_nodes.git`
+
+`pip install -r requirements.txt`
 
 You can also install from [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager).
 
