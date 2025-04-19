@@ -27,6 +27,7 @@ from .assets.nodes.DynamicImageSwitch import NODE_CLASS_MAPPINGS as DynamicImage
 from .assets.nodes.EvaluaterNode import NODE_CLASS_MAPPINGS as EvaluaterNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as EvaluaterNode_NODE_DISPLAY_NAMES
 from .assets.nodes.PeopleEvaluationNode import NODE_CLASS_MAPPINGS as PeopleEvaluationNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PeopleEvaluationNode_NODE_DISPLAY_NAMES
 from .assets.nodes.ArgosTranslateNode import NODE_CLASS_MAPPINGS as ArgosTranslateNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ArgosTranslateNode_NODE_DISPLAY_NAMES
+from .assets.nodes.CustomNodeManager import NODE_CLASS_MAPPINGS as CustomNodeManager_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CustomNodeManager_NODE_DISPLAY_NAMES
 
 import comfy.sd
 import comfy.utils
@@ -59,6 +60,7 @@ NODE_CLASS_MAPPINGS = {
     **EvaluaterNode_NODE_MAPPINGS,
     **PeopleEvaluationNode_NODE_MAPPINGS,
     **ArgosTranslateNode_NODE_MAPPINGS,
+    **CustomNodeManager_NODE_MAPPINGS,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -79,6 +81,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **EvaluaterNode_NODE_DISPLAY_NAMES,
     **PeopleEvaluationNode_NODE_DISPLAY_NAMES,
     **ArgosTranslateNode_NODE_DISPLAY_NAMES,
+    **CustomNodeManager_NODE_DISPLAY_NAMES,
 }
 
 __version__ = "2.0.0"
