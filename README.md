@@ -1,7 +1,7 @@
 # ComfyUI-Creepy_nodes
-A collection of switch nodes for ComfyUI
+A collection of custom nodes for ComfyUI
 
-This set of nodes contains a set of easy switch nodes as well as other special nodes and utilities. 
+A collection of switch nodes, dynamic nodes, evaluation nodes, translation node and some other specialized nodes.
 
 ### Installing
 
@@ -51,6 +51,7 @@ These nodes will delay the execution of the node following the delay node by x s
 * Sanitize Filename
 * Evaluater Node
 * People Evaluation Node
+* Custom Node Manager
 
 ### Sanitize Filename  
 The _Sanitize Filename_ node will make sure that no invalid characters are forwarded to the _save image_ node.    
@@ -79,22 +80,42 @@ The _People Evaluation Node_ I made just for fun, and it will rate the attractiv
 * attractiveness_x
 * attractiveness_xx
 
-![image](https://github.com/user-attachments/assets/0bc774d9-2b5a-40f3-8915-88328740fe2e)
 
-## Attractiveness_nice
+_Attractiveness_nice_
   ![image](https://github.com/user-attachments/assets/72dc83dc-8503-4002-86c6-29c0452e9797)
 
 
-## Attractiveness_rude
+_Attractiveness_rude_
  ![image](https://github.com/user-attachments/assets/893dbbfb-a299-49ea-a599-df8cad39b29d)
 
- ## Attractiveness_x 
+_Attractiveness_x_ 
 ![image](https://github.com/user-attachments/assets/10e327d6-2c43-4e46-968a-5b910491785c)
 
- ## Attractiveness_xx
+_Attractiveness_xx_
  ![image](https://github.com/user-attachments/assets/95f6d82e-0fba-4e2f-acfe-2b6d6dea1ca2)  
 
-     
+
+### Custom Node Manager  
+This node has two scan modes:
+* Validate Python  
+
+ ![image](https://github.com/user-attachments/assets/17c5c79f-f32e-44b3-9a31-9324b7f492df)
+
+This will scan a directory for valid ComfyUI nodes. If a node is a valid ComfyUI node it will forward the information in the output.  
+
+![image](https://github.com/user-attachments/assets/6126e9d8-bb31-4ab2-a466-66b647747cce)
+
+* Check Libraries
+
+![image](https://github.com/user-attachments/assets/6188f0e0-4e5a-4f7d-9902-b015dd0e4090)
+
+This will scan a directory and gather information about imported libraries, and which nodes that imported them. The output will only list nodes that acrtually use import {module} (nodes that doesn't require a specific library will be skipped) look like this:
+
+![image](https://github.com/user-attachments/assets/737cb55d-14f6-40a5-adb5-4e058a724a7a)
+
+Any folder path can be set in the "directory" textbox. If left empty it will use `custom_nodes/creepy_nodes/assets/nodes` as its default root directory.
+
+
 
 ## ARGOS TRANSLATE NODE
 
