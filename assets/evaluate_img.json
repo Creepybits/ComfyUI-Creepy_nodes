@@ -1,5 +1,8 @@
 {
  "prompts":[
-  "evaluate_img.txt"
+  "evaluate_img.txt",
+  "evaluate_img_long.txt",
+  "assistant_prompt.txt",
+  "summary.txt"
  ]
 }
