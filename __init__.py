@@ -109,7 +109,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **LoadBatchImagesDir_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
-__version__ = "2.0.0"
+__version__ = "2.1.0"
 
 # Define the web directory for ComfyUI to find our JavaScript files
 WEB_DIRECTORY = "./web"
