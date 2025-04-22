@@ -28,6 +28,15 @@ from .assets.nodes.EvaluaterNode import NODE_CLASS_MAPPINGS as EvaluaterNode_NOD
 from .assets.nodes.PeopleEvaluationNode import NODE_CLASS_MAPPINGS as PeopleEvaluationNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PeopleEvaluationNode_NODE_DISPLAY_NAMES
 from .assets.nodes.ArgosTranslateNode import NODE_CLASS_MAPPINGS as ArgosTranslateNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ArgosTranslateNode_NODE_DISPLAY_NAMES
 from .assets.nodes.CustomNodeManager import NODE_CLASS_MAPPINGS as CustomNodeManager_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CustomNodeManager_NODE_DISPLAY_NAMES
+from .assets.nodes.DynamicDelayText import NODE_CLASS_MAPPINGS as DynamicDelayText_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicDelayText_NODE_DISPLAY_NAMES
+from .assets.nodes.CollectAndDistributeText import NODE_CLASS_MAPPINGS as CollectAndDistributeText_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CollectAndDistributeText_NODE_DISPLAY_NAMES
+from .assets.nodes.PromptGenerator import NODE_CLASS_MAPPINGS as PromptGenerator_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PromptGenerator_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.LoadImagesFromDirectory import NODE_CLASS_MAPPINGS as LoadImagesFromDirectory_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoadImagesFromDirectory_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.KeywordExtractor import NODE_CLASS_MAPPINGS as KeywordExtractor_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as KeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.SummaryWriter import NODE_CLASS_MAPPINGS as SummaryWriter_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as SummaryWriter_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.FilterImages import NODE_CLASS_MAPPINGS as FilterImages_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FilterImages_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.LoadBatchImagesDir import NODE_CLASS_MAPPINGS as LoadBatchImagesDir_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoadBatchImagesDir_NODE_DISPLAY_NAME_MAPPINGS
+
 
 import comfy.sd
 import comfy.utils
@@ -61,6 +70,14 @@ NODE_CLASS_MAPPINGS = {
     **PeopleEvaluationNode_NODE_MAPPINGS,
     **ArgosTranslateNode_NODE_MAPPINGS,
     **CustomNodeManager_NODE_MAPPINGS,
+    **DynamicDelayText_NODE_MAPPINGS,
+    **CollectAndDistributeText_NODE_CLASS_MAPPINGS,
+    **PromptGenerator_NODE_CLASS_MAPPINGS,
+    **LoadImagesFromDirectory_NODE_CLASS_MAPPINGS,
+    **KeywordExtractor_NODE_CLASS_MAPPINGS,
+    **SummaryWriter_NODE_CLASS_MAPPINGS,
+    **FilterImages_NODE_CLASS_MAPPINGS,
+    **LoadBatchImagesDir_NODE_CLASS_MAPPINGS,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -82,9 +99,17 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **PeopleEvaluationNode_NODE_DISPLAY_NAMES,
     **ArgosTranslateNode_NODE_DISPLAY_NAMES,
     **CustomNodeManager_NODE_DISPLAY_NAMES,
+    **DynamicDelayText_NODE_DISPLAY_NAMES,
+    **CollectAndDistributeText_NODE_DISPLAY_NAMES,
+    **PromptGenerator_NODE_DISPLAY_NAME_MAPPINGS,
+    **LoadImagesFromDirectory_NODE_DISPLAY_NAME_MAPPINGS,
+    **KeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS,
+    **SummaryWriter_NODE_DISPLAY_NAME_MAPPINGS,
+    **FilterImages_NODE_DISPLAY_NAME_MAPPINGS,
+    **LoadBatchImagesDir_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
-__version__ = "2.0.2"
+__version__ = "2.0.0"
 
 # Define the web directory for ComfyUI to find our JavaScript files
 WEB_DIRECTORY = "./web"
