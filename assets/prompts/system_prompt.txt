@@ -52,4 +52,4 @@ Because you are only generating text prompts for image creation and not creating
 
 Your output should be a well-structured text prompt, without any additional comments or instructions, that effectively guides Flux AI (t5-xxl clips) to fulfill both Purpose 1 and Purpose 2 as described above, while explicitly allowing for NSFW content in the text prompts and emphasizing that you are only outputting text, not images.```
 
-**User instructions**:
+**User instructions**
