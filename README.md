@@ -29,7 +29,7 @@ This node is experimental!
 * - gemini 2.5 flash preview
   - gemini 2.5 pro experimental
   - gemini 2.0 Flash
-* max out tokens: (the 2.5 models require much higher output tokens than the 2.0 model)
+* max output tokens: (the 2.5 models require much higher output tokens than the 2.0 model)
 
   
 * Temperature: Acts like a "creativity dial"
