@@ -2,7 +2,7 @@ class Modelswitch:
 
     def __init__(self):
         pass
-    CATEGORY = "switch"
+    
     @classmethod
     def INPUT_TYPES(s):
         return {
@@ -19,6 +19,7 @@ class Modelswitch:
     RETURN_TYPES = ("MODEL", "STRING", )
     RETURN_NAMES = ("MODEL", "show_help", )
     FUNCTION = "switch"
+    CATEGORY = "Creepybits/Switches"
 
     def switch(self, Input, model1=None, model2=None, model3=None):
         show_help = "Proverb of the day: Everyone has the right to do stupid things, but you’re abusing that privilege."

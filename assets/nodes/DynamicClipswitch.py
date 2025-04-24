@@ -3,8 +3,7 @@ class DynamicClipswitch:
     def __init__(self):
         pass
 
-    CATEGORY = "dynamic_clip_switch"
-
+    
     @classmethod
     def INPUT_TYPES(cls):
         return {
@@ -19,6 +18,7 @@ class DynamicClipswitch:
     RETURN_TYPES = ("CLIP", "STRING",)
     RETURN_NAMES = ("CLIP", "show_help",)
     FUNCTION = "dynamic_clip_switch"
+    CATEGORY = "Creepybits/Switches"
 
     def dynamic_clip_switch(self, clip1: "CLIP" = None, clip2: "CLIP" = None, clip3: "CLIP" = None):  #<---Fixed parameters
         show_help = "Proverb of the day: I prefer not to think before speaking. I like being as surprised as everyone else by what comes out of my mouth."

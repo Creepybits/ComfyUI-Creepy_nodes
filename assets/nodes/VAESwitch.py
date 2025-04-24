@@ -18,6 +18,7 @@ class VAESwitch:
     RETURN_TYPES = ("VAE", "STRING", )
     RETURN_NAMES = ("VAE", "show_help", )
     FUNCTION = "switch"
+    CATEGORY = "Creepybits/Switches"
 
     def switch(self, Input, VAE1=None, VAE2=None, VAE3=None,):
         show_help = "Proverb of the day: Common sense is like deodorant. The people who need it most never use it."

@@ -12,7 +12,7 @@ class SanitizeFilename:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("sanitized_text",)
     FUNCTION = "sanitize"
-    CATEGORY = "Utilities"
+    CATEGORY = "Creepybits/Utilities"
 
     def sanitize(self, text):
         """

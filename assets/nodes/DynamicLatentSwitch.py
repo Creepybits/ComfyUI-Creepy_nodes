@@ -3,8 +3,6 @@ class DynamicLatentSwitch:
     def __init__(self):
         pass
 
-    CATEGORY = "dynamic_switch"
-
     @classmethod
     def INPUT_TYPES(cls):
         return {
@@ -19,6 +17,7 @@ class DynamicLatentSwitch:
     RETURN_TYPES = ("LATENT", "STRING",)
     RETURN_NAMES = ("LATENT", "show_help",)
     FUNCTION = "dynamic_switch"
+    CATEGORY = "Creepybits/Switches"
 
     def dynamic_switch(self, **kwargs):
         show_help = "Proverb of the day: Freedom means the right to yell, “THEATRE!” in a crowded fire."

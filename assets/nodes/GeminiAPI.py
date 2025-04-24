@@ -3,6 +3,8 @@
 import os
 import json
 import google.generativeai as genai # Use the official library
+# Import types for SafetySetting and HarmCategory if using the library's types
+# from google.generativeai import types
 from io import BytesIO
 from PIL import Image # For image handling
 import torch # For ComfyUI tensor
@@ -24,12 +26,36 @@ DEFAULT_API_KEY_PATH = r"C:\AI\Comfy\ComfyUI\custom_nodes\Creepy_nodes\assets\sc
 # Define a default thinking budget if thinking mode is enabled
 DEFAULT_THINKING_BUDGET = 4096 # You might experiment with this value
 
+# Define available safety thresholds for the dropdown
+SAFETY_THRESHOLDS = ["Block None", "Block Low", "Block Medium", "Block High"]
+
+# Map dropdown values to API threshold constants (as strings for direct payload)
+# The google-generativeai library often handles the mapping of these strings internally
+SAFETY_THRESHOLD_MAP = {
+    "Block None": "BLOCK_NONE",
+    "Block Low": "BLOCK_LOW_AND_ABOVE",
+    "Block Medium": "BLOCK_MEDIUM_AND_ABOVE",
+    "Block High": "BLOCK_HIGH_AND_ABOVE",
+}
+
+# Define standard safety categories to apply the threshold to
+# Using the string names as expected by the API payload / genai library
+SAFETY_CATEGORIES = [
+    "HARM_CATEGORY_HARASSMENT",
+    "HARM_CATEGORY_HATE_SPEECH",
+    "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+    "HARM_CATEGORY_DANGEROUS_CONTENT",
+    # Note: Some models might have additional categories like MEDICAL, DRUG, etc.
+    # Check the specific model documentation if needed.
+]
+
 
 class GeminiAPI:
     """
     A custom node for ComfyUI that uses the Google Gemini API for text and image generation
     via the official google-generativeai library.
-    Includes optional image input (with resizing), system prompt, user instructions, and thinking mode.
+    Includes optional image input (with resizing), system prompt, user instructions,
+    thinking mode, and safety settings control.
     """
 
     CATEGORY = "Creepybits/Gemini"  # Category in ComfyUI interface
@@ -43,7 +69,7 @@ class GeminiAPI:
         return {
             "required": {
                 "system_prompt": ("STRING", {"multiline": True, "default": ""}),  # Input for system instructions
-                "model": (["gemini-2.5-flash-preview-04-17", "gemini-2.5-pro-exp-03-25", "gemini-2.0-flash"],),  # Model selection with added models
+                "model": (["gemini-2.5-flash-preview-04-17", "gemini-2.5-pro-preview-03-25", "gemini-2.0-flash"],),  # Model selection with added models
                 "max_output_tokens": ("INT", {"default": 512, "min": 1, "max": 4096}),  # Max output length, Increased default and max
                 "temperature": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 2.0, "step": 0.1}),  # Temperature for randomness
                 "top_p": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 1.0, "step": 0.01}),  # Top-p sampling
@@ -55,16 +81,18 @@ class GeminiAPI:
                 "image": ("IMAGE",), # Image input is optional
                 "resize_image_to": (["None", "512", "768", "1024"], {"default": "768"}), # Option to resize image before sending
                 "thinking_mode": (["disable", "enable"], {"default": "disable"}), # Thinking mode switch
+                "safety_threshold": (SAFETY_THRESHOLDS, {"default": "Block None"}), # New safety threshold input
                 # Could add thinking_budget here if user wants control over the budget
                 # "thinking_budget": ("INT", {"default": DEFAULT_THINKING_BUDGET, "min": 1, "max": 8192}),
             }
         }
 
 
-    def generate_text(self, system_prompt, model, max_output_tokens, temperature, top_p, top_k, user_instructions="", api_key_file=None, image=None, resize_image_to="768", thinking_mode="disable"):
+    def generate_text(self, system_prompt, model, max_output_tokens, temperature, top_p, top_k, user_instructions="", api_key_file=None, image=None, resize_image_to="768", thinking_mode="disable", safety_threshold="Block None"):
         """
         Generates text using the Google Gemini API via the google-generativeai library.
-        Handles optional image input (with resizing), system prompt, user instructions, and thinking mode.
+        Handles optional image input (with resizing), system prompt, user instructions,
+        thinking mode, and safety settings.
         """
         api_key = None
 
@@ -209,6 +237,23 @@ class GeminiAPI:
              # Note: Model support for thinking mode might vary. API may ignore this config.
 
 
+        # --- Construct the safety_settings payload ---
+        safety_settings = []
+        # Get the API threshold value from the map
+        api_threshold = SAFETY_THRESHOLD_MAP.get(safety_threshold, "BLOCK_NONE") # Default to BLOCK_NONE if key not found
+
+        # Add safety settings for each category if the threshold is not 'BLOCK_NONE'
+        if api_threshold != "BLOCK_NONE":
+            for category_name in SAFETY_CATEGORIES:
+                safety_settings.append({
+                    "category": category_name,
+                    "threshold": api_threshold
+                })
+            print(f"Applying safety threshold '{api_threshold}' to categories: {SAFETY_CATEGORIES}")
+        else:
+            print("Safety threshold set to 'Block None'. No safety settings applied.")
+
+
         # --- Get the Generative Model ---
         try:
             # Use genai.GenerativeModel to get the specific model
@@ -225,11 +270,11 @@ class GeminiAPI:
         try:
             # The genai library handles the request format (including roles implicitly for a single turn)
             # and sending the request to the correct endpoint.
-            # Safety settings can be passed as a separate argument if needed.
+            # Pass the constructed safety_settings list to the generate_content call
             response = model_instance.generate_content(
                 contents, # This is the list of text strings and PIL Images
                 generation_config=generation_config,
-                # safety_settings=... # Add safety settings here if needed
+                safety_settings=safety_settings, # <--- Added safety settings here
             )
 
             # The response object from the library has attributes, not just text

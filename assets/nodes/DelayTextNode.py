@@ -1,3 +1,5 @@
+import time
+
 class DelayTextNode:
     @classmethod
     def INPUT_TYPES(cls):
@@ -11,7 +13,7 @@ class DelayTextNode:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text",)
     FUNCTION = "delay"
-    CATEGORY = "Utilities"
+    CATEGORY = "Creepybits/Utilities"
 
     def delay(self, seconds, text):
         time.sleep(seconds)

@@ -1,3 +1,5 @@
+import time
+
 class DelayNode:
     def __init__(self):
         pass
@@ -14,7 +16,7 @@ class DelayNode:
     RETURN_TYPES = ("IMAGE",)  # Specific return type for images
     RETURN_NAMES = ("image",)
     FUNCTION = "delay"
-    CATEGORY = "Utilities"
+    CATEGORY = "Creepybits/Utilities"
 
     def delay(self, seconds, image):
         """

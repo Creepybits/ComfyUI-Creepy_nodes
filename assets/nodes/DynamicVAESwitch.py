@@ -3,8 +3,6 @@ class DynamicVAESwitch:
     def __init__(self):
         pass
 
-    CATEGORY = "dynamic_switch"
-
     @classmethod
     def INPUT_TYPES(cls):
         return {
@@ -19,6 +17,7 @@ class DynamicVAESwitch:
     RETURN_TYPES = ("VAE", "STRING",)
     RETURN_NAMES = ("VAE", "show_help",)
     FUNCTION = "dynamic_switch"
+    CATEGORY = "Creepybits/Switches"
 
     def dynamic_switch(self, **kwargs):
         show_help = "Proverb of the day: Freedom means the right to yell, “THEATRE!” in a crowded fire."

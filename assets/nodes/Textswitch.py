@@ -2,8 +2,6 @@ class Textswitch:
     def __init__(self):
         pass
 
-        CATEGORY = "switch"
-
     @classmethod
     def INPUT_TYPES(cls):
         return {
@@ -20,6 +18,7 @@ class Textswitch:
     RETURN_TYPES = ("STRING", "STRING",)
     RETURN_NAMES = ("STRING", "show_help",)
     FUNCTION = "switch"
+    CATEGORY = "Creepybits/Switches"
 
     def switch(self, Input, text1=None, text2=None, text3=None,):
         show_help = "Proverb of the day: Something about today makes me want to have a hangover tomorrow."
