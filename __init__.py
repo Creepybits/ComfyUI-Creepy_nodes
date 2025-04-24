@@ -31,7 +31,6 @@ from .assets.nodes.CustomNodeManager import NODE_CLASS_MAPPINGS as CustomNodeMan
 from .assets.nodes.DynamicDelayText import NODE_CLASS_MAPPINGS as DynamicDelayText_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicDelayText_NODE_DISPLAY_NAMES
 from .assets.nodes.CollectAndDistributeText import NODE_CLASS_MAPPINGS as CollectAndDistributeText_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CollectAndDistributeText_NODE_DISPLAY_NAMES
 from .assets.nodes.PromptGenerator import NODE_CLASS_MAPPINGS as PromptGenerator_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PromptGenerator_NODE_DISPLAY_NAME_MAPPINGS
-from .assets.nodes.LoadImagesFromDirectory import NODE_CLASS_MAPPINGS as LoadImagesFromDirectory_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoadImagesFromDirectory_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.KeywordExtractor import NODE_CLASS_MAPPINGS as KeywordExtractor_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as KeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.SummaryWriter import NODE_CLASS_MAPPINGS as SummaryWriter_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as SummaryWriter_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.FilterImages import NODE_CLASS_MAPPINGS as FilterImages_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FilterImages_NODE_DISPLAY_NAME_MAPPINGS
@@ -74,7 +73,6 @@ NODE_CLASS_MAPPINGS = {
     **DynamicDelayText_NODE_MAPPINGS,
     **CollectAndDistributeText_NODE_CLASS_MAPPINGS,
     **PromptGenerator_NODE_CLASS_MAPPINGS,
-    **LoadImagesFromDirectory_NODE_CLASS_MAPPINGS,
     **KeywordExtractor_NODE_CLASS_MAPPINGS,
     **SummaryWriter_NODE_CLASS_MAPPINGS,
     **FilterImages_NODE_CLASS_MAPPINGS,
@@ -104,7 +102,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **DynamicDelayText_NODE_DISPLAY_NAMES,
     **CollectAndDistributeText_NODE_DISPLAY_NAMES,
     **PromptGenerator_NODE_DISPLAY_NAME_MAPPINGS,
-    **LoadImagesFromDirectory_NODE_DISPLAY_NAME_MAPPINGS,
     **KeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS,
     **SummaryWriter_NODE_DISPLAY_NAME_MAPPINGS,
     **FilterImages_NODE_DISPLAY_NAME_MAPPINGS,
@@ -112,7 +109,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **GeminiAPI_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
-__version__ = "2.2.0"
+__version__ = "2.2.1"
 
 # Define the web directory for ComfyUI to find our JavaScript files
 WEB_DIRECTORY = "./web"
