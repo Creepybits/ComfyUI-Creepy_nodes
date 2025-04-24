@@ -36,6 +36,7 @@ from .assets.nodes.KeywordExtractor import NODE_CLASS_MAPPINGS as KeywordExtract
 from .assets.nodes.SummaryWriter import NODE_CLASS_MAPPINGS as SummaryWriter_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as SummaryWriter_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.FilterImages import NODE_CLASS_MAPPINGS as FilterImages_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FilterImages_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.LoadBatchImagesDir import NODE_CLASS_MAPPINGS as LoadBatchImagesDir_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoadBatchImagesDir_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.GeminiAPI import NODE_CLASS_MAPPINGS as GeminiAPI_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as GeminiAPI_NODE_DISPLAY_NAME_MAPPINGS
 
 
 import comfy.sd
@@ -78,6 +79,7 @@ NODE_CLASS_MAPPINGS = {
     **SummaryWriter_NODE_CLASS_MAPPINGS,
     **FilterImages_NODE_CLASS_MAPPINGS,
     **LoadBatchImagesDir_NODE_CLASS_MAPPINGS,
+    **GeminiAPI_NODE_CLASS_MAPPINGS,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -107,9 +109,10 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **SummaryWriter_NODE_DISPLAY_NAME_MAPPINGS,
     **FilterImages_NODE_DISPLAY_NAME_MAPPINGS,
     **LoadBatchImagesDir_NODE_DISPLAY_NAME_MAPPINGS,
+    **GeminiAPI_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
-__version__ = "2.1.0"
+__version__ = "2.2.0"
 
 # Define the web directory for ComfyUI to find our JavaScript files
 WEB_DIRECTORY = "./web"
