@@ -13,7 +13,41 @@ Open a command prompt from your custom_nodes folder and type:
 
 You can also install from [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager).
 
-Restart ComfyUI
+Restart ComfyUI  
+
+## GEMINI 2.5 FLASH/PRO API
+
+![image](https://github.com/user-attachments/assets/ed555797-341c-4d3b-88e8-e48644fa425c)  
+
+This node is experimental!
+
+![image](https://github.com/user-attachments/assets/430ab812-5093-4de7-8edd-1ea6e4a23463)  
+
+* Image: regular image input
+* System prompt: Customize a system prompt (some models require that the system prompt and user instructions use the same input, if you get an error message try to use the same text input or without a system prompt)
+* Model: Chose between the following models (note that the free API calls are much more limited for the 2.5 models)
+* - gemini 2.5 flash preview
+  - gemini 2.5 pro experimental
+  - gemini 2.0 Flash
+* max out tokens: (the 2.5 models require much higher output tokens than the 2.0 model)
+
+  
+* Temperature: Acts like a "creativity dial"
+* - Higher Temperature: Makes the output more random, surprising, and potentially creative (but also riskier for coherence).
+  - Lower Temperature: Makes the output more focused, deterministic, and predictable (sticking to more probable words).
+* Top K: Limits the pool of possible next words to the K most likely options.
+* - Higher K: More options considered, leading to more diverse text.
+  - Lower K: Fewer options considered (only the very top ones), leading to more predictable text.
+* Top P (Nucleus Sampling): Limits the pool of possible next words to the smallest set whose cumulative probability adds up to P.
+* - Higher P: Includes a larger, more diverse set of words whose probabilities collectively reach the threshold. This adjusts dynamically based on how confident the model is.
+  - Lower P: Restricts choices to a smaller set of highly probable words.
+* User instructions: Write additional instructions.
+* API key: Get your free API key here: [Gemini API](https://aistudio.google.com/apikey)
+* - Save your key in a text file named `gemini_api_key.txt`, copy the path to the file and paste it in the text box for API.
+* Resize image to: If you load a lot of images in a batch, resizing them to a smaller size can save time and tokens.
+* Thinking mode: The 2.5 models have a "thinking mode" where you can follow their reasoning. Not very useful in Comfy, but you can use it if you want. You will have to explicity tell Gemini that the output should include the thinking (costs a lot more output tokens).
+
+
 
 ## SWITCHES
 
@@ -52,6 +86,10 @@ These nodes will delay the execution of the node following the delay node by x s
 * Evaluater Node
 * People Evaluation Node
 * Custom Node Manager
+* Load Batch From Dir
+* Keyword Extractor
+* Summary Writer
+* Prompt Generator
 
 ### Sanitize Filename  
 The _Sanitize Filename_ node will make sure that no invalid characters are forwarded to the _save image_ node.    
@@ -114,6 +152,30 @@ This will scan a directory and gather information about imported libraries, and 
 ![image](https://github.com/user-attachments/assets/737cb55d-14f6-40a5-adb5-4e058a724a7a)
 
 Any folder path can be set in the "directory" textbox. If left empty it will use `custom_nodes/creepy_nodes/assets/nodes` as its default root directory.
+
+### Load Batch From Dir  
+
+![image](https://github.com/user-attachments/assets/c819daa2-31e3-422b-a56e-1d481ca7fc47)
+
+A large part of the code for this node comes from [ComfyUI Inspire Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack)
+
+### Keyword Extractor
+
+![image](https://github.com/user-attachments/assets/204efae9-6c7f-4db6-96af-ba6998461812)
+
+This node will extract keywords from an image. In the textbox, describe which types of keywords it should extract.
+
+### Summary Writer
+
+![image](https://github.com/user-attachments/assets/36425dea-6952-46e6-9929-03676fc9c49c)
+
+Basically the same as Keyword Extractor, but lets you add several files in `/custom_nodes/creepy_nodes/assets/summary.json` to pick from in dropdown list.
+
+### Prompt Generator
+
+![image](https://github.com/user-attachments/assets/52bb97db-d890-4d79-affb-1feeaa175f2c)
+
+Basically the same as the System Prompt node.
 
 
 
