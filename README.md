@@ -5,13 +5,18 @@ A collection of switch nodes, dynamic nodes, evaluation nodes, translation node 
 
 ### Installing
 
-Open a command prompt from your custom_nodes folder and type:  
+Search for "creepy nodes" in [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) and install.
+
+Manual installation:
+
+Open a command prompt from your /custom_nodes/ComfyUI-Creepy_nodes/ folder and type:  
 
 `git clone https://github.com/Creepybits/ComfyUI-Creepy_nodes.git`
 
-`pip install -r requirements.txt`
+Then type: `..\..\python_embeded\python.exe -m pip install -r requirements.txt` 
 
-You can also install from [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager).
+Or `\full path to your python\python.exe -m pip install -r requirements.txt`
+
 
 Restart ComfyUI  
 
