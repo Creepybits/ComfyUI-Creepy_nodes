@@ -69,7 +69,7 @@ class GeminiAPI:
         return {
             "required": {
                 "system_prompt": ("STRING", {"multiline": True, "default": ""}),  # Input for system instructions
-                "model": (["gemini-2.5-flash-preview-04-17", "gemini-2.5-pro-preview-03-25", "gemini-2.0-flash"],),  # Model selection with added models
+                "model": (["gemini-2.5-flash-preview-04-17", "gemini-2.5-pro-exp-03-25", "gemini-2.0-flash"],),  # Model selection with added models
                 "max_output_tokens": ("INT", {"default": 512, "min": 1, "max": 4096}),  # Max output length, Increased default and max
                 "temperature": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 2.0, "step": 0.1}),  # Temperature for randomness
                 "top_p": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 1.0, "step": 0.01}),  # Top-p sampling
