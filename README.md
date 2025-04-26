@@ -95,6 +95,7 @@ These nodes will delay the execution of the node following the delay node by x s
 * Keyword Extractor
 * Summary Writer
 * Prompt Generator
+* Gemini Token Counter
 
 ### Sanitize Filename  
 The _Sanitize Filename_ node will make sure that no invalid characters are forwarded to the _save image_ node.    
@@ -182,6 +183,12 @@ Basically the same as Keyword Extractor, but lets you add several files in `/cus
 
 Basically the same as the System Prompt node.
 
+
+### Gemini Token Counter
+
+![image](https://github.com/user-attachments/assets/ecd443e4-d92e-4e6d-a6a2-00b8881cf161)
+
+Estimates how many tokens your API call will cost
 
 
 ## ARGOS TRANSLATE NODE
