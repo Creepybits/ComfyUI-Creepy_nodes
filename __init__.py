@@ -36,8 +36,9 @@ from .assets.nodes.SummaryWriter import NODE_CLASS_MAPPINGS as SummaryWriter_NOD
 from .assets.nodes.FilterImages import NODE_CLASS_MAPPINGS as FilterImages_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FilterImages_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.LoadBatchImagesDir import NODE_CLASS_MAPPINGS as LoadBatchImagesDir_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoadBatchImagesDir_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.GeminiAPI import NODE_CLASS_MAPPINGS as GeminiAPI_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as GeminiAPI_NODE_DISPLAY_NAME_MAPPINGS
-from .assets.nodes.GeminiTokenCounter import NODE_CLASS_MAPPINGS as GeminiTokenCounter_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as GeminiTokenCounter_NODE_DISPLAY_NAME_MAPPINGS
-
+from .assets.nodes.GeminiAudioAnalyzer import NODE_CLASS_MAPPINGS as GeminiAudioAnalyzer_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as GeminiAudioAnalyzer_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.RandomAudioSegment import NODE_CLASS_MAPPINGS as RandomAudioSegment_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as RandomAudioSegment_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.AudioKeywordExtractor import NODE_CLASS_MAPPINGS as AudioKeywordExtractor_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as AudioKeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS
 
 
 import comfy.sd
@@ -80,7 +81,9 @@ NODE_CLASS_MAPPINGS = {
     **FilterImages_NODE_CLASS_MAPPINGS,
     **LoadBatchImagesDir_NODE_CLASS_MAPPINGS,
     **GeminiAPI_NODE_CLASS_MAPPINGS,
-    **GeminiTokenCounter_NODE_CLASS_MAPPINGS,
+    **GeminiAudioAnalyzer_NODE_CLASS_MAPPINGS,
+    **RandomAudioSegment_NODE_CLASS_MAPPINGS,
+    **AudioKeywordExtractor_NODE_CLASS_MAPPINGS,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -110,10 +113,12 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **FilterImages_NODE_DISPLAY_NAME_MAPPINGS,
     **LoadBatchImagesDir_NODE_DISPLAY_NAME_MAPPINGS,
     **GeminiAPI_NODE_DISPLAY_NAME_MAPPINGS,
-    **GeminiTokenCounter_NODE_DISPLAY_NAME_MAPPINGS,
+    **GeminiAudioAnalyzer_NODE_DISPLAY_NAME_MAPPINGS,
+    **RandomAudioSegment_NODE_DISPLAY_NAME_MAPPINGS,
+    **AudioKeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
-__version__ = "2.2.3"
+__version__ = "2.2.4"
 
 # Define the web directory for ComfyUI to find our JavaScript files
 WEB_DIRECTORY = "./web"
