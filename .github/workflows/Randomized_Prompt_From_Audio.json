@@ -1,0 +1,392 @@
+{
+  "id": "52c66625-6e98-4fd9-be7e-41fc7b7f153d",
+  "revision": 0,
+  "last_node_id": 7,
+  "last_link_id": 9,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "AudioKeywordExtractor",
+      "pos": [
+        -2114.953857421875,
+        -787.4462280273438
+      ],
+      "size": [
+        483.5887451171875,
+        159.85963439941406
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AudioKeywordExtractor",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#1f641f",
+      "bgcolor": "#0b500b",
+      "shape": 1
+    },
+    {
+      "id": 5,
+      "type": "RandomAudioSegment",
+      "pos": [
+        -2116.873046875,
+        -932.9177856445312
+      ],
+      "size": [
+        478.8000183105469,
+        82
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomAudioSegment",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        15,
+        -1
+      ],
+      "color": "#1f641f",
+      "bgcolor": "#0b500b",
+      "shape": 1
+    },
+    {
+      "id": 2,
+      "type": "GeminiAudioAnalyzer",
+      "pos": [
+        -1566.7877197265625,
+        -939.0892944335938
+      ],
+      "size": [
+        461.0175476074219,
+        310
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 5
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "generated_content",
+          "type": "STRING",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GeminiAudioAnalyzer",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "",
+        "audio",
+        "gemini-2.0-flash",
+        "analysis",
+        "",
+        "",
+        2048,
+        0.9,
+        "Block None"
+      ],
+      "color": "#1f641f",
+      "bgcolor": "#0b500b",
+      "shape": 1
+    },
+    {
+      "id": 7,
+      "type": "PromptGenerator",
+      "pos": [
+        -1086.85693359375,
+        -935.6904907226562
+      ],
+      "size": [
+        243.60000610351562,
+        88
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_2",
+          "type": "STRING",
+          "widget": {
+            "name": "text_2"
+          },
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "title": "Prompt Generator (Creepybits)",
+      "properties": {
+        "Node name for S&R": "PromptGenerator",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#1f641f",
+      "bgcolor": "#0b500b",
+      "shape": 1
+    },
+    {
+      "id": 4,
+      "type": "LoadAudio",
+      "pos": [
+        -2563.662109375,
+        -929.3247680664062
+      ],
+      "size": [
+        385.2491149902344,
+        137.25437927246094
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadAudio",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "Bailando Sin Miedo ext v1.2.2.mp3",
+        null,
+        null
+      ],
+      "color": "#223",
+      "bgcolor": "#335",
+      "shape": 1
+    },
+    {
+      "id": 6,
+      "type": "GeminiAPI",
+      "pos": [
+        -822.5016479492188,
+        -943.9839477539062
+      ],
+      "size": [
+        466.1999816894531,
+        358
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "system_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "system_prompt"
+          },
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GeminiAPI",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "",
+        "gemini-2.5-flash-preview-04-17",
+        512,
+        0.9,
+        0.9,
+        50,
+        "",
+        "C:\\AI\\Comfy\\ComfyUI\\custom_nodes\\Creepy_nodes\\assets\\scripts\\gemini_api_key.txt",
+        "None",
+        "disable",
+        "Block None"
+      ],
+      "color": "#1f641f",
+      "bgcolor": "#0b500b",
+      "shape": 1
+    },
+    {
+      "id": 3,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -283.5060119628906,
+        -944.08984375
+      ],
+      "size": [
+        443.3786315917969,
+        348.97491455078125
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "PROMPT",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [],
+      "color": "#223",
+      "bgcolor": "#335",
+      "shape": 1
+    }
+  ],
+  "links": [
+    [
+      2,
+      1,
+      0,
+      2,
+      1,
+      "STRING"
+    ],
+    [
+      4,
+      4,
+      0,
+      5,
+      0,
+      "AUDIO"
+    ],
+    [
+      5,
+      5,
+      0,
+      2,
+      0,
+      "AUDIO"
+    ],
+    [
+      7,
+      2,
+      0,
+      7,
+      0,
+      "STRING"
+    ],
+    [
+      8,
+      7,
+      0,
+      6,
+      1,
+      "STRING"
+    ],
+    [
+      9,
+      6,
+      0,
+      3,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8769226950000005,
+      "offset": [
+        2422.1037331246043,
+        1143.3380826646726
+      ]
+    },
+    "ue_links": [],
+    "frontendVersion": "1.17.11",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
