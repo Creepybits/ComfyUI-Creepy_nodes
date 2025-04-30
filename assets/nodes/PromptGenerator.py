@@ -49,5 +49,5 @@ NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-      "SPromptGenerator": "Prompt Generator (Creepybits)",
+      "PromptGenerator": "Prompt Generator (Creepybits)",
 }

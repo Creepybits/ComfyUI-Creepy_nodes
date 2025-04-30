@@ -9,7 +9,7 @@ class FilterImages:
     RETURN_TYPES = ("STRING",)  # Returns a list of image file paths
     RETURN_NAMES = ("image_paths",)
     OUTPUT_NODE = True
-    CATEGORY = "Creepybits/utils"
+    CATEGORY = "Creepybits/utilities"
 
     def filter_images(self, folder_path):
         if not os.path.isdir(folder_path):
