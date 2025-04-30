@@ -52,7 +52,52 @@ This node is experimental!
 * Resize image to: If you load a lot of images in a batch, resizing them to a smaller size can save time and tokens.
 * Thinking mode: The 2.5 models have a "thinking mode" where you can follow their reasoning. Not very useful in Comfy, but you can use it if you want. You will have to explicity tell Gemini that the output should include the thinking (costs a lot more output tokens).
 
+___  
 
+## AUDIO NODES  
+
+* Random/Fixed Audio Picker
+* Audio To Image Draft
+* Gemini Audio Analyzer 
+
+![image](https://github.com/user-attachments/assets/e97ff31f-41f7-4cf3-80e4-93085a13e112)  
+
+___  
+
+**Random/Fixed Audio Picker**  
+  
+![image](https://github.com/user-attachments/assets/0de9f9ed-a6c0-4e8f-b325-74a81b75d7a9)  
+
+> Segment Lengt:  
+> Set how long the audio clip you forward to Gemini Audio Analyzer should be in seconds (max 600 seconds)  
+>
+> Start Time:  
+> Set how far in your selected audio clip should begin, in seconds (or -1 to pick start time at random)
+___
+  
+**Audio To Image Draft**  
+
+![image](https://github.com/user-attachments/assets/917dfa5f-be83-4644-86fb-580faf91e2f4)  
+
+> Will load a system prompt located at `\custom_nodes\ComfyUI_Creepy_Nodes\assets\prompts\audio_keywords.txt`
+>
+> If you have additional or special instructions regarding how and what adio should be analyzed, you can enter the instructions in the text box.
+
+___
+
+**Gemini Audio Analyzer**  
+
+![image](https://github.com/user-attachments/assets/f23f7ebc-0e83-48a8-81c1-814a3ebfa3c6)  
+
+A lot of the code for this node is inspired by, or borrowed from, [Gemini 2.0 Flash Exp](https://github.com/ShmuelRonen/ComfyUI-Gemini_Flash_2.0_Exp)  
+
+> The API key will load automatically from `\custom_nodes\ComfyUI_Creepy_Nodes\assets\scripts\gemini_api_key.txt` if field is left empty.
+> Pick between:
+> * Gemini 2.0 Flash
+> * Gemini 2.5 Pro
+> * Gemini 2.5 Flash
+___
+    
 
 ## SWITCHES
 
@@ -100,21 +145,23 @@ These nodes will delay the execution of the node following the delay node by x s
 ### Sanitize Filename  
 The _Sanitize Filename_ node will make sure that no invalid characters are forwarded to the _save image_ node.    
   
-![image](https://github.com/user-attachments/assets/e0e55b39-efe2-460e-b25b-62c130680a30)
+![image](https://github.com/user-attachments/assets/e0e55b39-efe2-460e-b25b-62c130680a30)  
+
+___  
 
 ### Evaluater Node    
 The _Evaluater Node_ fetches and forwards a system prompt to [Gemini 2.0 Flash Experimental](https://github.com/ShmuelRonen/ComfyUI-Gemini_Flash_2.0_Exp) node for evaluating and grading images.  
 
 It will give a short answer with just a number between 1-10 when using _evaluate_img.txt_ 
 
-![Skärmbild 2025-04-18 061747](https://github.com/user-attachments/assets/64f53f5f-8832-4003-9234-81f52c8241fe)
-
+![Skärmbild 2025-04-18 061747](https://github.com/user-attachments/assets/64f53f5f-8832-4003-9234-81f52c8241fe)  
 
 
 It will give a longer explanation to the reasoning behind the grading when using _evaluate_img_long.txt_
 
 ![Skärmbild 2025-04-18 061809](https://github.com/user-attachments/assets/84606ff9-33a2-42fe-8553-ae703894f230)
 
+___  
 
 ### People Evaluation Node
 The _People Evaluation Node_ I made just for fun, and it will rate the attractiveness/sexiness of people in images. It currently has 4 settings:  
@@ -138,6 +185,7 @@ _Attractiveness_x_
 _Attractiveness_xx_
  ![image](https://github.com/user-attachments/assets/95f6d82e-0fba-4e2f-acfe-2b6d6dea1ca2)  
 
+___  
 
 ### Custom Node Manager  
 This node has two scan modes:
@@ -157,7 +205,8 @@ This will scan a directory and gather information about imported libraries, and 
 
 ![image](https://github.com/user-attachments/assets/737cb55d-14f6-40a5-adb5-4e058a724a7a)
 
-Any folder path can be set in the "directory" textbox. If left empty it will use `custom_nodes/creepy_nodes/assets/nodes` as its default root directory.
+Any folder path can be set in the "directory" textbox. If left empty it will use `custom_nodes/creepy_nodes/assets/nodes` as its default root directory.  
+___
 
 ### Load Batch From Dir  
 
@@ -165,17 +214,23 @@ Any folder path can be set in the "directory" textbox. If left empty it will use
 
 A large part of the code for this node comes from [ComfyUI Inspire Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack)
 
+___
+
 ### Keyword Extractor
 
 ![image](https://github.com/user-attachments/assets/204efae9-6c7f-4db6-96af-ba6998461812)
 
 This node will extract keywords from an image. In the textbox, describe which types of keywords it should extract.
 
+___  
+
 ### Summary Writer
 
 ![image](https://github.com/user-attachments/assets/36425dea-6952-46e6-9929-03676fc9c49c)
 
-Basically the same as Keyword Extractor, but lets you add several files in `/custom_nodes/creepy_nodes/assets/summary.json` to pick from in dropdown list.
+Basically the same as Keyword Extractor, but lets you add several files in `/custom_nodes/creepy_nodes/assets/summary.json` to pick from in dropdown list.   
+
+___
 
 ### Prompt Generator
 
@@ -183,6 +238,7 @@ Basically the same as Keyword Extractor, but lets you add several files in `/cus
 
 Basically the same as the System Prompt node.
 
+___
 
 ### Gemini Token Counter
 
@@ -203,6 +259,7 @@ But from my experience it's easier to install language packages through [Argos G
 
 _NOTE THIS NODE HAS A LOT OF WORK AHEAD AND WILL BE UPDATED SPORADICALLY_
     
+___  
 
 ## SYSTEM PROMPT
 
@@ -215,7 +272,9 @@ The current system prompt is written to work for both Text to image and image to
 ### EXAMPLE
 ![image](https://github.com/user-attachments/assets/e4746af1-55be-4363-b420-f271615ab7ac)
 
+  ___  
 
+  
 ### TESTS
 
 I did some tests using 1 image and the same seed/setting, only changing the system prompt. The old system prompt I used was the following:
