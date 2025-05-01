@@ -34,6 +34,7 @@ This node is experimental!
 * - gemini 2.5 flash preview
   - gemini 2.5 pro experimental
   - gemini 2.0 Flash
+  - gemini 2.0 Flash Experimental
 * max output tokens: (the 2.5 models require much higher output tokens than the 2.0 model)
 
   
