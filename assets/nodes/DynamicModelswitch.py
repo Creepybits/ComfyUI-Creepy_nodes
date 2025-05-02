@@ -11,6 +11,7 @@ class DynamicModelswitch:
                 "model1": ("MODEL",),
                 "model2": ("MODEL",),
                 "model3": ("MODEL",),
+                "model4": ("MODEL",),
             }
         }
 
@@ -29,8 +30,11 @@ class DynamicModelswitch:
         elif "model2" in kwargs and kwargs["model2"] is not None: #Check the kwarg model2 exists, to use the model
             model = kwargs["model2"]  # Use model2 if model1 is missing
 
-        elif "model3" in kwargs and kwargs["model3"] is not None: #Check the kwarg model2 exists, to use the model
-            model = kwargs["model3"]  # Use model2 if model1 is missing
+        elif "model3" in kwargs and kwargs["model3"] is not None: #Check the kwarg model3 exists, to use the model
+            model = kwargs["model3"]  # Use model3 if model2 is missing
+
+        elif "model4" in kwargs and kwargs["model4"] is not None: #Check the kwarg model4 exists, to use the model
+            model = kwargs["model4"]  # Use model4 if model3 is missing
 
         if model is not None:  # Return the model if a valid one was found
             return (model, show_help,)
