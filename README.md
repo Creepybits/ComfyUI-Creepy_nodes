@@ -142,6 +142,7 @@ These nodes will delay the execution of the node following the delay node by x s
 * Summary Writer
 * Prompt Generator
 * Gemini Token Counter
+* IMG To IMG Conditioning
 
 ### Sanitize Filename  
 The _Sanitize Filename_ node will make sure that no invalid characters are forwarded to the _save image_ node.    
@@ -245,7 +246,17 @@ ___
 
 ![image](https://github.com/user-attachments/assets/ecd443e4-d92e-4e6d-a6a2-00b8881cf161)
 
-Estimates how many tokens your API call will cost
+Estimates how many tokens your API call will cost  
+
+___  
+
+### IMG To IMG Conditioning  
+
+
+![image](https://github.com/user-attachments/assets/12bd2e8e-0104-47be-9f81-2b7d24e1380f)  
+
+Largely based of the official [InstructPixToPixConditioning](https://github.com/comfyanonymous/ComfyUI/blob/master/comfy_extras/nodes_ip2p.py) node  
+
 
 
 ## ARGOS TRANSLATE NODE
