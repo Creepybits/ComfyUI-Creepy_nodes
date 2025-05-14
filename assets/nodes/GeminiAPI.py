@@ -58,7 +58,7 @@ class GeminiAPI:
     thinking mode, and safety settings control.
     """
 
-    CATEGORY = "Creepybits/Gemini"  # Category in ComfyUI interface
+    CATEGORY = "Creepybits/Beginner's Tools"  # Category in ComfyUI interface
     RETURN_TYPES = ("STRING",) # Output data type
     RETURN_NAMES = ("text",)  # Output name displayed in ComfyUI
 
@@ -69,8 +69,8 @@ class GeminiAPI:
         return {
             "required": {
                 "system_prompt": ("STRING", {"multiline": True, "default": ""}),  # Input for system instructions
-                "model": (["gemini-2.5-flash-preview-04-17", "gemini-2.5-pro-exp-03-25", "gemini-2.0-flash", "gemini-2.0-flash-exp"],),  # Model selection with added models
-                "max_output_tokens": ("INT", {"default": 512, "min": 1, "max": 4096}),  # Max output length, Increased default and max
+                "model": (["gemini-2.5-flash-preview-04-17", "gemini-2.0-flash-lite", "gemini-2.0-flash", "gemini-2.0-flash-exp"],),  # Model selection with added models
+                "max_output_tokens": ("INT", {"default": 1024, "min": 1, "max": 4096}),  # Max output length, Increased default and max
                 "temperature": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 2.0, "step": 0.1}),  # Temperature for randomness
                 "top_p": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 1.0, "step": 0.01}),  # Top-p sampling
                 "top_k": ("INT", {"default": 50, "min": 1, "max": 100}),  # Top-k sampling
@@ -79,7 +79,7 @@ class GeminiAPI:
                 "user_instructions": ("STRING", {"multiline": True, "default": ""}), # User instructions are now optional
                 "api_key_file": ("STRING", {"default": DEFAULT_API_KEY_PATH, "multiline": False}),  # Optional file containing the API KEY
                 "image": ("IMAGE",), # Image input is optional
-                "resize_image_to": (["None", "512", "768", "1024"], {"default": "768"}), # Option to resize image before sending
+                "resize_image_to": (["None", "512", "768", "1024"], {"default": "None"}), # Option to resize image before sending
                 "thinking_mode": (["disable", "enable"], {"default": "disable"}), # Thinking mode switch
                 "safety_threshold": (SAFETY_THRESHOLDS, {"default": "Block None"}), # New safety threshold input
                 # Could add thinking_budget here if user wants control over the budget
@@ -88,7 +88,7 @@ class GeminiAPI:
         }
 
 
-    def generate_text(self, system_prompt, model, max_output_tokens, temperature, top_p, top_k, user_instructions="", api_key_file=None, image=None, resize_image_to="768", thinking_mode="disable", safety_threshold="Block None"):
+    def generate_text(self, system_prompt, model, max_output_tokens, temperature, top_p, top_k, user_instructions="", api_key_file=None, image=None, resize_image_to="None", thinking_mode="disable", safety_threshold="Block None"):
         """
         Generates text using the Google Gemini API via the google-generativeai library.
         Handles optional image input (with resizing), system prompt, user instructions,
