@@ -20,6 +20,34 @@ Or `\full path to your python\python.exe -m pip install -r requirements.txt`
 
 Restart ComfyUI  
 
+___
+
+### Free Beginner's Toolkit
+
+The Free Beginner's Toolkit includes the following:
+* 7 Essential Custom Nodes
+* A 20+ pages detailed guide
+* A versatile and useful workflow
+
+It's available for download here: [Free Beginner's Toolkit](https://www.zanno.se/free-comfyui-beginner-toolkit/) 
+
+![beginner ](https://github.com/user-attachments/assets/b5746ba9-2753-4e48-a9ff-1863fa3c6393)
+
+___
+
+
+### Save Images To Google Drive node pack
+  
+Save Images To Google Drive node pack includes:
+* Custom Node for saving images directly to Google Drive from ComfyUI
+* Detailed PDF guide on how to setup your own Google Drive API
+
+The node and guide are available here: [Save Images To Google Drive](https://patreon.com/creepybits)
+
+![image](https://github.com/user-attachments/assets/a58de484-7346-469a-b737-d3fc4812034e)
+
+___
+
 ## GEMINI 2.5 FLASH/PRO API
 
 ![image](https://github.com/user-attachments/assets/ed555797-341c-4d3b-88e8-e48644fa425c)  
