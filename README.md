@@ -48,6 +48,13 @@ The node and guide are available here: [Save Images To Google Drive](https://pat
 
 ___
 
+## ALL CREEPY NODES
+
+![workflow (34)](https://github.com/user-attachments/assets/921113fd-ec14-4ca9-8bde-80b3593cd3f7)
+
+___
+
+
 ## GEMINI 2.5 FLASH/PRO API
 
 ![image](https://github.com/user-attachments/assets/ed555797-341c-4d3b-88e8-e48644fa425c)  
