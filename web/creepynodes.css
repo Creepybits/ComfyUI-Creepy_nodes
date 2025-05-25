@@ -1,0 +1,23 @@
+/* Custom styling for Creepynodes */
+/* Target all nodes in the Creepybits category */
+.comfy-node[data-category="Creepybits"] {
+    background-color: #500b50 !important;
+    color: #0b500b !important;
+}
+
+/* Make the title bar more visible with the specified color */
+.comfy-node[data-category="Creepybits"] .comfy-node-title {
+    color: #500b50 !important;
+    font-weight: bold;
+}
+
+/* Specific node styling if needed
+.comfy-node.FluxFillSampler {
+    background-color: #3d124d !important;
+    color: #051b34 !important;
+}
+
+.comfy-node.FluxFillSampler .comfy-node-title {
+    color: #19124d !important;
+    font-weight: bold;
+} */
