@@ -1,15 +1,15 @@
 import os
 import sys
-import subprocess # Keep if your nodes use it, otherwise can remove
-# import argostranslate.package # Keep commented out if you want to avoid issues
-# import argostranslate.translate # Keep commented out
+import subprocess
+import argostranslate.package
+import argostranslate.translate
 
 # Add the path to your custom nodes directory to the Python path
+# If this isn't done, Python won't be able to find your custom node modules
 custom_nodes_path = os.path.dirname(os.path.abspath(__file__))
-assets_nodes_path = os.path.join(custom_nodes_path, "assets", "nodes")
-sys.path.append(assets_nodes_path)
+assets_nodes_path = os.path.join(custom_nodes_path, "assets", "nodes") #New
+sys.path.append(assets_nodes_path) #New
 
-# --- IMPORT ALL YOUR NODES FROM assets/nodes ---
 from .assets.nodes.Modelswitch import NODE_CLASS_MAPPINGS as Modelswitch_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Modelswitch_NODE_DISPLAY_NAMES
 from .assets.nodes.VAESwitch import NODE_CLASS_MAPPINGS as VAESwitch_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as VAESwitch_NODE_DISPLAY_NAMES
 from .assets.nodes.CLIPSwitch import NODE_CLASS_MAPPINGS as CLIPSwitch_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CLIPSwitch_NODE_DISPLAY_NAMES
@@ -26,7 +26,7 @@ from .assets.nodes.SanitizeFilename import NODE_CLASS_MAPPINGS as SanitizeFilena
 from .assets.nodes.DynamicImageSwitch import NODE_CLASS_MAPPINGS as DynamicImageSwitch_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicImageSwitch_NODE_DISPLAY_NAMES
 from .assets.nodes.EvaluaterNode import NODE_CLASS_MAPPINGS as EvaluaterNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as EvaluaterNode_NODE_DISPLAY_NAMES
 from .assets.nodes.PeopleEvaluationNode import NODE_CLASS_MAPPINGS as PeopleEvaluationNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PeopleEvaluationNode_NODE_DISPLAY_NAMES
-# from .assets.nodes.ArgosTranslateNode import NODE_CLASS_MAPPINGS as ArgosTranslateNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ArgosTranslateNode_NODE_DISPLAY_NAMES
+from .assets.nodes.ArgosTranslateNode import NODE_CLASS_MAPPINGS as ArgosTranslateNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ArgosTranslateNode_NODE_DISPLAY_NAMES
 from .assets.nodes.CustomNodeManager import NODE_CLASS_MAPPINGS as CustomNodeManager_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CustomNodeManager_NODE_DISPLAY_NAMES
 from .assets.nodes.DynamicDelayText import NODE_CLASS_MAPPINGS as DynamicDelayText_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicDelayText_NODE_DISPLAY_NAMES
 from .assets.nodes.CollectAndDistributeText import NODE_CLASS_MAPPINGS as CollectAndDistributeText_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CollectAndDistributeText_NODE_DISPLAY_NAMES
@@ -39,18 +39,13 @@ from .assets.nodes.GeminiAPI import NODE_CLASS_MAPPINGS as GeminiAPI_NODE_CLASS_
 from .assets.nodes.GeminiAudioAnalyzer import NODE_CLASS_MAPPINGS as GeminiAudioAnalyzer_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as GeminiAudioAnalyzer_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.RandomAudioSegment import NODE_CLASS_MAPPINGS as RandomAudioSegment_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as RandomAudioSegment_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.AudioKeywordExtractor import NODE_CLASS_MAPPINGS as AudioKeywordExtractor_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as AudioKeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS
-from .assets.nodes.IMGToIMGConditioning import NODE_CLASS_MAPPINGS as IMGToIMGConditioning_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as IMGToIMGConditioning_NODE_DISPLAY_NAME_MAPPINGS
-from .assets.nodes.Coloring import NODE_CLASS_MAPPINGS as Coloring_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Coloring_NODE_DISPLAY_NAME_MAPPINGS
-from .assets.nodes.Categorizer import NODE_CLASS_MAPPINGS as Categorizer_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Categorizer_NODE_DISPLAY_NAME_MAPPINGS
 
-# --- ADD THE ONEDRIVE NODE IMPORT HERE ---
-from .assets.nodes.SaveImageToOneDrive_CreepyBits import NODE_CLASS_MAPPINGS as OneDrive_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as OneDrive_NODE_DISPLAY_NAME_MAPPINGS
 
-import comfy.sd # Keep if needed by any nodes
-import comfy.utils # Keep if needed by any nodes
-import time # Keep if needed by any nodes
-import re # Keep if needed by any nodes
-import json # Keep if needed by any nodes
+import comfy.sd
+import comfy.utils
+import time
+import re
+import json
 
 # Try to import folder_paths from ComfyUI
 try:
@@ -59,7 +54,6 @@ except ImportError:
     print("Warning: Could not import folder_paths from ComfyUI")
     folder_paths = None
 
-# --- CONSOLIDATE ALL NODE MAPPINGS ---
 NODE_CLASS_MAPPINGS = {
     **Modelswitch_NODE_MAPPINGS,
     **VAESwitch_NODE_MAPPINGS,
@@ -77,7 +71,7 @@ NODE_CLASS_MAPPINGS = {
     **DynamicImageSwitch_NODE_MAPPINGS,
     **EvaluaterNode_NODE_MAPPINGS,
     **PeopleEvaluationNode_NODE_MAPPINGS,
-    # **ArgosTranslateNode_NODE_MAPPINGS, # Keep commented
+    **ArgosTranslateNode_NODE_MAPPINGS,
     **CustomNodeManager_NODE_MAPPINGS,
     **DynamicDelayText_NODE_MAPPINGS,
     **CollectAndDistributeText_NODE_CLASS_MAPPINGS,
@@ -90,10 +84,6 @@ NODE_CLASS_MAPPINGS = {
     **GeminiAudioAnalyzer_NODE_CLASS_MAPPINGS,
     **RandomAudioSegment_NODE_CLASS_MAPPINGS,
     **AudioKeywordExtractor_NODE_CLASS_MAPPINGS,
-    **IMGToIMGConditioning_NODE_CLASS_MAPPINGS,
-    **Coloring_NODE_CLASS_MAPPINGS,
-    **Categorizer_NODE_CLASS_MAPPINGS,
-    **OneDrive_NODE_CLASS_MAPPINGS, # <--- ADD THIS LINE
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -113,7 +103,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **DynamicImageSwitch_NODE_DISPLAY_NAMES,
     **EvaluaterNode_NODE_DISPLAY_NAMES,
     **PeopleEvaluationNode_NODE_DISPLAY_NAMES,
-    # **ArgosTranslateNode_NODE_DISPLAY_NAMES, # Keep commented
+    **ArgosTranslateNode_NODE_DISPLAY_NAMES,
     **CustomNodeManager_NODE_DISPLAY_NAMES,
     **DynamicDelayText_NODE_DISPLAY_NAMES,
     **CollectAndDistributeText_NODE_DISPLAY_NAMES,
@@ -126,24 +116,11 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **GeminiAudioAnalyzer_NODE_DISPLAY_NAME_MAPPINGS,
     **RandomAudioSegment_NODE_DISPLAY_NAME_MAPPINGS,
     **AudioKeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS,
-    **IMGToIMGConditioning_NODE_DISPLAY_NAME_MAPPINGS,
-    **Coloring_NODE_DISPLAY_NAME_MAPPINGS,
-    **Categorizer_NODE_DISPLAY_NAME_MAPPINGS,
-    **OneDrive_NODE_DISPLAY_NAME_MAPPINGS, # <--- ADD THIS LINE
 }
 
-__version__ = "2.3.1" # Update this version if you like
+__version__ = "2.3.2"
 
 # Define the web directory for ComfyUI to find our JavaScript files
-WEB_DIRECTORY = "./web" # This points to ComfyUI/custom_nodes/Creepy_nodes/web
+WEB_DIRECTORY = "./web"
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS', 'WEB_DIRECTORY']
-
-print("-------------------------------------------------------------------")
-print("Thank you for using Creepybits Custom Nodes! - Nova was here, probably looking for snacks.")
-print("Loading nodes:")
-for node_name in NODE_CLASS_MAPPINGS.keys():
-    print(f"  - {node_name}")
-if 'WEB_DIRECTORY' in locals():
-    print(f"Web directory for custom UI: {WEB_DIRECTORY}")
-print("-------------------------------------------------------------------")
