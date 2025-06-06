@@ -39,6 +39,7 @@ from .assets.nodes.GeminiAPI import NODE_CLASS_MAPPINGS as GeminiAPI_NODE_CLASS_
 from .assets.nodes.GeminiAudioAnalyzer import NODE_CLASS_MAPPINGS as GeminiAudioAnalyzer_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as GeminiAudioAnalyzer_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.RandomAudioSegment import NODE_CLASS_MAPPINGS as RandomAudioSegment_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as RandomAudioSegment_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.AudioKeywordExtractor import NODE_CLASS_MAPPINGS as AudioKeywordExtractor_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as AudioKeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.conditional_lora_selector import NODE_CLASS_MAPPINGS as ConditionalLoRAApplier_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ConditionalLoRAApplier_NODE_DISPLAY_NAME_MAPPINGS
 
 
 import comfy.sd
@@ -84,6 +85,7 @@ NODE_CLASS_MAPPINGS = {
     **GeminiAudioAnalyzer_NODE_CLASS_MAPPINGS,
     **RandomAudioSegment_NODE_CLASS_MAPPINGS,
     **AudioKeywordExtractor_NODE_CLASS_MAPPINGS,
+    **ConditionalLoRAApplier_NODE_CLASS_MAPPINGS,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -116,9 +118,10 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **GeminiAudioAnalyzer_NODE_DISPLAY_NAME_MAPPINGS,
     **RandomAudioSegment_NODE_DISPLAY_NAME_MAPPINGS,
     **AudioKeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS,
+    **ConditionalLoRAApplier_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
-__version__ = "2.3.2"
+__version__ = "2.3.3"
 
 # Define the web directory for ComfyUI to find our JavaScript files
 WEB_DIRECTORY = "./web"
