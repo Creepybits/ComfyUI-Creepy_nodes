@@ -94,7 +94,7 @@ ___
 
 ![image](https://github.com/user-attachments/assets/9b2e72b5-3543-49d6-80f6-bd9aa9fecd1f)
 
-This node will load loras based on if keywords 8that you set) is present somewhere in the prompt.
+This node will load loras based on if keywords (that you set) is present somewhere in the prompt.
 
 * Format: keyword_phrase: lora_full_relative_path, lora_strength, clip_strength
 * Example (use forward slashes for paths):
