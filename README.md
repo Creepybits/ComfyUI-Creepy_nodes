@@ -50,7 +50,8 @@ ___
 
 ## ALL CREEPY NODES
 
-![workflow (34)](https://github.com/user-attachments/assets/921113fd-ec14-4ca9-8bde-80b3593cd3f7)
+![workflow (1)](https://github.com/user-attachments/assets/c829288d-9177-4c47-80e8-8ee5066a542c)
+
 
 ___
 
@@ -89,7 +90,25 @@ This node is experimental!
 * Thinking mode: The 2.5 models have a "thinking mode" where you can follow their reasoning. Not very useful in Comfy, but you can use it if you want. You will have to explicity tell Gemini that the output should include the thinking (costs a lot more output tokens).
 
 ___  
+## CONDITIONAL LORA LOADER  
 
+![image](https://github.com/user-attachments/assets/9b2e72b5-3543-49d6-80f6-bd9aa9fecd1f)
+
+This node will load loras based on if keywords 8that you set) is present somewhere in the prompt.
+
+* Format: keyword_phrase: lora_full_relative_path, lora_strength, clip_strength
+* Example (use forward slashes for paths):
+* portrait: Flux/Details/amateur_photo_v1.safetensors, 0.75, 1.0
+* cinematic scene: MyLoRAs/Styles/retro_cinematic_v2.safetensors, 0.8, 0.9
+* fantasy creature: Custom/Creatures/mythic_beast_lora.safetensors, 0.9, 0.9
+* Use comma-separated values for strength. Default is 1.0 if omitted.
+* Keep strength between -2.0 and 2.0.
+* The keyword_phrase should be found anywhere in the prompt (case-insensitive by default).
+* Use several keywords for each lora by separate them as:
+   keyword_1, keyword_2: MyLoRAs/Styles/retro_cinematic_v2.safetensors, 0.8, 0.9
+   This will load the lora _retro_cinematic_v2.safetensors_ from the path _MyLoRAs/Styles/_ if _keyword_1_ and/or _keyword_2_ is present anywhere in the prompt.   
+
+___
 ## AUDIO NODES  
 
 * Random/Fixed Audio Picker
