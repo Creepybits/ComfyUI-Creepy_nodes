@@ -58,7 +58,7 @@ class GeminiAudioAnalyzer:
             "required": {
                 "prompt": ("STRING", {"default": "Analyze the audio input.", "multiline": True}),
                 "input_type": (["text", "audio"], {"default": "text"}), # Added text option
-                "model_version": (["gemini-2.5-flash-preview-04-17", "gemini-2.5-pro-exp-03-25", "gemini-2.0-flash"], {"default": "gemini-2.0-flash"}), # Added new models
+                "model_version": (["gemini-2.5-flash-preview-05-20", "gemini-2.0-flash", "gemini-2.5-flash-lite-preview-06-17", "gemini-2.0-flash-lite"], {"default": "gemini-2.0-flash"}), # Added new models
                 "operation_mode": (["analysis", "generate_images"], {"default": "analysis"}), # operation_mode - seems unused in generate_content but kept as in original
             },
             "optional": {
