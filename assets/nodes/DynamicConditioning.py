@@ -21,24 +21,24 @@ class DynamicConditioning:
 
     def dynamic_switch(self, **kwargs):
         show_help = "Proverb of the day: Freedom means the right to yell, “THEATRE!” in a crowded fire."
-        cond = None  # Initialize model to None
+        cond = None  
 
-        if "conditioning1" in kwargs and kwargs["conditioning1"] is not None: #Check the kwarg model1 exists
-            conditioning = kwargs["conditioning1"]  # Use model1 if it exists
+        if "conditioning1" in kwargs and kwargs["conditioning1"] is not None: 
+            conditioning = kwargs["conditioning1"]  
 
-        elif "conditioning2" in kwargs and kwargs["conditioning2"] is not None: #Check the kwarg model2 exists, to use the model
-            conditioning = kwargs["conditioning2"]  # Use model2 if model1 is missing
+        elif "conditioning2" in kwargs and kwargs["conditioning2"] is not None: 
+            conditioning = kwargs["conditioning2"]  
 
-        elif "conditioning3" in kwargs and kwargs["conditioning3"] is not None: #Check the kwarg model2 exists, to use the model
-            conditioning = kwargs["conditioning3"]  # Use model2 if model1 is missing
+        elif "conditioning3" in kwargs and kwargs["conditioning3"] is not None: 
+            conditioning = kwargs["conditioning3"]  
 
-        if conditioning is not None:  # Return the model if a valid one was found
+        if conditioning is not None: 
             return (conditioning, show_help,)
         else:
-            return (None, show_help,)  # Return None if no valid models were provided
+            return (None, show_help,)  
 
 
-NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
+NODE_CLASS_MAPPINGS = {  
       "DynamicConditioning": DynamicConditioning,
 }
 
