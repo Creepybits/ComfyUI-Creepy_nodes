@@ -4,7 +4,7 @@ import threading
 class DynamicDelayText:
     def __init__(self):
         self.timer = None
-        self.lock = threading.Lock()  # Ensure thread safety
+        self.lock = threading.Lock()  
         self.output_text = ""
 
     @classmethod
@@ -22,19 +22,19 @@ class DynamicDelayText:
     CATEGORY = "Creepybits/Utilities"
 
     def delay(self, seconds, text):
-        with self.lock:  # Thread-safe access to shared resources
-            self.output_text = text  # Store the text for output
+        with self.lock:  
+            self.output_text = text  
             if self.timer is not None:
-                self.timer.cancel()  # Cancel any existing timer
-            self.timer = threading.Timer(seconds, self.output)  # Start a new timer
+                self.timer.cancel()  
+            self.timer = threading.Timer(seconds, self.output)  
             self.timer.start()
-        return ("",)  # Return empty string immediately
+        return ("",)  
 
     def output(self):
-        with self.lock:  # Thread-safe access to shared resources
+        with self.lock: 
             text_to_output = self.output_text
             self.output_text = ""
-            self.timer = None  # Clear the timer
+            self.timer = None  
         return (text_to_output,)
 
 NODE_CLASS_MAPPINGS = {
