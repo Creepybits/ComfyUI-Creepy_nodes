@@ -20,25 +20,25 @@ class DynamicLatentSwitch:
     CATEGORY = "Creepybits/Switches"
 
     def dynamic_switch(self, **kwargs):
-        show_help = "Proverb of the day: Freedom means the right to yell, “THEATRE!” in a crowded fire."
-        latent = None  # Initialize model to None
+        show_help = "Proverb of the day: I prefer not to think before speaking. I like being as surprised as everyone else by what comes out of my mouth."
+        latent = None  
 
-        if "latent1" in kwargs and kwargs["latent1"] is not None: #Check the kwarg model1 exists
-            latent = kwargs["latent1"]  # Use model1 if it exists
+        if "latent1" in kwargs and kwargs["latent1"] is not None: 
+            latent = kwargs["latent1"]  
 
-        elif "latent2" in kwargs and kwargs["latent2"] is not None: #Check the kwarg model2 exists, to use the model
-            latent = kwargs["latent2"]  # Use model2 if model1 is missing
+        elif "latent2" in kwargs and kwargs["latent2"] is not None: 
+            latent = kwargs["latent2"]  #
 
-        elif "latent3" in kwargs and kwargs["latent3"] is not None: #Check the kwarg model2 exists, to use the model
-            latent = kwargs["latent3"]  # Use model2 if model1 is missing
+        elif "latent3" in kwargs and kwargs["latent3"] is not None: 
+            latent = kwargs["latent3"]  #
 
-        if latent is not None:  # Return the model if a valid one was found
+        if latent is not None:  
             return (latent, show_help,)
         else:
-            return (None, show_help,)  # Return None if no valid models were provided
+            return (None, show_help,)  
 
 
-NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
+NODE_CLASS_MAPPINGS = {  
       "DynamicLatentSwitch": DynamicLatentSwitch,
 }
 
