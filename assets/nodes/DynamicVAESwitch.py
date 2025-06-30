@@ -20,25 +20,25 @@ class DynamicVAESwitch:
     CATEGORY = "Creepybits/Switches"
 
     def dynamic_switch(self, **kwargs):
-        show_help = "Proverb of the day: Freedom means the right to yell, “THEATRE!” in a crowded fire."
-        vae = None  # Initialize model to None
+        show_help = "Proverb of the day: I prefer not to think before speaking. I like being as surprised as everyone else by what comes out of my mouth."
+        vae = None  
 
-        if "vae1" in kwargs and kwargs["vae1"] is not None: #Check the kwarg model1 exists
-            vae = kwargs["vae1"]  # Use model1 if it exists
+        if "vae1" in kwargs and kwargs["vae1"] is not None: 
+            vae = kwargs["vae1"]  
 
-        elif "vae2" in kwargs and kwargs["vae2"] is not None: #Check the kwarg model2 exists, to use the model
-            vae = kwargs["vae2"]  # Use model2 if model1 is missing
+        elif "vae2" in kwargs and kwargs["vae2"] is not None: 
+            vae = kwargs["vae2"] 
 
-        elif "vae3" in kwargs and kwargs["vae3"] is not None: #Check the kwarg model2 exists, to use the model
-            vae = kwargs["vae3"]  # Use model2 if model1 is missing
+        elif "vae3" in kwargs and kwargs["vae3"] is not None: 
+            vae = kwargs["vae3"] 
 
-        if vae is not None:  # Return the model if a valid one was found
+        if vae is not None:  
             return (vae, show_help,)
         else:
-            return (None, show_help,)  # Return None if no valid models were provided
+            return (None, show_help,)  
 
 
-NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
+NODE_CLASS_MAPPINGS = { 
       "DynamicVAESwitch": DynamicVAESwitch,
 }
 
