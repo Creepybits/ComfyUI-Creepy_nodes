@@ -7,7 +7,7 @@ class DynamicClipswitch:
     @classmethod
     def INPUT_TYPES(cls):
         return {
-            "required": {},  # or None is also valid
+            "required": {},  
             "optional": {
                 "clip1": ("CLIP",),
                 "clip2": ("CLIP",),
@@ -20,26 +20,26 @@ class DynamicClipswitch:
     FUNCTION = "dynamic_clip_switch"
     CATEGORY = "Creepybits/Switches"
 
-    def dynamic_clip_switch(self, clip1: "CLIP" = None, clip2: "CLIP" = None, clip3: "CLIP" = None):  #<---Fixed parameters
+    def dynamic_clip_switch(self, clip1: "CLIP" = None, clip2: "CLIP" = None, clip3: "CLIP" = None):  
         show_help = "Proverb of the day: I prefer not to think before speaking. I like being as surprised as everyone else by what comes out of my mouth."
-        clip = None  # Initialize clip to None
+        clip = None  
 
-        if clip1 is not None: #Check the kwarg clip1 exists
-            clip = clip1  # Use clip1 if it exists
+        if clip1 is not None: 
+            clip = clip1  
 
-        elif clip2 is not None: #Check the kwarg clip2 exists, to use the clip
-            clip = clip2  # Use clip2 if clip1 is missing
+        elif clip2 is not None: 
+            clip = clip2 
 
-        elif clip3 is not None: #Check the kwarg clip3 exists, to use the clip
-            clip = clip3  # Use clip3 if clip1 is missing
+        elif clip3 is not None: 
+            clip = clip3  
 
-        if clip is not None:  # Return the clip if a valid one was found
+        if clip is not None:  
             return (clip, show_help,)
         else:
-            return (None, show_help,)  # Return None if no valid clips were provided
+            return (None, show_help,)  
 
 
-NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
+NODE_CLASS_MAPPINGS = { 
       "DynamicClipswitch": DynamicClipswitch,
 }
 
