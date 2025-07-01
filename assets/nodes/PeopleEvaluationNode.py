@@ -5,13 +5,13 @@ import folder_paths
 class PeopleEvaluationNode:
     def __init__(self):
         self.script_dir = os.path.dirname(os.path.abspath(__file__))
-        self.assets_dir = os.path.dirname(self.script_dir) #Go up one directory level
+        self.assets_dir = os.path.dirname(self.script_dir) 
         self.prompts_dir = os.path.join(self.assets_dir, "prompts")
-        self.json_file = "evaluate_people.json"  # New json file
+        self.json_file = "evaluate_people.json" 
         try:
             with open(os.path.join(self.assets_dir, self.json_file), "r", encoding="utf-8") as f:
                 data = json.load(f)
-            self.prompt_files = data["prompts"]  # Load the prompt_files
+            self.prompt_files = data["prompts"]  
         except FileNotFoundError as e:
             print(f"File not found error: {e}")
             self.prompt_files = []
@@ -32,15 +32,13 @@ class PeopleEvaluationNode:
                 "prompt_file": (PeopleEvaluationNode.get_prompt_file_names(),),
             },
             "optional": {
-                "optional_input": ("*",)  # This is added because ALL nodes has to have an input.
+                "optional_input": ("*",)  
             }
         }
 
     @classmethod
-    def get_prompt_file_names(cls):
-        #Create a new instance of the PeopleEvaluationNode
-        instance = PeopleEvaluationNode()
-        # Return the prompt_files
+    def get_prompt_file_names(cls):        
+        instance = PeopleEvaluationNode()        
         return instance.prompt_files
 
     RETURN_TYPES = ("STRING",)
@@ -60,7 +58,7 @@ class PeopleEvaluationNode:
         except Exception as e:
             return f"ERROR: Could not read prompt file: {e}"
 
-NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
+NODE_CLASS_MAPPINGS = {  
     "PeopleEvaluationNode": PeopleEvaluationNode,
 }
 
