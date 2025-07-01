@@ -1,5 +1,4 @@
 # ComfyUI-Creepy_nodes
-A collection of custom nodes for ComfyUI
 
 A collection of custom and specialized nodes for ComfyUI.
 
