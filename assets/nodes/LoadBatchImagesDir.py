@@ -2,18 +2,15 @@ import os
 import torch
 from PIL import ImageOps
 try:
-    import pillow_jxl      # noqa: F401
-    jxl = True
+    import pillow_jxl      # noqa: F401 - This import is for side-effect enabling JXL support in PIL, not directly used.
 except ImportError:
-    jxl = False
+    pass # JXL support won't be available if pillow_jxl isn't installed
 import comfy
 import folder_paths
-import base64
-from io import BytesIO
+# Removed unused: import base64, from io import BytesIO
 from PIL import Image
 import numpy as np
-import logging
-import time
+# Removed unused: import logging, import time
 
 
 class LoadBatchImagesDir:
@@ -167,8 +164,9 @@ class LoadBatchImagesDir:
             image2 = images[idx]
             mask2 = masks[idx]
 
-            target_height = image_batch.shape[1]
-            target_width = image_batch.shape[2]
+            # FIX: Changed 'image_batch' to 'final_image_batch' here
+            target_height = final_image_batch.shape[1]
+            target_width = final_image_batch.shape[2]
             target_size = (target_height, target_width)
 
             if image2.shape[1:3] != target_size:
