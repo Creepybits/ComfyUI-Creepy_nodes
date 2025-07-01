@@ -5,7 +5,7 @@ class CollectAndDistributeText:
     def __init__(self):
         self.accumulated_text = ""
         self.timer = None
-        self.lock = threading.Lock()  # Ensure thread safety
+        self.lock = threading.Lock()  
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -13,7 +13,7 @@ class CollectAndDistributeText:
             "required": {
                 "seconds": ("FLOAT", {"default": 1.0, "min": 0.1, "step": 0.1}),
                 "text": ("STRING", {"default": ""}),
-                "trigger": ("BOOLEAN", {"default": False}),  # New trigger input
+                "trigger": ("BOOLEAN", {"default": False}), 
             },
         }
 
@@ -23,18 +23,18 @@ class CollectAndDistributeText:
     CATEGORY = "Creepybits/Utilities"
 
     def collect(self, seconds, text, trigger):
-        with self.lock:  # Thread-safe access to shared resources
-            self.accumulated_text += text  # Append the new text
+        with self.lock:  #
+            self.accumulated_text += text  
 
             if self.timer is not None:
-                self.timer.cancel()  # Cancel any existing timer
+                self.timer.cancel()  
 
-            if trigger:  # If trigger is True, output immediately
+            if trigger:  
                 return self.output()
             else:
-                self.timer = threading.Timer(seconds, self.timed_output)  # Start a new timer
+                self.timer = threading.Timer(seconds, self.timed_output)  
                 self.timer.start()
-                return ("",)  # Return an empty string immediately
+                return ("",)  
 
     def timed_output(self):
         with self.lock:
@@ -44,10 +44,10 @@ class CollectAndDistributeText:
         return (output_text,)
 
     def output(self):
-        with self.lock:  # Thread-safe access to shared resources
-            output_text = self.accumulated_text  # Copy the accumulated text
-            self.accumulated_text = ""  # Reset the accumulated text
-            self.timer = None  # Clear the timer
+        with self.lock:  
+            output_text = self.accumulated_text  
+            self.accumulated_text = ""  
+            self.timer = None  
 
         return (output_text,)
 
