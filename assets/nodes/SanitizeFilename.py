@@ -15,25 +15,14 @@ class SanitizeFilename:
     CATEGORY = "Creepybits/Utilities"
 
     def sanitize(self, text):
-        """
-        Sanitizes a filename by removing or replacing invalid characters.
-
-        Args:
-            text (str): The text to sanitize.
-
-        Returns:
-            str: The sanitized text.
-        """
-        # Replace newline characters with an empty string
-        text = text.replace('\n', '')
-        # Replace or remove other invalid characters (example)
-        text = re.sub(r'[\\/*?:"<>|]', "", text)  # Remove invalid characters
-        # Remove leading/trailing whitespace
+        
+        text = text.replace('\n', '')        
+        text = re.sub(r'[\\/*?:"<>|]', "", text)          
         text = text.strip()
         return (text,)
 
 
-NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
+NODE_CLASS_MAPPINGS = { 
       "SanitizeFilename": SanitizeFilename,
 }
 
