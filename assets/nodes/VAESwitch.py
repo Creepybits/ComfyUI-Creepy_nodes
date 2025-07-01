@@ -24,15 +24,15 @@ class VAESwitch:
         show_help = "Proverb of the day: Common sense is like deodorant. The people who need it most never use it."
         if Input == 1:
             return (VAE1, show_help,)
-        elif Input == 2:  # Corrected indentation
+        elif Input == 2:  
             return (VAE2, show_help,)
-        elif Input == 3:  # Corrected indentation
+        elif Input == 3:  
             return (VAE3, show_help,)
         else:
-            return (None, show_help,)  # Handle invalid input (return None model)
+            return (None, show_help,)  
 
 
-NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
+NODE_CLASS_MAPPINGS = { 
       "VAESwitch": VAESwitch,
 }
 
