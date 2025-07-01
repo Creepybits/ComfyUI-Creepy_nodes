@@ -5,7 +5,7 @@ from io import BytesIO
 from PIL import Image
 import torch
 import numpy as np
-import comfy.utils # Keeping this as it's a common ComfyUI import, even if not directly used in the final logic presented.
+import comfy.utils 
 
 DEFAULT_API_KEY_PATH = r"C:\AI\Comfy\ComfyUI\custom_nodes\Creepy_nodes\assets\scripts\gemini_api_key.txt"
 DEFAULT_THINKING_BUDGET = 4096
@@ -37,9 +37,7 @@ class Coloring:
     def INPUT_TYPES(s):
         return {
             "required": {
-                "system_prompt": ("STRING", {"multiline": True, "default": ""}),
-                # Keep these models as they are defined by the node's current functionality.
-                # Model list curation would be a functional improvement, not a code cleanup.
+                "system_prompt": ("STRING", {"multiline": True, "default": ""}),                
                 "model": (["gemini-2.5-flash-preview-04-17", "gemini-2.5-pro-exp-03-25", "gemini-2.0-flash", "gemini-2.0-flash-exp"],),
                 "max_output_tokens": ("INT", {"default": 512, "min": 1, "max": 4096}),
                 "temperature": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 2.0, "step": 0.1}),
@@ -84,9 +82,8 @@ class Coloring:
             combined_prompt_text += system_prompt.strip() + "\n\n"
 
         contents = []
-
-        # Removed '--- REFERENCE FUNCTION ---' and '--- REFERENCE FUNCTION ENDS ---' comments
-        def process_image(image, image_name="image"): # Pass also the image name
+        
+        def process_image(image, image_name="image"): 
             pil_image = None
             try:
                 image_data = image.numpy()
@@ -99,40 +96,34 @@ class Coloring:
                     pil_image = Image.fromarray(image_data, 'RGB')
                 elif len(image_data.shape) == 3 and image_data.shape[2] == 4:
                     pil_image = Image.fromarray(image_data, 'RGBA').convert('RGB')
-                else:
-                    # Keep user-facing warning
+                else:                    
                     print(f"Warning: Unexpected image data shape {image_data.shape}. Attempting conversion to RGB.")
                     try:
                         pil_image = Image.fromarray(image_data).convert('RGB')
-                    except Exception as convert_e:
-                        # Keep user-facing warning
-                        print(f"Error converting {image_name} format: {convert_e}") # Use the image name in the log
-                        return None # Return none if the image failed to convert
+                    except Exception as convert_e:                        
+                        print(f"Error converting {image_name} format: {convert_e}") 
+                        return None 
 
                 return pil_image
 
-            except Exception as e:
-                # Keep user-facing warning
-                print(f"Error processing {image_name} for API request: {e}") # Use the image name in the log
-                return None # Return none if the image failed to convert
-
-        # Removed '# Process ref_image' and '# Process color image' comments
+            except Exception as e:                
+                print(f"Error processing {image_name} for API request: {e}") 
+                return None 
+        
         processed_ref_image = None
         if ref_image is not None:
             processed_ref_image = process_image(ref_image, "ref_image")
             if processed_ref_image is None:
-                return ("Error: Failed to process ref_image",) # Keep error message
+                return ("Error: Failed to process ref_image",) 
 
         processed_color_image = None
         if color_image is not None:
             processed_color_image = process_image(color_image, "color_image")
             if processed_color_image is None:
-                return ("Error: Failed to process color_image",)  # Keep error message
-
-        # Removed 'Resize the ref image, and color image' comment
+                return ("Error: Failed to process color_image",)  
+        
         pil_image = processed_ref_image
-        pil_image2 = processed_color_image
-        # Removed 'Resize Image' comment
+        pil_image2 = processed_color_image       
         if resize_image_to != "None" and pil_image is not None:
             try:
                 target_size = int(resize_image_to)
@@ -146,14 +137,11 @@ class Coloring:
 
                 new_height = max(1, new_height)
                 new_width = max(1, new_width)
-
-                # Removed internal debug print: print(f"Resizing image from {width}x{height} to {new_width}x{new_height}")
+                
                 pil_image = pil_image.resize((new_width, new_height))
-            except ValueError:
-                # Keep user-facing warning
+            except ValueError:                #
                 print(f"Warning: Invalid resize_image_to value '{resize_image_to}'. Skipping resize.")
-            except Exception as e:
-                # Keep user-facing warning
+            except Exception as e:                
                 print(f"Error during image resizing: {e}. Skipping resize.")
 
         if resize_image_to != "None" and pil_image2 is not None:
@@ -169,26 +157,20 @@ class Coloring:
 
                 new_height = max(1, new_height)
                 new_width = max(1, new_width)
-
-                # Removed internal debug print: print(f"Resizing image from {width}x{height} to {new_width}x{new_height}")
+               
                 pil_image2 = pil_image2.resize((new_width, new_height))
-            except ValueError:
-                # Keep user-facing warning
+            except ValueError:                
                 print(f"Warning: Invalid resize_image_to value '{resize_image_to}'. Skipping resize.")
-            except Exception as e:
-                # Keep user-facing warning
+            except Exception as e:                
                 print(f"Error during image resizing: {e}. Skipping resize.")
-
-        # Removed 'Check which pil image to use and add it to contents list' comment
+        
         if pil_image is not None:
             contents.append(pil_image)
         if pil_image2 is not None:
-            contents.append(pil_image2)
-        # Removed 'add prompt text to list' comment
+            contents.append(pil_image2)       
         if combined_prompt_text or not contents:
             contents.append(combined_prompt_text)
-
-        # Removed 'Ensure the list isn't empty to send' comment
+        
         if not contents:
             return ("Error: No valid content provided. Ensure system prompt, user instructions, or image are present.",)
 
@@ -199,24 +181,20 @@ class Coloring:
             "top_k": top_k,
         }
 
-        if thinking_mode == "enable":
-            # Keep informative print for mode activation
+        if thinking_mode == "enable":            
             print(f"Thinking mode enabled with budget {DEFAULT_THINKING_BUDGET}.")
 
         safety_settings = []
         api_threshold = SAFETY_THRESHOLD_MAP.get(safety_threshold, "BLOCK_NONE")
 
-        if api_threshold != "BLOCK_NONE":
-            # Keep informative print
+        if api_threshold != "BLOCK_NONE":            
             print(f"Applying safety threshold '{api_threshold}' to categories: {SAFETY_CATEGORIES}")
-        else:
-            # Keep informative print
+        else:            
             print("Safety threshold set to 'Block None'. No safety settings applied.")
 
         try:
             model_instance = genai.GenerativeModel(model)
-        except Exception as e:
-            # Keep user-facing error
+        except Exception as e:           
             print(f"Error getting model '{model}': {e}")
             if "Invalid model" in str(e):
                 return (f"Error: Invalid model name '{model}'. Check model availability.",)
@@ -237,30 +215,24 @@ class Coloring:
                     if hasattr(response.candidates[0], 'content') and response.candidates[0].content and \
                        hasattr(response.candidates[0].content, 'parts') and response.candidates[0].content.parts:
                         generated_text = response.candidates[0].content.parts[0].text
-                except (AttributeError, IndexError, KeyError):
-                    # Keep user-facing warning
+                except (AttributeError, IndexError, KeyError):                   
                     print("Warning: Could not extract text from response.candidates structure.")
 
-            if not generated_text:
-                # Keep user-facing info/debug
+            if not generated_text:                
                 print("Generated text is empty or extraction failed.")
-                if hasattr(response, 'prompt_feedback') and response.prompt_feedback:
-                    # Keep user-facing info/debug
+                if hasattr(response, 'prompt_feedback') and response.prompt_feedback:                    
                     print("Prompt Feedback:")
                     feedback_info = {}
-                    if hasattr(response.prompt_feedback, 'block_reason') and response.prompt_feedback.block_reason and hasattr(response.prompt_feedback.block_reason.name) and response.prompt_feedback.block_reason.name != 'UNASSIGNED':
-                        # Keep user-facing info/debug
+                    if hasattr(response.prompt_feedback, 'block_reason') and response.prompt_feedback.block_reason and hasattr(response.prompt_feedback.block_reason.name) and response.prompt_feedback.block_reason.name != 'UNASSIGNED':                        
                         print(f"  Block Reason: {response.prompt_feedback.block_reason.name}")
                         feedback_info['block_reason'] = response.prompt_feedback.block_reason.name
 
-                    if hasattr(response.prompt_feedback, 'safety_ratings') and response.prompt_feedback.safety_ratings:
-                        # Keep user-facing info/debug
+                    if hasattr(response.prompt_feedback, 'safety_ratings') and response.prompt_feedback.safety_ratings:                        
                         print("  Safety Ratings:")
                         feedback_info['safety_ratings'] = []
                         for rating in response.prompt_feedback.safety_ratings:
                             if hasattr(rating, 'probability') and hasattr(rating.probability.name) and rating.probability.name != 'UNSPECIFIED':
-                                rating_info = {"category": rating.category.name, "probability": rating.probability.name}
-                                # Keep user-facing info/debug
+                                rating_info = {"category": rating.category.name, "probability": rating.probability.name}                                
                                 print(f"    Category: {rating_info['category']}, Probability: {rating_info['probability']}")
                                 feedback_info['safety_ratings'].append(rating_info)
 
@@ -276,8 +248,7 @@ class Coloring:
 
             return (generated_text,)
 
-        except Exception as e:
-            # Keep user-facing error
+        except Exception as e:            
             print(f"An error occurred during Gemini API call: {e}")
             error_message = str(e)
             if hasattr(e, 'response') and e.response:
@@ -285,8 +256,7 @@ class Coloring:
                     try:
                         error_json = json.loads(e.response.text)
                         if 'error' in error_json and 'message' in error_json['error']:
-                            api_error_message = error_json['error']['message']
-                            # Keep user-facing info/debug
+                            api_error_message = error_json['error']['message']                            
                             print(f"API Error Message from response: {api_error_message}")
                             error_message = f"API Error: {api_error_message}"
                         elif hasattr(e.response, 'status_code') and hasattr(e.response, 'reason'):
