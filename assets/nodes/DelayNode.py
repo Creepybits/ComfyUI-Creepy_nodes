@@ -9,11 +9,11 @@ class DelayNode:
         return {
             "required": {
                 "seconds": ("FLOAT", {"default": 1.0, "min": 0.1, "step": 0.1}),
-                "image": ("IMAGE",),  # Specific input type for images
+                "image": ("IMAGE",),  
             },
         }
 
-    RETURN_TYPES = ("IMAGE",)  # Specific return type for images
+    RETURN_TYPES = ("IMAGE",)  
     RETURN_NAMES = ("image",)
     FUNCTION = "delay"
     CATEGORY = "Creepybits/Utilities"
@@ -30,13 +30,13 @@ class DelayNode:
             torch.Tensor: The input image after the delay.
         """
         if seconds < 0.1:
-            seconds = 0.1 #Enforce minimum value.
+            seconds = 0.1 
 
         time.sleep(seconds)
         return (image,)
 
 
-NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
+NODE_CLASS_MAPPINGS = {  
       "DelayNode": DelayNode,
 }
 
