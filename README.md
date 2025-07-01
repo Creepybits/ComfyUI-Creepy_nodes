@@ -1,7 +1,7 @@
 # ComfyUI-Creepy_nodes
 A collection of custom nodes for ComfyUI
 
-A collection of switch nodes, dynamic nodes, evaluation nodes, translation node and some other specialized nodes.
+A collection of custom and specialized nodes for ComfyUI.
 
 ### Installing
 
