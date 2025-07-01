@@ -25,15 +25,15 @@ class Modelswitch:
         show_help = "Proverb of the day: Everyone has the right to do stupid things, but you’re abusing that privilege."
         if Input == 1:
             return (model1, show_help,)
-        elif Input == 2:  # Corrected indentation
+        elif Input == 2:  
             return (model2, show_help,)
-        elif Input == 3:  # Corrected indentation
+        elif Input == 3:  
             return (model3, show_help,)
         else:
-            return (None, show_help,)  # Handle invalid input (return None model)
+            return (None, show_help,)  
 
-NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
-      "Modelswitch": Modelswitch, #Corrected Node name
+NODE_CLASS_MAPPINGS = {  
+      "Modelswitch": Modelswitch, 
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
