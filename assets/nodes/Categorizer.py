@@ -1,6 +1,6 @@
 import os
 import json
-import folder_paths # While not directly used in the final logic, it's a common ComfyUI import, keep for consistency if desired.
+import folder_paths 
 
 class Categorizer:
     def __init__(self):
@@ -12,14 +12,11 @@ class Categorizer:
         try:
             with open(os.path.join(self.assets_dir, self.json_file), "r", encoding="utf-8") as f:
                 data = json.load(f)
-                self.prompt_files = data.get("prompts", []) # Use .get() with a default for robustness
+                self.prompt_files = data.get("prompts", []) 
         except (FileNotFoundError, KeyError, json.JSONDecodeError):
-            # Log these errors internally if needed by ComfyUI's logging system,
-            # but avoid print statements in production nodes for general users.
-            # For now, we'll just ensure prompt_files is empty.
             self.prompt_files = []
         except Exception:
-            # Catch any other unexpected errors during file loading
+            
             self.prompt_files = []
 
     @classmethod
@@ -34,8 +31,7 @@ class Categorizer:
         }
 
     @classmethod
-    def get_prompt_file_names(cls):
-        # Load prompt files only once per class instance to populate the dropdown
+    def get_prompt_file_names(cls):        
         if not hasattr(cls, '_prompt_files'):
             cls._prompt_files = Categorizer().prompt_files
         return cls._prompt_files
@@ -51,14 +47,10 @@ class Categorizer:
             with open(filepath, "r", encoding="utf-8") as f:
                 prompt_text = f.read()
             return (prompt_text,)
-        except FileNotFoundError:
-            # ComfyUI often handles node errors gracefully in the UI/console
-            # without needing a print statement directly from the node's function.
-            # Returning an error message string is a good fallback for the user.
+        except FileNotFoundError:            
             error_message = "ERROR: Prompt file not found."
             return (error_message,)
-        except Exception as e:
-            # Catch any other unexpected errors during file reading
+        except Exception as e:            
             error_message = f"ERROR: Could not read prompt file: {e}"
             return (error_message,)
 
