@@ -6,7 +6,7 @@ class DelayTextNode:
         return {
             "required": {
                 "seconds": ("FLOAT", {"default": 1.0, "min": 0.1, "step": 0.1}),
-                "text": ("STRING",),  # Text input
+                "text": ("STRING",),  
             },
         }
 
@@ -20,7 +20,7 @@ class DelayTextNode:
         return (text,)
 
 
-NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
+NODE_CLASS_MAPPINGS = {  
       "DelayTextNode": DelayTextNode,
 }
 
