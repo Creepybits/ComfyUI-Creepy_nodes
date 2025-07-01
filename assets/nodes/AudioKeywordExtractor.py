@@ -6,12 +6,10 @@ import re
 
 class AudioKeywordExtractor:
 
-    def __init__(self):
-        # Get the directory of the current script (SystemPromp.py)
+    def __init__(self):        
         script_dir = os.path.dirname(os.path.abspath(__file__))
-
-        # Construct the full path to the text file: up one level, then into "assets/prompts"
-        assets_dir = os.path.dirname(script_dir) # go up to assets
+        
+        assets_dir = os.path.dirname(script_dir) 
         filepath = os.path.join(assets_dir, "prompts", "audio_keywords.txt")
 
         try:
@@ -19,10 +17,10 @@ class AudioKeywordExtractor:
                 self.fixed_text = f.read()
         except FileNotFoundError:
             print(f"Error: system_prompt.txt not found at {filepath}")
-            self.fixed_text = "ERROR: Prompt file not found."  # Provide a fallback
+            self.fixed_text = "ERROR: Prompt file not found." 
         except Exception as e:
             print(f"Error reading system_prompt.txt: {e}")
-            self.fixed_text = "ERROR: Could not read prompt file."  # Provide a fallback
+            self.fixed_text = "ERROR: Could not read prompt file."  
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -44,7 +42,7 @@ class AudioKeywordExtractor:
         return (combined_text,)
 
 
-NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
+NODE_CLASS_MAPPINGS = {  
       "AudioKeywordExtractor": AudioKeywordExtractor,
 }
 
