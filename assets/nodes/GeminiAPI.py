@@ -48,7 +48,7 @@ class GeminiAPI:
         return {
             "required": {
                 "system_prompt": ("STRING", {"multiline": True, "default": ""}),
-                "model": (["gemini-2.5-flash-lite-preview-06-17", "gemini-2.0-flash-lite", "gemini-2.5-pro-preview-06-05," "gemini-2.0-flash", "gemini-2.0-flash-exp"],),
+                "model": (["gemini-2.5-flash-lite-preview-06-17", "gemini-2.0-flash-lite", "gemini-2.5-pro-preview-06-05", "gemini-2.0-flash", "gemini-2.0-flash-exp"],),
                 "max_output_tokens": ("INT", {"default": 1024, "min": 1, "max": 4096}),
                 "temperature": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 2.0, "step": 0.1}),
                 "top_p": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 1.0, "step": 0.01}),
