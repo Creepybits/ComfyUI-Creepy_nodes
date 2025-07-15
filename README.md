@@ -310,19 +310,6 @@ ___
 
 Largely based of the official [InstructPixToPixConditioning](https://github.com/comfyanonymous/ComfyUI/blob/master/comfy_extras/nodes_ip2p.py) node  
 
-
-
-## ARGOS TRANSLATE NODE
-
-![image](https://github.com/user-attachments/assets/5d1263dd-c92b-45ba-a08c-9d170d2fb35e)
-
-This node is very much under development and is an attempt to incorporate the translate code for locally translating see: [Argos](https://github.com/argosopentech/argos-translate)  
-Index over available languages are here: [Language index](https://www.argosopentech.com/argospm/index/)  
-
-But from my experience it's easier to install language packages through [Argos GUI](https://github.com/argosopentech/argos-translate-gui) to be sure they install correctly.
-
-
-_NOTE THIS NODE HAS A LOT OF WORK AHEAD AND WILL BE UPDATED SPORADICALLY_
     
 ___  
 
