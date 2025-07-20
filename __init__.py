@@ -135,7 +135,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **ConditionalLoRAApplier_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
-__version__ = "2.3.5" # Update this version if you like
+__version__ = "2.4.1" # Update this version if you like
 
 # Define the web directory for ComfyUI to find our JavaScript files
 WEB_DIRECTORY = "./web" # This points to ComfyUI/custom_nodes/Creepy_nodes/web
