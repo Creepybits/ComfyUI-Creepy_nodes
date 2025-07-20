@@ -26,11 +26,12 @@ from .assets.nodes.SanitizeFilename import NODE_CLASS_MAPPINGS as SanitizeFilena
 from .assets.nodes.DynamicImageSwitch import NODE_CLASS_MAPPINGS as DynamicImageSwitch_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicImageSwitch_NODE_DISPLAY_NAMES
 from .assets.nodes.EvaluaterNode import NODE_CLASS_MAPPINGS as EvaluaterNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as EvaluaterNode_NODE_DISPLAY_NAMES
 from .assets.nodes.PeopleEvaluationNode import NODE_CLASS_MAPPINGS as PeopleEvaluationNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PeopleEvaluationNode_NODE_DISPLAY_NAMES
-# from .assets.nodes.ArgosTranslateNode import NODE_CLASS_MAPPINGS as ArgosTranslateNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ArgosTranslateNode_NODE_DISPLAY_NAMES
+from .assets.nodes.ModelBridge import NODE_CLASS_MAPPINGS as ModelBridge_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ModelBridge_NODE_DISPLAY_NAMES
+from .assets.nodes.WANModelBridge import NODE_CLASS_MAPPINGS as WANModelBridge_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as WANModelBridge_NODE_DISPLAY_NAMES
 from .assets.nodes.CustomNodeManager import NODE_CLASS_MAPPINGS as CustomNodeManager_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CustomNodeManager_NODE_DISPLAY_NAMES
 from .assets.nodes.DynamicDelayText import NODE_CLASS_MAPPINGS as DynamicDelayText_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicDelayText_NODE_DISPLAY_NAMES
 from .assets.nodes.CollectAndDistributeText import NODE_CLASS_MAPPINGS as CollectAndDistributeText_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CollectAndDistributeText_NODE_DISPLAY_NAMES
-from .assets.nodes.PromptGenerator import NODE_CLASS_MAPPINGS as PromptGenerator_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PromptGenerator_NODE_DISPLAY_NAME_MAPPINGS
+# from .assets.nodes.PromptGenerator import NODE_CLASS_MAPPINGS as PromptGenerator_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PromptGenerator_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.KeywordExtractor import NODE_CLASS_MAPPINGS as KeywordExtractor_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as KeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.SummaryWriter import NODE_CLASS_MAPPINGS as SummaryWriter_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as SummaryWriter_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.FilterImages import NODE_CLASS_MAPPINGS as FilterImages_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FilterImages_NODE_DISPLAY_NAME_MAPPINGS
@@ -43,6 +44,9 @@ from .assets.nodes.IMGToIMGConditioning import NODE_CLASS_MAPPINGS as IMGToIMGCo
 from .assets.nodes.Coloring import NODE_CLASS_MAPPINGS as Coloring_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Coloring_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.Categorizer import NODE_CLASS_MAPPINGS as Categorizer_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Categorizer_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.conditional_lora_selector import NODE_CLASS_MAPPINGS as ConditionalLoRAApplier_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ConditionalLoRAApplier_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.UnifiedModelBridge import NODE_CLASS_MAPPINGS as UnifiedModelBridge_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as UnifiedModelBridge_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.VaceToVideoAdvanced import NODE_CLASS_MAPPINGS as VaceToVideoAdvanced_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as VaceToVideoAdvanced_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.MasterKey import NODE_CLASS_MAPPINGS as MasterKey_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as MasterKey_NODE_DISPLAY_NAME_MAPPINGS
 
 # --- ADD THE ONEDRIVE NODE IMPORT HERE ---
 # from .assets.nodes.SaveImageToOneDrive_CreepyBits import NODE_CLASS_MAPPINGS as OneDrive_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as OneDrive_NODE_DISPLAY_NAME_MAPPINGS
@@ -78,11 +82,12 @@ NODE_CLASS_MAPPINGS = {
     **DynamicImageSwitch_NODE_MAPPINGS,
     **EvaluaterNode_NODE_MAPPINGS,
     **PeopleEvaluationNode_NODE_MAPPINGS,
-    # **ArgosTranslateNode_NODE_MAPPINGS, # Keep commented
+    **ModelBridge_NODE_MAPPINGS,
+    **WANModelBridge_NODE_MAPPINGS, # Keep commented
     **CustomNodeManager_NODE_MAPPINGS,
     **DynamicDelayText_NODE_MAPPINGS,
     **CollectAndDistributeText_NODE_CLASS_MAPPINGS,
-    **PromptGenerator_NODE_CLASS_MAPPINGS,
+    # **PromptGenerator_NODE_CLASS_MAPPINGS,
     **KeywordExtractor_NODE_CLASS_MAPPINGS,
     **SummaryWriter_NODE_CLASS_MAPPINGS,
     **FilterImages_NODE_CLASS_MAPPINGS,
@@ -94,8 +99,10 @@ NODE_CLASS_MAPPINGS = {
     **IMGToIMGConditioning_NODE_CLASS_MAPPINGS,
     **Coloring_NODE_CLASS_MAPPINGS,
     **Categorizer_NODE_CLASS_MAPPINGS,
-    # **OneDrive_NODE_CLASS_MAPPINGS, # <--- ADD THIS LINE
+    **UnifiedModelBridge_NODE_CLASS_MAPPINGS, # <--- ADD THIS LINE
     **ConditionalLoRAApplier_NODE_CLASS_MAPPINGS,
+    **VaceToVideoAdvanced_NODE_CLASS_MAPPINGS,
+    **MasterKey_NODE_CLASS_MAPPINGS,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -115,11 +122,12 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **DynamicImageSwitch_NODE_DISPLAY_NAMES,
     **EvaluaterNode_NODE_DISPLAY_NAMES,
     **PeopleEvaluationNode_NODE_DISPLAY_NAMES,
-    # **ArgosTranslateNode_NODE_DISPLAY_NAMES, # Keep commented
+    **ModelBridge_NODE_DISPLAY_NAMES,
+    **WANModelBridge_NODE_DISPLAY_NAMES, # Keep commented
     **CustomNodeManager_NODE_DISPLAY_NAMES,
     **DynamicDelayText_NODE_DISPLAY_NAMES,
     **CollectAndDistributeText_NODE_DISPLAY_NAMES,
-    **PromptGenerator_NODE_DISPLAY_NAME_MAPPINGS,
+    # **PromptGenerator_NODE_DISPLAY_NAME_MAPPINGS,
     **KeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS,
     **SummaryWriter_NODE_DISPLAY_NAME_MAPPINGS,
     **FilterImages_NODE_DISPLAY_NAME_MAPPINGS,
@@ -131,8 +139,10 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **IMGToIMGConditioning_NODE_DISPLAY_NAME_MAPPINGS,
     **Coloring_NODE_DISPLAY_NAME_MAPPINGS,
     **Categorizer_NODE_DISPLAY_NAME_MAPPINGS,
-    # **OneDrive_NODE_DISPLAY_NAME_MAPPINGS, # <--- ADD THIS LINE
+    **UnifiedModelBridge_NODE_DISPLAY_NAME_MAPPINGS, # <--- ADD THIS LINE
     **ConditionalLoRAApplier_NODE_DISPLAY_NAME_MAPPINGS,
+    **VaceToVideoAdvanced_NODE_DISPLAY_NAME_MAPPINGS,
+    **MasterKey_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
 __version__ = "2.4.1" # Update this version if you like
