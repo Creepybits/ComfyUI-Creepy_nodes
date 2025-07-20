@@ -52,6 +52,7 @@ class GeminiAPI:
                 "max_output_tokens": ("INT", {"default": 1024, "min": 1, "max": 4096}),
                 "temperature": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 2.0, "step": 0.1}),
                 "top_p": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 1.0, "step": 0.01}),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
                 "top_k": ("INT", {"default": 50, "min": 1, "max": 100}),
             },
             "optional": {
@@ -65,7 +66,7 @@ class GeminiAPI:
         }
 
 
-    def generate_text(self, system_prompt, model, max_output_tokens, temperature, top_p, top_k, user_instructions="", api_key_file=None, image=None, resize_image_to="None", thinking_mode="disable", safety_threshold="Block None"):
+    def generate_text(self, system_prompt, model, max_output_tokens, temperature, top_p, seed, top_k, user_instructions="", api_key_file=None, image=None, resize_image_to="None", thinking_mode="disable", safety_threshold="Block None"):
         """
         Generates text using the Google Gemini API via the google-generativeai library.
         Handles optional image input (with resizing), system prompt, user instructions,
