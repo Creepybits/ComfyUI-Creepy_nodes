@@ -1,8 +1,7 @@
 import os
 import sys
-import subprocess # Keep if your nodes use it, otherwise can remove
-# import argostranslate.package # Keep commented out if you want to avoid issues
-# import argostranslate.translate # Keep commented out
+import subprocess 
+
 
 # Add the path to your custom nodes directory to the Python path
 custom_nodes_path = os.path.dirname(os.path.abspath(__file__))
@@ -31,7 +30,7 @@ from .assets.nodes.WANModelBridge import NODE_CLASS_MAPPINGS as WANModelBridge_N
 from .assets.nodes.CustomNodeManager import NODE_CLASS_MAPPINGS as CustomNodeManager_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CustomNodeManager_NODE_DISPLAY_NAMES
 from .assets.nodes.DynamicDelayText import NODE_CLASS_MAPPINGS as DynamicDelayText_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicDelayText_NODE_DISPLAY_NAMES
 from .assets.nodes.CollectAndDistributeText import NODE_CLASS_MAPPINGS as CollectAndDistributeText_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CollectAndDistributeText_NODE_DISPLAY_NAMES
-# from .assets.nodes.PromptGenerator import NODE_CLASS_MAPPINGS as PromptGenerator_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PromptGenerator_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.PromptGenerator import NODE_CLASS_MAPPINGS as PromptGenerator_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PromptGenerator_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.KeywordExtractor import NODE_CLASS_MAPPINGS as KeywordExtractor_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as KeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.SummaryWriter import NODE_CLASS_MAPPINGS as SummaryWriter_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as SummaryWriter_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.FilterImages import NODE_CLASS_MAPPINGS as FilterImages_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FilterImages_NODE_DISPLAY_NAME_MAPPINGS
@@ -48,8 +47,7 @@ from .assets.nodes.UnifiedModelBridge import NODE_CLASS_MAPPINGS as UnifiedModel
 from .assets.nodes.VaceToVideoAdvanced import NODE_CLASS_MAPPINGS as VaceToVideoAdvanced_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as VaceToVideoAdvanced_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.MasterKey import NODE_CLASS_MAPPINGS as MasterKey_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as MasterKey_NODE_DISPLAY_NAME_MAPPINGS
 
-# --- ADD THE ONEDRIVE NODE IMPORT HERE ---
-# from .assets.nodes.SaveImageToOneDrive_CreepyBits import NODE_CLASS_MAPPINGS as OneDrive_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as OneDrive_NODE_DISPLAY_NAME_MAPPINGS
+
 
 import comfy.sd # Keep if needed by any nodes
 import comfy.utils # Keep if needed by any nodes
@@ -87,7 +85,7 @@ NODE_CLASS_MAPPINGS = {
     **CustomNodeManager_NODE_MAPPINGS,
     **DynamicDelayText_NODE_MAPPINGS,
     **CollectAndDistributeText_NODE_CLASS_MAPPINGS,
-    # **PromptGenerator_NODE_CLASS_MAPPINGS,
+    **PromptGenerator_NODE_CLASS_MAPPINGS,
     **KeywordExtractor_NODE_CLASS_MAPPINGS,
     **SummaryWriter_NODE_CLASS_MAPPINGS,
     **FilterImages_NODE_CLASS_MAPPINGS,
@@ -127,7 +125,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **CustomNodeManager_NODE_DISPLAY_NAMES,
     **DynamicDelayText_NODE_DISPLAY_NAMES,
     **CollectAndDistributeText_NODE_DISPLAY_NAMES,
-    # **PromptGenerator_NODE_DISPLAY_NAME_MAPPINGS,
+    **PromptGenerator_NODE_DISPLAY_NAME_MAPPINGS,
     **KeywordExtractor_NODE_DISPLAY_NAME_MAPPINGS,
     **SummaryWriter_NODE_DISPLAY_NAME_MAPPINGS,
     **FilterImages_NODE_DISPLAY_NAME_MAPPINGS,
@@ -145,7 +143,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **MasterKey_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
-__version__ = "2.4.1" # Update this version if you like
+__version__ = "2.4.2" # Update this version if you like
 
 # Define the web directory for ComfyUI to find our JavaScript files
 WEB_DIRECTORY = "./web" # This points to ComfyUI/custom_nodes/Creepy_nodes/web
