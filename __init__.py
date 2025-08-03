@@ -25,7 +25,7 @@ from .assets.nodes.SanitizeFilename import NODE_CLASS_MAPPINGS as SanitizeFilena
 from .assets.nodes.DynamicImageSwitch import NODE_CLASS_MAPPINGS as DynamicImageSwitch_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicImageSwitch_NODE_DISPLAY_NAMES
 from .assets.nodes.EvaluaterNode import NODE_CLASS_MAPPINGS as EvaluaterNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as EvaluaterNode_NODE_DISPLAY_NAMES
 from .assets.nodes.PeopleEvaluationNode import NODE_CLASS_MAPPINGS as PeopleEvaluationNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PeopleEvaluationNode_NODE_DISPLAY_NAMES
-from .assets.nodes.ModelBridge import NODE_CLASS_MAPPINGS as ModelBridge_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ModelBridge_NODE_DISPLAY_NAMES
+# from .assets.nodes.ModelBridge import NODE_CLASS_MAPPINGS as ModelBridge_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ModelBridge_NODE_DISPLAY_NAMES
 from .assets.nodes.WANModelBridge import NODE_CLASS_MAPPINGS as WANModelBridge_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as WANModelBridge_NODE_DISPLAY_NAMES
 from .assets.nodes.CustomNodeManager import NODE_CLASS_MAPPINGS as CustomNodeManager_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CustomNodeManager_NODE_DISPLAY_NAMES
 from .assets.nodes.DynamicDelayText import NODE_CLASS_MAPPINGS as DynamicDelayText_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicDelayText_NODE_DISPLAY_NAMES
@@ -158,3 +158,4 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
