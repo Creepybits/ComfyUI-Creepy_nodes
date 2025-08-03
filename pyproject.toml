@@ -1,7 +1,7 @@
 [project]
 name = "comfyui_creepy_nodes"
 description = "A collection of custom and specialized nodes for ComfyUI."
-version = "2.4.5"
+version = "2.4.6"
 license = {file = "LICENSE"}
 
 [project.urls]
@@ -12,4 +12,5 @@ Repository = "https://github.com/Creepybits/ComfyUI-Creepy_nodes"
 PublisherId = "creepybits"
 DisplayName = "Creepy_nodes"
 Icon = "https://github.com/Creepybits/ComfyUI-Creepy_nodes/blob/a392f0cbc076a66b261b51e315fd5b5d356c2cf2/assets/cpbt.png"
+
 
