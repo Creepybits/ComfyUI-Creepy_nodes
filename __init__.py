@@ -26,7 +26,7 @@ from .assets.nodes.DynamicImageSwitch import NODE_CLASS_MAPPINGS as DynamicImage
 from .assets.nodes.EvaluaterNode import NODE_CLASS_MAPPINGS as EvaluaterNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as EvaluaterNode_NODE_DISPLAY_NAMES
 from .assets.nodes.PeopleEvaluationNode import NODE_CLASS_MAPPINGS as PeopleEvaluationNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PeopleEvaluationNode_NODE_DISPLAY_NAMES
 # from .assets.nodes.ModelBridge import NODE_CLASS_MAPPINGS as ModelBridge_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ModelBridge_NODE_DISPLAY_NAMES
-from .assets.nodes.WANModelBridge import NODE_CLASS_MAPPINGS as WANModelBridge_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as WANModelBridge_NODE_DISPLAY_NAMES
+# from .assets.nodes.WANModelBridge import NODE_CLASS_MAPPINGS as WANModelBridge_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as WANModelBridge_NODE_DISPLAY_NAMES
 from .assets.nodes.CustomNodeManager import NODE_CLASS_MAPPINGS as CustomNodeManager_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CustomNodeManager_NODE_DISPLAY_NAMES
 from .assets.nodes.DynamicDelayText import NODE_CLASS_MAPPINGS as DynamicDelayText_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicDelayText_NODE_DISPLAY_NAMES
 from .assets.nodes.CollectAndDistributeText import NODE_CLASS_MAPPINGS as CollectAndDistributeText_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CollectAndDistributeText_NODE_DISPLAY_NAMES
@@ -44,7 +44,7 @@ from .assets.nodes.Coloring import NODE_CLASS_MAPPINGS as Coloring_NODE_CLASS_MA
 from .assets.nodes.Categorizer import NODE_CLASS_MAPPINGS as Categorizer_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Categorizer_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.ConditionalLoRAApplier import NODE_CLASS_MAPPINGS as ConditionalLoRAApplier_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ConditionalLoRAApplier_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.UnifiedModelBridge import NODE_CLASS_MAPPINGS as UnifiedModelBridge_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as UnifiedModelBridge_NODE_DISPLAY_NAME_MAPPINGS
-from .assets.nodes.VaceToVideoAdvanced import NODE_CLASS_MAPPINGS as VaceToVideoAdvanced_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as VaceToVideoAdvanced_NODE_DISPLAY_NAME_MAPPINGS
+# from .assets.nodes.VaceToVideoAdvanced import NODE_CLASS_MAPPINGS as VaceToVideoAdvanced_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as VaceToVideoAdvanced_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.MasterKey import NODE_CLASS_MAPPINGS as MasterKey_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as MasterKey_NODE_DISPLAY_NAME_MAPPINGS
 
 
@@ -80,8 +80,8 @@ NODE_CLASS_MAPPINGS = {
     **DynamicImageSwitch_NODE_MAPPINGS,
     **EvaluaterNode_NODE_MAPPINGS,
     **PeopleEvaluationNode_NODE_MAPPINGS,
-    **ModelBridge_NODE_MAPPINGS,
-    **WANModelBridge_NODE_MAPPINGS, # Keep commented
+    # **ModelBridge_NODE_MAPPINGS,
+    # **WANModelBridge_NODE_MAPPINGS, # Keep commented
     **CustomNodeManager_NODE_MAPPINGS,
     **DynamicDelayText_NODE_MAPPINGS,
     **CollectAndDistributeText_NODE_CLASS_MAPPINGS,
@@ -97,9 +97,9 @@ NODE_CLASS_MAPPINGS = {
     **IMGToIMGConditioning_NODE_CLASS_MAPPINGS,
     **Coloring_NODE_CLASS_MAPPINGS,
     **Categorizer_NODE_CLASS_MAPPINGS,
-    **UnifiedModelBridge_NODE_CLASS_MAPPINGS, # <--- ADD THIS LINE
+    # **UnifiedModelBridge_NODE_CLASS_MAPPINGS, # <--- ADD THIS LINE
     **ConditionalLoRAApplier_NODE_CLASS_MAPPINGS,
-    **VaceToVideoAdvanced_NODE_CLASS_MAPPINGS,
+    # **VaceToVideoAdvanced_NODE_CLASS_MAPPINGS,
     **MasterKey_NODE_CLASS_MAPPINGS,
 }
 
@@ -120,8 +120,8 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **DynamicImageSwitch_NODE_DISPLAY_NAMES,
     **EvaluaterNode_NODE_DISPLAY_NAMES,
     **PeopleEvaluationNode_NODE_DISPLAY_NAMES,
-    **ModelBridge_NODE_DISPLAY_NAMES,
-    **WANModelBridge_NODE_DISPLAY_NAMES, # Keep commented
+    # **ModelBridge_NODE_DISPLAY_NAMES,
+    # **WANModelBridge_NODE_DISPLAY_NAMES, # Keep commented
     **CustomNodeManager_NODE_DISPLAY_NAMES,
     **DynamicDelayText_NODE_DISPLAY_NAMES,
     **CollectAndDistributeText_NODE_DISPLAY_NAMES,
@@ -137,9 +137,9 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **IMGToIMGConditioning_NODE_DISPLAY_NAME_MAPPINGS,
     **Coloring_NODE_DISPLAY_NAME_MAPPINGS,
     **Categorizer_NODE_DISPLAY_NAME_MAPPINGS,
-    **UnifiedModelBridge_NODE_DISPLAY_NAME_MAPPINGS, # <--- ADD THIS LINE
+    # **UnifiedModelBridge_NODE_DISPLAY_NAME_MAPPINGS, # <--- ADD THIS LINE
     **ConditionalLoRAApplier_NODE_DISPLAY_NAME_MAPPINGS,
-    **VaceToVideoAdvanced_NODE_DISPLAY_NAME_MAPPINGS,
+    # **VaceToVideoAdvanced_NODE_DISPLAY_NAME_MAPPINGS,
     **MasterKey_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
@@ -158,4 +158,5 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
 
