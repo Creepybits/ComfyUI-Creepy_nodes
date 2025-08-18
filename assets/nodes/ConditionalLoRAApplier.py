@@ -19,7 +19,7 @@ def get_recursive_filenames(folder_name):
                 filenames.append(relative_path)
     return filenames
 
-class ConditionalLoRAApplierCreepybits:
+class ConditionalLoRAApplier:
     def __init__(self):
         pass
 
@@ -151,9 +151,9 @@ class ConditionalLoRAApplierCreepybits:
         return (final_model, final_clip,)
 
 NODE_CLASS_MAPPINGS = {
-    "ConditionalLoRAApplierCreepybits": ConditionalLoRAApplierCreepybits
+    "ConditionalLoRAApplier": ConditionalLoRAApplier,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "ConditionalLoRAApplierCreepybits": "Conditional LoRA Applier (Creepybits)"
+    "ConditionalLoRAApplier": "Conditional LoRA Applier (Creepybits)",
 }
