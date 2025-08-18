@@ -1,17 +1,22 @@
 [project]
 name = "comfyui_creepy_nodes"
 description = "A collection of custom and specialized nodes for ComfyUI."
-version = "2.4.7"
+version = "2.4.8"
 license = {file = "LICENSE"}
 
 [project.urls]
 Repository = "https://github.com/Creepybits/ComfyUI-Creepy_nodes"
+Homepage = "https://zanno.se"
+"Bug Tracker" = "https://github.com/Creepybits/ComfyUI-Creepy_nodes/issues"
+Patreon = "https://www.patreon.com/c/creepybits"
+CivitAI = "https://civitai.com/user/Creepybit/"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
 PublisherId = "creepybits"
 DisplayName = "Creepy_nodes"
 Icon = "https://github.com/Creepybits/ComfyUI-Creepy_nodes/blob/a392f0cbc076a66b261b51e315fd5b5d356c2cf2/assets/cpbt.png"
+
 
 
 
