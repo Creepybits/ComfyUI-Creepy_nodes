@@ -42,6 +42,7 @@ from .assets.nodes.Coloring import NODE_CLASS_MAPPINGS as Coloring_NODE_CLASS_MA
 from .assets.nodes.Categorizer import NODE_CLASS_MAPPINGS as Categorizer_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Categorizer_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.ConditionalLoRAApplier import NODE_CLASS_MAPPINGS as ConditionalLoRAApplier_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ConditionalLoRAApplier_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.MasterKey import NODE_CLASS_MAPPINGS as MasterKey_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as MasterKey_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.FallbackTextSwitch import NODE_CLASS_MAPPINGS as FallbackTextSwitch_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FallbackTextSwitch_NODE_DISPLAY_NAME_MAPPINGS
 
 
 
@@ -93,6 +94,7 @@ NODE_CLASS_MAPPINGS = {
     **Categorizer_NODE_CLASS_MAPPINGS,
     **ConditionalLoRAApplier_NODE_CLASS_MAPPINGS,
     **MasterKey_NODE_CLASS_MAPPINGS,
+    **FallbackTextSwitch_NODE_CLASS_MAPPINGS,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -128,10 +130,10 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **Coloring_NODE_DISPLAY_NAME_MAPPINGS,
     **Categorizer_NODE_DISPLAY_NAME_MAPPINGS,
     **ConditionalLoRAApplier_NODE_DISPLAY_NAME_MAPPINGS,
-    **MasterKey_NODE_DISPLAY_NAME_MAPPINGS,
+    **FallbackTextSwitch_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
-__version__ = "2.4.7" 
+__version__ = "2.4.8" 
 
 
 WEB_DIRECTORY = "./web" 
@@ -146,3 +148,4 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
