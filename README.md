@@ -87,6 +87,15 @@ This node is experimental!
 * - Save your key in a text file named `gemini_api_key.txt`, copy the path to the file and paste it in the text box for API.
 * Resize image to: If you load a lot of images in a batch, resizing them to a smaller size can save time and tokens.
 * Thinking mode: The 2.5 models have a "thinking mode" where you can follow their reasoning. Not very useful in Comfy, but you can use it if you want. You will have to explicity tell Gemini that the output should include the thinking (costs a lot more output tokens).
+___
+## Fallback Text Switch
+
+<img width="1244" height="474" alt="image" src="https://github.com/user-attachments/assets/303558e7-6177-4516-80c6-ae8b9b73ef33" />  
+
+
+If there's no text input in the Primary text box, or if the input for it fails or are bypassed, the text from the "Default "Prompt" input will be used.    
+<img width="1406" height="556" alt="image" src="https://github.com/user-attachments/assets/e32eb504-ab82-41d5-ae53-1304bed7e675" />
+  
 
 ___  
 ## CONDITIONAL LORA LOADER  
