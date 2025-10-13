@@ -43,6 +43,9 @@ from .assets.nodes.Categorizer import NODE_CLASS_MAPPINGS as Categorizer_NODE_CL
 from .assets.nodes.ConditionalLoRAApplier import NODE_CLASS_MAPPINGS as ConditionalLoRAApplier_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ConditionalLoRAApplier_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.MasterKey import NODE_CLASS_MAPPINGS as MasterKey_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as MasterKey_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.FallbackTextSwitch import NODE_CLASS_MAPPINGS as FallbackTextSwitch_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FallbackTextSwitch_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.QwenAspectRatio import NODE_CLASS_MAPPINGS as QwenAspectRatio_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as QwenAspectRatio_NODE_DISPLAY_NAMES
+from .assets.nodes.LoraTriggerLookup import NODE_CLASS_MAPPINGS as LoraTriggerLookup_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoraTriggerLookup_NODE_DISPLAY_NAMES
+from .assets.nodes.LoraDBBuilder import NODE_CLASS_MAPPINGS as LoraDBBuilder_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoraDBBuilder_NODE_DISPLAY_NAMES
 
 
 
@@ -95,6 +98,9 @@ NODE_CLASS_MAPPINGS = {
     **ConditionalLoRAApplier_NODE_CLASS_MAPPINGS,
     **MasterKey_NODE_CLASS_MAPPINGS,
     **FallbackTextSwitch_NODE_CLASS_MAPPINGS,
+    **QwenAspectRatio_NODE_MAPPINGS,
+    **LoraTriggerLookup_NODE_MAPPINGS,
+    **LoraDBBuilder_NODE_MAPPINGS,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -131,9 +137,12 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **Categorizer_NODE_DISPLAY_NAME_MAPPINGS,
     **ConditionalLoRAApplier_NODE_DISPLAY_NAME_MAPPINGS,
     **FallbackTextSwitch_NODE_DISPLAY_NAME_MAPPINGS,
+    **QwenAspectRatio_NODE_DISPLAY_NAMES,
+    **LoraTriggerLookup_NODE_DISPLAY_NAMES,
+    **LoraDBBuilder_NODE_DISPLAY_NAMES,
 }
 
-__version__ = "2.4.8" 
+__version__ = "2.4.9" 
 
 
 WEB_DIRECTORY = "./web" 
@@ -148,4 +157,5 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
 
