@@ -1,0 +1,17 @@
+{
+    "SDXL_FILM_PHOTOGRAPHY_STYLE_V1.safetensors": [
+        "film photography style",
+        "light grain",
+        "medium grain",
+        "heavy grain"
+    ],
+    "Another_Lora_Name.safetensors": [
+        "trigger word 1",
+        "some other tag",
+        "character style"
+    ],
+    "Lora_With_No_Triggers.safetensors": [],
+    "flux_scenery.safetensors": [
+        "scenery style"
+    ]
+}
