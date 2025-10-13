@@ -142,7 +142,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **LoraDBBuilder_NODE_DISPLAY_NAMES,
 }
 
-__version__ = "2.4.9" 
+__version__ = "2.5.0" 
 
 
 WEB_DIRECTORY = "./web" 
@@ -157,5 +157,6 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
 
 
