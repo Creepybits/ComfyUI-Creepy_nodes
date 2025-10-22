@@ -46,6 +46,9 @@ from .assets.nodes.FallbackTextSwitch import NODE_CLASS_MAPPINGS as FallbackText
 from .assets.nodes.QwenAspectRatio import NODE_CLASS_MAPPINGS as QwenAspectRatio_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as QwenAspectRatio_NODE_DISPLAY_NAMES
 from .assets.nodes.LoraTriggerLookup import NODE_CLASS_MAPPINGS as LoraTriggerLookup_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoraTriggerLookup_NODE_DISPLAY_NAMES
 from .assets.nodes.LoraDBBuilder import NODE_CLASS_MAPPINGS as LoraDBBuilder_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoraDBBuilder_NODE_DISPLAY_NAMES
+from .assets.nodes.MediaMigratorNode import NODE_CLASS_MAPPINGS as MediaMigratorNode_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as MediaMigratorNode_DISPLAY_NAMES
+from .assets.nodes.EmptyFolderCleanerNode import NODE_CLASS_MAPPINGS as EmptyFolderCleanerNode_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as EmptyFolderCleanerNode_DISPLAY_NAMES
+from .assets.nodes.FileSorterNode import NODE_CLASS_MAPPINGS as FileSorterNode_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FileSorterNode_DISPLAY_NAMES
 
 
 
@@ -101,6 +104,9 @@ NODE_CLASS_MAPPINGS = {
     **QwenAspectRatio_NODE_MAPPINGS,
     **LoraTriggerLookup_NODE_MAPPINGS,
     **LoraDBBuilder_NODE_MAPPINGS,
+    **MediaMigratorNode_MAPPINGS,
+    **EmptyFolderCleanerNode_MAPPINGS,
+    **FileSorterNode_MAPPINGS,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -140,9 +146,12 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **QwenAspectRatio_NODE_DISPLAY_NAMES,
     **LoraTriggerLookup_NODE_DISPLAY_NAMES,
     **LoraDBBuilder_NODE_DISPLAY_NAMES,
+    **MediaMigratorNode_DISPLAY_NAMES,
+    **EmptyFolderCleanerNode_DISPLAY_NAMES,
+    **FileSorterNode_DISPLAY_NAMES,
 }
 
-__version__ = "2.5.2" 
+__version__ = "2.5.3" 
 
 
 WEB_DIRECTORY = "./web" 
@@ -157,6 +166,7 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
 
 
 
