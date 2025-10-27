@@ -4,13 +4,13 @@ import comfy.sd
 import comfy.utils
 import re
 
-class KeywordExtractor:
+class SceneDirector:
 
     def __init__(self):
         script_dir = os.path.dirname(os.path.abspath(__file__))
 
         assets_dir = os.path.dirname(script_dir)
-        filepath = os.path.join(assets_dir, "prompts", "face_detail.md")
+        filepath = os.path.join(assets_dir, "prompts", "Scene_Director.md")
 
         try:
             with open(filepath, "r", encoding="utf-8") as f:
@@ -43,9 +43,9 @@ class KeywordExtractor:
 
 
 NODE_CLASS_MAPPINGS = {
-      "KeywordExtractor": KeywordExtractor,
+      "SceneDirector": SceneDirector,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-      "KeywordExtractor": "Keyword Extractor (Creepybits)",
+      "SceneDirector": "Scene Director (Creepybits)",
 }

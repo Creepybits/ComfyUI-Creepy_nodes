@@ -4,22 +4,22 @@ import comfy.sd
 import comfy.utils
 import re
 
-class KeywordExtractor:
+class WanPrompter:
 
     def __init__(self):
         script_dir = os.path.dirname(os.path.abspath(__file__))
 
         assets_dir = os.path.dirname(script_dir)
-        filepath = os.path.join(assets_dir, "prompts", "face_detail.md")
+        filepath = os.path.join(assets_dir, "prompts", "wan_prompt.txt")
 
         try:
             with open(filepath, "r", encoding="utf-8") as f:
                 self.fixed_text = f.read()
         except FileNotFoundError:
-            print(f"Error: system_prompt.txt not found at {filepath}")
+            print(f"Error: wan_prompt.txt not found at {filepath}")
             self.fixed_text = "ERROR: Prompt file not found."
         except Exception as e:
-            print(f"Error reading system_prompt.txt: {e}")
+            print(f"Error reading wan_prompt.txt: {e}")
             self.fixed_text = "ERROR: Could not read prompt file."
 
     @classmethod
@@ -43,9 +43,9 @@ class KeywordExtractor:
 
 
 NODE_CLASS_MAPPINGS = {
-      "KeywordExtractor": KeywordExtractor,
+      "WanPrompter": WanPrompter,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-      "KeywordExtractor": "Keyword Extractor (Creepybits)",
+      "WanPrompter": "WAN Prompter (Creepybits)",
 }

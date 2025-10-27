@@ -24,15 +24,15 @@ class Textswitch:
         show_help = "Proverb of the day: Something about today makes me want to have a hangover tomorrow."
         if Input == 1:
             return (text1, show_help,)
-        elif Input == 2:  
+        elif Input == 2:  # Corrected indentation
             return (text2, show_help,)
-        elif Input == 3:  
+        elif Input == 3:  # Corrected indentation
             return (text3, show_help,)
         else:
-            return (None, show_help,)  
+            return (None, show_help,)  # Handle invalid input (return None model)
 
 
-NODE_CLASS_MAPPINGS = {  
+NODE_CLASS_MAPPINGS = {  # <---Outdent these lines
       "Textswitch": Textswitch,
 }
 
