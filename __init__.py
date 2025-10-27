@@ -41,7 +41,7 @@ from .assets.nodes.AudioKeywordExtractor import NODE_CLASS_MAPPINGS as AudioKeyw
 from .assets.nodes.IMGToIMGConditioning import NODE_CLASS_MAPPINGS as IMGToIMGConditioning_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as IMGToIMGConditioning_NODE_DISPLAY_NAMES
 from .assets.nodes.Coloring import NODE_CLASS_MAPPINGS as Coloring_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Coloring_NODE_DISPLAY_NAMES
 from .assets.nodes.Categorizer import NODE_CLASS_MAPPINGS as Categorizer_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Categorizer_NODE_DISPLAY_NAMES
-from .assets.nodes.conditional_lora_selector import NODE_CLASS_MAPPINGS as ConditionalLoRAApplier_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ConditionalLoRAApplier_NODE_DISPLAY_NAMES
+from .assets.nodes.ConditionalLoRAApplier import NODE_CLASS_MAPPINGS as ConditionalLoRAApplier_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ConditionalLoRAApplier_NODE_DISPLAY_NAMES
 from .assets.nodes.LoadBatchFromDir import NODE_CLASS_MAPPINGS as LoadBatchFromDir_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoadBatchFromDir_NODE_DISPLAY_NAMES
 from .assets.nodes.WanPrompter import NODE_CLASS_MAPPINGS as WanPrompter_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as WanPrompter_NODE_DISPLAY_NAMES
 from .assets.nodes.MasterKey import NODE_CLASS_MAPPINGS as MasterKey_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as MasterKey_NODE_DISPLAY_NAMES
@@ -49,9 +49,6 @@ from .assets.nodes.ArtAnalyst import NODE_CLASS_MAPPINGS as ArtAnalyst_NODE_MAPP
 from .assets.nodes.SceneDirector import NODE_CLASS_MAPPINGS as SceneDirector_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as SceneDirector_NODE_DISPLAY_NAMES
 from .assets.nodes.DynamicStartIndex import NODE_CLASS_MAPPINGS as DynamicStartIndex_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicStartIndex_NODE_DISPLAY_NAMES
 from .assets.nodes.FallbackTextSwitch import NODE_CLASS_MAPPINGS as FallbackTextSwitch_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FallbackTextSwitch_NODE_DISPLAY_NAMES
-from .assets.nodes.AnalyzeLatent import NODE_CLASS_MAPPINGS as AnalyzeLatent_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as AnalyzeLatent_NODE_DISPLAY_NAMES
-from .assets.nodes.RebuildLatent import NODE_CLASS_MAPPINGS as RebuildLatent_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as RebuildLatent_NODE_DISPLAY_NAMES
-from .assets.nodes.VideoCombineSeparateAlpha import NODE_CLASS_MAPPINGS as VideoCombineSeparateAlpha_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as VideoCombineSeparateAlpha_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.latent import NODE_CLASS_MAPPINGS as LoadLatentFromPath_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoadLatentFromPath_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.latent import NODE_CLASS_MAPPINGS as SaveRawLatent_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as SaveRawLatent_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.QwenAspectRatio import NODE_CLASS_MAPPINGS as QwenAspectRatio_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as QwenAspectRatio_NODE_DISPLAY_NAMES
@@ -64,11 +61,11 @@ from .assets.nodes.ImageFormatConverter import NODE_CLASS_MAPPINGS as ImageForma
 
 
 
-import comfy.sd 
-import comfy.utils 
-import time 
-import re 
-import json 
+import comfy.sd
+import comfy.utils
+import time
+import re
+import json
 
 
 try:
@@ -119,9 +116,6 @@ NODE_CLASS_MAPPINGS = {
     **SceneDirector_NODE_MAPPINGS,
     **DynamicStartIndex_NODE_MAPPINGS,
     **FallbackTextSwitch_NODE_MAPPINGS,
-    **AnalyzeLatent_NODE_MAPPINGS,
-    **RebuildLatent_NODE_MAPPINGS,
-    **VideoCombineSeparateAlpha_NODE_CLASS_MAPPINGS,
     **LoadLatentFromPath_NODE_CLASS_MAPPINGS,
     **SaveRawLatent_NODE_CLASS_MAPPINGS,
     **QwenAspectRatio_NODE_MAPPINGS,
@@ -175,9 +169,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **SceneDirector_NODE_DISPLAY_NAMES,
     **DynamicStartIndex_NODE_DISPLAY_NAMES,
     **FallbackTextSwitch_NODE_DISPLAY_NAMES,
-    **AnalyzeLatent_NODE_DISPLAY_NAMES,
-    **RebuildLatent_NODE_DISPLAY_NAMES,
-    **VideoCombineSeparateAlpha_NODE_DISPLAY_NAME_MAPPINGS,
     **LoadLatentFromPath_NODE_DISPLAY_NAME_MAPPINGS,
     **SaveRawLatent_NODE_DISPLAY_NAME_MAPPINGS,
     **QwenAspectRatio_NODE_DISPLAY_NAMES,
@@ -189,10 +180,10 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **ImageFormatConverter_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
-__version__ = "2.5.4" 
+__version__ = "2.6.0"
 
 
-WEB_DIRECTORY = "./web" 
+WEB_DIRECTORY = "./web"
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS', 'WEB_DIRECTORY']
 
@@ -204,10 +195,3 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
-
-
-
-
-
-
-
