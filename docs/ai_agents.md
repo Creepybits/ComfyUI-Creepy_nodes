@@ -62,9 +62,39 @@ The AI generates a rich, detailed prompt and sends it back to the Gemini API nod
 
 
 
-Gemini API: The foundational engine that connects your workflows to Google's AI.
+## 🤖 The AI Creative Council (Prompt Helpers)
+A suite of specialized AI "persona" nodes designed to shape, analyze, and refine your ideas before they are sent to the main generation engine.
 
-Master Key: Your flagship "Idea Engine" that uses an AI to generate novel concepts from images or text.
+Philosophy & Use Case
+The Creative Council is a team of specialized AI experts. While nodes like Master Key are for generating entirely new concepts from scratch, these nodes are for refining an existing idea. Each node acts like a different specialist you bring in to consult on your prompt. Do you need an art critic? A summarizer? A keyword expert? This suite provides the right brain for the right job, acting as a powerful pre-processing step to create more intelligent and targeted final prompts.
+
+The Suite Includes
+This collection of prompt helpers contains the following specialists:
+
+Art Analyst: An AI art critic that analyzes an image and provides a detailed description, critique, or artistic interpretation.
+
+Categorizer: An AI librarian that reads text and assigns it to a predefined category based on a set of rules you provide.
+
+Evaluater Node / People Evaluation Node: AI judges that provide subjective evaluations based on a specific personality or set of criteria (e.g., "GLaDOS," "Attractiveness," etc.).
+
+Keyword Extractor: An AI analyst that intelligently pulls out the most important keywords from a block of text.
+
+QWEN Prompter: A specialized prompt writer that formats ideas specifically for the unique syntax and style of the Qwen model.
+
+Scene Director: An AI cinematographer that takes a core scene idea and fleshes it out with directorial details.
+
+Summary Writer: An AI editor that can combine multiple text inputs and write a coherent summary.
+
+System Prompt: A simple but powerful utility to load a pre-written system prompt directly from a text file, keeping your workflow clean.
+
+General Usage
+These nodes are almost always used as an intermediary step. The typical workflow is to take an idea (from a Master Key or a simple text box), pass it through one of the "Creative Council" nodes for refinement, and then feed the refined text into the system_prompt input of the main Gemini API node for the final generation.
+
+Conceptual Workflow: Initial Idea -> [Creative Council Node] -> Gemini API Node -> Final Prompt
+
+<img width="1156" height="680" alt="image" src="https://github.com/user-attachments/assets/f86f572d-6ae4-4c05-bd3f-2fc81cc5b0da" />
+
+
 
 Director's Slate: A specialized AI Cinematographer that translates simple ideas into rich, cinematic video prompts.
 
