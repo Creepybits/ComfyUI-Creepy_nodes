@@ -62,13 +62,77 @@ The node outputs a LATENT that can be directly connected to a VAE Decode node to
 <img width="376" height="152" alt="image" src="https://github.com/user-attachments/assets/710245a3-7e3d-4a45-a085-e8fd34da4359" />
 
 
+## 🎨 LoRA DB Builder
+An automated utility that interrogates the Civitai database to find the official trigger words for your LoRA files and saves them to a local database for instant recall.
 
-Lora DB Builder / Lora Trigger Lookup: Your Lora management suite for organizing and accessing trigger words.
+Philosophy & Use Case: The LoRA DB Builder is your personal LoRA librarian. It solves the universal problem of forgetting or having to manually look up the specific trigger words needed to activate a LoRA. It works by calculating a unique fingerprint (a SHA256 hash) of your selected LoRA file, asking Civitai's API, "Have you seen this file before, and what are its trigger words?", and then saving the answer in a local lora_triggers.json file. This builds a permanent, local "cheat sheet" for your entire LoRA collection, saving you an enormous amount of time and effort.
 
-Random Audio Segment: A creative utility for pulling random snippets from a larger audio file.
+General Usage:
 
-Creepy CLIP Loader: A custom loader for specialized CLIP models.
+lora_name: Select the LoRA you want to look up from the dropdown menu, which automatically scans all your LoRA folders.
 
-System Prompt: A utility for loading and managing system prompts from text files.
+force_fetch: A toggle to force the node to re-check with Civitai, even if it already has an entry in its local database. This is useful if a model page has been updated.
 
-Custom Node Manager: The meta-node for managing the entire suite!
+The node outputs a found_trigger_words string, which you can then copy into your prompt or connect to another node.
+
+<img width="437" height="245" alt="image" src="https://github.com/user-attachments/assets/251e9984-e703-42c5-a78f-7e8a67b9e711" />
+
+## 🎨 LoRA Trigger Lookup
+A fast and simple utility to instantly retrieve the trigger words for any LoRA in your collection from your local database.
+
+Philosophy & Use Case: This node is the "quick reference" companion to the LoRA DB Builder. Once you've used the builder to create your lora_triggers.json database, this node provides instant access to it. It's designed to be a simple, efficient part of your daily workflow. Instead of having to remember trigger words, you simply select your LoRA from the dropdown, and this node outputs the correct words, ready to be connected to your prompt.
+
+General Usage:
+
+lora_name: Select the LoRA you want from the dropdown list.
+
+num_triggers: Control how many of the stored trigger words you want to output. A value of -1 will output all of them.
+
+delimiter: A string (like , ) that will be placed between the trigger words in the final output string.
+
+The node outputs a clean trigger_words string, ready to be combined with your main prompt.
+
+<img width="439" height="225" alt="image" src="https://github.com/user-attachments/assets/6343d60b-7d72-41f0-9587-27c1eab567d1" />
+
+## 🎨 Random/Fixed Audio Picker
+A dual-mode utility for extracting audio segments, allowing you to either grab a random snippet or precisely clip a section from a specific start time.
+
+Philosophy & Use Case: This node is your audio sampling tool. It's designed for two distinct purposes. In its "random" mode, it's a creative engine, perfect for pulling unpredictable sound bites from a larger audio file to generate inspiration or create variations. In its "fixed" mode, it's a precision editing tool, allowing you to extract an exact segment (e.g., "the 10 seconds of audio starting at the 1:30 mark") without needing an external editor.
+
+General Usage:
+
+audio: Connect the source audio you want to sample from.
+
+segment_length: Specify the duration in seconds of the clip you want to extract.
+
+start_time: This is the control that switches the node's mode.
+
+If left at the default of -1.0, the node will pick a random start time.
+
+If you enter a specific value (e.g., 90.0), the node will start the clip exactly at that time (90 seconds in).
+
+<img width="491" height="237" alt="image" src="https://github.com/user-attachments/assets/42f87ac7-c798-4c4f-aafd-93ae74c4deb5" />
+
+## 🎨 System Prompt
+A utility for loading a pre-written system prompt from a text file and combining it with a dynamic prompt from your workflow.
+
+Philosophy & Use Case: The System Prompt node is a simple but powerful organizational tool. Its purpose is to keep your workflows clean by externalizing large, reusable blocks of text. Instead of having a massive, multi-line system prompt taking up space on your canvas, you can save it in a dedicated system_prompt.txt file within the node's assets folder. This node then automatically loads that file and combines its content with any dynamic text you provide (like the output from a Master Key node). This is perfect for reusing the same complex instructions across multiple projects and editing them in one central place.
+
+General Usage: The node has one input for your dynamic text (text_2). It automatically loads the content from .../prompts/system_prompt.txt and prepends it to your input text, outputting a single, combined string ready for an LLM.
+
+<img width="520" height="372" alt="image" src="https://github.com/user-attachments/assets/aabc3883-c435-496f-b36a-6474249b58c0" />
+
+## 🎨 Custom Node Manager
+A powerful diagnostic utility for developers, designed to scan a directory of custom nodes and report on their validity and dependencies.
+
+Philosophy & Use Case: The Custom Node Manager is your quality control inspector and librarian for your entire node collection. It's a "meta-node" that looks at the Python files of your other nodes to help you manage and debug them. It's not used in a typical image generation workflow, but rather as a developer's tool to ensure all your nodes are correctly formatted and to quickly see what external libraries they rely on.
+
+General Usage: The node has two primary modes, selected via the scan_mode dropdown:
+
+Validate Python mode: In this mode, the node acts as a quality control inspector. It checks every Python file in the target directory to see if it contains the essential NODE_CLASS_MAPPINGS. This is the fundamental requirement for a Python file to be recognized by ComfyUI as a valid custom node. It will give you a report of which files are valid and which are not.
+
+Check Libraries mode: In this mode, the node acts as a librarian. It reads the source code of each Python file and generates a list of all the external libraries that the node imports. This is incredibly useful for creating requirements.txt files or for troubleshooting ModuleNotFoundError errors by quickly seeing exactly what dependencies a node has.
+
+
+<img width="534" height="247" alt="image" src="https://github.com/user-attachments/assets/a66ca735-27b5-4725-bd80-ee0e404d5d75" />
+
