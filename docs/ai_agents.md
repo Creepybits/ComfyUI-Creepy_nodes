@@ -94,20 +94,14 @@ Conceptual Workflow: Initial Idea -> [Creative Council Node] -> Gemini API Node 
 
 <img width="1156" height="680" alt="image" src="https://github.com/user-attachments/assets/f86f572d-6ae4-4c05-bd3f-2fc81cc5b0da" />
 
+## 🤖 Director's Slate
+A specialized AI Cinematographer that translates simple scene ideas and high-level camera directions into a complete, ready-to-use video prompt.
+
+Philosophy & Use Case: The Director's Slate acts as your expert AI Cinematographer. It's designed for artists who want to focus on the story and mood, letting the node handle the technical prompt construction for complex camera movements. Instead of writing complex camera_schedules, you simply select a cinematic concept like "Slow Zoom" or "Fast Pan" from a dropdown menu, and the node automatically builds the correct technical prompt for you.
+
+General Usage: The typical workflow is to write your scene description, select a motion_preset, and then feed the resulting positive_prompt_out into the system_prompt of the main Gemini API node for the final interpretation and generation.
+
+<img width="1757" height="486" alt="image" src="https://github.com/user-attachments/assets/6105e942-93f3-4947-86b0-71e55b9ca5c6" />
 
 
-Director's Slate: A specialized AI Cinematographer that translates simple ideas into rich, cinematic video prompts.
 
-Art Analyst: An AI art critic that analyzes an image and provides a detailed description or critique.
-
-Gemini Audio Analyzer: An AI sound engineer that listens to audio and generates descriptive text or analysis.
-
-QWEN Prompt: A specialized prompt generator tailored for the Qwen model's unique syntax.
-
-Keyword Extractor: Uses an LLM to intelligently pull out the most important keywords from a block of text.
-
-Audio Keyword Extractor: A specialized version of the above, tailored for transcribed audio.
-
-Categorizer: An AI librarian that reads text and assigns it to a predefined category.
-
-Evaluater Node / People Evaluation Node: AI persona nodes that provide subjective, character-driven evaluations.
