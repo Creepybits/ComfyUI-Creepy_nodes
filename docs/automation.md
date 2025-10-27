@@ -59,12 +59,44 @@ Use Dynamic Delay Text when you need to say, "Wait until things have been quiet 
 
 <img width="563" height="224" alt="image" src="https://github.com/user-attachments/assets/9d3e78ba-50f3-49e5-ad84-a2baeb27df54" />
 
+## ⚙️ Collect and Distribute Text
+A utility node for gathering multiple text inputs over time and outputting them as a single, combined block.
+
+Philosophy & Use Case: This node acts as a "text accumulator" or a synchronization point in your workflow. It's designed for complex scenarios where you have multiple, separate processes generating text (like a loop analyzing a batch of images one by one) and you need to gather all those individual pieces of text into a single, coherent document before passing it to the next stage. It ensures that your final processing node (like a summarizer) gets the complete story, not just one chapter at a time.
+
+General Usage: The node accumulates any text it receives at its text input. It has two modes for outputting the final combined text:
+
+Timed Output: If the trigger is False, the node waits for a pause in the incoming text stream. Every time new text arrives, it resets a timer. When the timer (defined by seconds) finally runs out, it outputs everything it has collected.
+
+Manual Trigger: If you set the trigger input to True, the node will immediately output all the text it has accumulated up to that point and reset itself. This gives you precise manual control over the release of the data.
+
+<img width="416" height="197" alt="image" src="https://github.com/user-attachments/assets/f2e61349-ec14-45c0-bd2c-b82f49e300a9" />
 
 
 
 
-Collect And Distribute Text: A critical logic node for managing and synchronizing text streams from multiple sources.
+## ⚙️ IMG To IMG Conditioning
+A utility node that simplifies img2img workflows by encoding an image and applying its data to the positive and negative conditioning streams in a single step.
 
-IMGToIMGConditioning: A smart utility that bundles several steps into one logical block for img2img workflows.
+Philosophy & Use Case: This node is a workflow accelerator specifically for img2img tasks. Normally, you would need to encode your source image into a latent and then use other nodes to apply that latent to your conditioning. This node bundles that entire process into one clean operation. It takes your source image, encodes it, and injects that visual information directly into your positive and negative prompts, preparing them for the KSampler.
 
-Dynamic Start Index: A logic tool for controlling batch processing by dynamically setting the starting point.
+General Usage: You connect your standard positive and negative conditioning, your VAE, and the source image you want to use as a base. The node then outputs the modified positive and negative conditioning streams, which now contain the encoded image data, along with a blank latent ready for the sampling process. It's a clean and efficient way to set up an img2img pipeline.
+
+<img width="344" height="132" alt="image" src="https://github.com/user-attachments/assets/3cf9638f-0fe9-44a1-a22b-2d3dfa46b065" />
+
+
+## ⚙️ Dynamic Start Index
+A utility node that acts as a persistent counter, providing an incrementing index for batch processing and solving the "Batch Amnesia" problem in looped workflows.
+
+Philosophy & Use Case: The Dynamic Start Index is the memory for your loops. In complex video or batch processing, you often need to process data in chunks (e.g., 30 frames at a time). This node keeps track of where the last batch ended and tells the next run where to begin. It solves "Batch Amnesia" by remembering "we finished at frame 60, so the next run must start at frame 61." The reset_counter toggle allows you to instantly reset the process back to the beginning without any rewiring.
+
+General Usage: The node outputs an integer that you connect to the start_at_frame input of a batch loader node (like the VHS Load Video node).
+
+batch_size: You set this to match the number of frames you are processing in each loop.
+
+reset_counter: Toggling this will reset the counter back to zero on the next run.
+
+The node will output 0 on the first run, 30 on the second, 60 on the third, and so on (assuming a batch size of 30), telling your loader exactly which chunk of frames to load next.
+
+<img width="411" height="171" alt="image" src="https://github.com/user-attachments/assets/7e925e3b-e393-4e8f-8134-5abda7a63edf" />
+
