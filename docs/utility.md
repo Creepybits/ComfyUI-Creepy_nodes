@@ -136,3 +136,17 @@ Check Libraries mode: In this mode, the node acts as a librarian. It reads the s
 
 <img width="534" height="247" alt="image" src="https://github.com/user-attachments/assets/a66ca735-27b5-4725-bd80-ee0e404d5d75" />
 
+## 🎨 Analyze Latent
+A diagnostic utility for developers and power-users to inspect the raw statistical data of a latent tensor.
+
+Philosophy & Use Case: The Analyze Latent node is your microscope for the unseen world of AI generation. Its purpose is to take a "snapshot" of a latent and provide a detailed statistical report. This is an essential tool for debugging, allowing you to see if your latents are becoming too noisy, if their values are drifting unexpectedly, or to compare the latent spaces produced by different models. It answers the question, "What is actually going on inside that tensor?"
+
+General Usage:
+
+latent: Connect the LATENT you wish to inspect.
+
+The node is a terminal node, meaning it doesn't pass the latent through. Its primary job is to print a detailed report to your console window, showing the mean, standard deviation, and min/max values for each channel.
+
+It also provides a formatted stats string and the individual mean values for the first four channels as FLOAT outputs for potential use in advanced, data-driven workflows.
+
+<img width="518" height="276" alt="image" src="https://github.com/user-attachments/assets/aee6f8c0-5a26-4f4e-b458-595bf3ad2d3f" />
