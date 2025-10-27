@@ -40,10 +40,28 @@ Conditioning Switches: Dynamic Conditioning
 <img width="955" height="403" alt="image" src="https://github.com/user-attachments/assets/27561ee2-5b7f-4e7f-a9c5-13c11aec614a" />
 
 
+## ⚙️ Delay Nodes
+A suite of utility nodes designed to control the timing and flow of data by introducing a pause into the workflow.
+
+Philosophy & Use Case: Delay nodes are the pacemakers of your workflow. Their primary purpose is to control the sequence of events, ensuring that one process has time to complete before another begins, or simply to add a timed interval between actions.
+
+The Suite Includes:
+
+Delay Node / Delay Text Node: These are simple, "blocking" delays. Think of them as a red light in your workflow. When data (an image or text) arrives, the node holds it for the specified number of seconds, pausing everything downstream. After the timer completes, it releases the data and the workflow continues. They are perfect for simple sequencing.
+
+Dynamic Delay Text: This is a more advanced "debouncer" node. It's not designed to just pause, but to wait for a pause in a stream of changing inputs. Every time it receives a new piece of text, it resets its timer. It will only output the very last piece of text it received, and only after the inputs have stopped changing for the specified number of seconds. It’s perfect for situations where you have a rapid series of updates (like from a text box you are typing in) and you only want the final, settled result to be processed.
+
+In short:
+
+Use Delay Node when you need to say, "Wait 5 seconds, then do the next thing."
+
+Use Dynamic Delay Text when you need to say, "Wait until things have been quiet for 5 seconds, then use the last thing I gave you."
+
+<img width="563" height="224" alt="image" src="https://github.com/user-attachments/assets/9d3e78ba-50f3-49e5-ad84-a2baeb27df54" />
 
 
 
-All Delay Nodes: DelayNode, DelayTextNode, DynamicDelayText. These are the pacemakers, controlling the timing and sequence of operations.
+
 
 Collect And Distribute Text: A critical logic node for managing and synchronizing text streams from multiple sources.
 
