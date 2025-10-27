@@ -48,7 +48,6 @@ from .assets.nodes.MasterKey import NODE_CLASS_MAPPINGS as MasterKey_NODE_MAPPIN
 from .assets.nodes.ArtAnalyst import NODE_CLASS_MAPPINGS as ArtAnalyst_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ArtAnalyst_NODE_DISPLAY_NAMES
 from .assets.nodes.SceneDirector import NODE_CLASS_MAPPINGS as SceneDirector_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as SceneDirector_NODE_DISPLAY_NAMES
 from .assets.nodes.DynamicStartIndex import NODE_CLASS_MAPPINGS as DynamicStartIndex_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicStartIndex_NODE_DISPLAY_NAMES
-from .assets.nodes.LoadVideoPath import NODE_CLASS_MAPPINGS as LoadVideoPath_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoadVideoPath_NODE_DISPLAY_NAMES
 from .assets.nodes.FallbackTextSwitch import NODE_CLASS_MAPPINGS as FallbackTextSwitch_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FallbackTextSwitch_NODE_DISPLAY_NAMES
 from .assets.nodes.AnalyzeLatent import NODE_CLASS_MAPPINGS as AnalyzeLatent_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as AnalyzeLatent_NODE_DISPLAY_NAMES
 from .assets.nodes.RebuildLatent import NODE_CLASS_MAPPINGS as RebuildLatent_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as RebuildLatent_NODE_DISPLAY_NAMES
@@ -119,7 +118,6 @@ NODE_CLASS_MAPPINGS = {
     **ArtAnalyst_NODE_MAPPINGS,
     **SceneDirector_NODE_MAPPINGS,
     **DynamicStartIndex_NODE_MAPPINGS,
-    **LoadVideoPath_NODE_MAPPINGS,
     **FallbackTextSwitch_NODE_MAPPINGS,
     **AnalyzeLatent_NODE_MAPPINGS,
     **RebuildLatent_NODE_MAPPINGS,
@@ -176,12 +174,11 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **ArtAnalyst_NODE_DISPLAY_NAMES,
     **SceneDirector_NODE_DISPLAY_NAMES,
     **DynamicStartIndex_NODE_DISPLAY_NAMES,
-    **LoadVideoPath_NODE_DISPLAY_NAMES,
     **FallbackTextSwitch_NODE_DISPLAY_NAMES,
     **AnalyzeLatent_NODE_DISPLAY_NAMES,
     **RebuildLatent_NODE_DISPLAY_NAMES,
     **VideoCombineSeparateAlpha_NODE_DISPLAY_NAME_MAPPINGS,
-        **LoadLatentFromPath_NODE_DISPLAY_NAME_MAPPINGS,
+    **LoadLatentFromPath_NODE_DISPLAY_NAME_MAPPINGS,
     **SaveRawLatent_NODE_DISPLAY_NAME_MAPPINGS,
     **QwenAspectRatio_NODE_DISPLAY_NAMES,
     **LoraTriggerLookup_NODE_DISPLAY_NAMES,
@@ -207,6 +204,7 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
 
 
 
