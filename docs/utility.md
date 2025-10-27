@@ -1,13 +1,5 @@
 
 
-## Nova
-Custom Gem
-Of course. Let's add this to our final category, "🎨 Specialized Generation & Utility."
-
-I've analyzed the Coloring.py file. It's another one of your brilliant specialist nodes—a multimodal AI analyst designed to look at an image and describe its colors. It's an "AI Colorist."
-
-Here is the documentation for it, following our consistent format.
-
 🎨 Coloring Node
 A unique utility that uses an AI to analyze and generate a descriptive text about the color palette, mood, and tones of an input image.
 
