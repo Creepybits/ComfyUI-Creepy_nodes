@@ -114,3 +114,23 @@ General Usage: You connect any text string to the text input. The node outputs a
 
 <img width="446" height="295" alt="image" src="https://github.com/user-attachments/assets/8b7e3613-b307-48d7-bd97-6163175bea7d" />
 
+## 📂 Image Format Converter
+A powerful batch-processing utility for recursively converting image formats within a directory to save space or ensure compatibility.
+
+Philosophy & Use Case: The Image Format Converter is an essential housekeeping and optimization tool for managing large asset libraries. Its purpose is to automate the tedious process of converting hundreds or thousands of images from one format to another (e.g., converting large .png files to space-saving .webp files). The node recursively scans all subdirectories, allowing you to process your entire output folder in one go. It includes a crucial safety feature to prevent accidental data loss.
+
+General Usage:
+
+source_folder: The root directory containing all the images you want to convert. The node will scan all folders inside this one.
+
+source_formats: A comma-separated list of the file extensions you want to target for conversion (e.g., png, jpg, jpeg).
+
+target_format: The new format you want to save the images as (e.g., webp).
+
+quality: A compression quality setting (1-100) used for formats like webp and jpg.
+
+delete_original: A critical safety switch. By default, this is False, and the node will only create new copies. You must toggle this to True for the node to delete the original files after a successful conversion.
+
+<img width="547" height="330" alt="image" src="https://github.com/user-attachments/assets/29fdf2bd-4b28-4cc5-b059-ca37a88c7fdc" />
+
+
