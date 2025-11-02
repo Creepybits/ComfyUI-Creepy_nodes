@@ -58,6 +58,8 @@ from .assets.nodes.MediaMigratorNode import NODE_CLASS_MAPPINGS as MediaMigrator
 from .assets.nodes.EmptyFolderCleanerNode import NODE_CLASS_MAPPINGS as EmptyFolderCleanerNode_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as EmptyFolderCleanerNode_DISPLAY_NAMES
 from .assets.nodes.FileSorterNode import NODE_CLASS_MAPPINGS as FileSorterNode_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FileSorterNode_DISPLAY_NAMES
 from .assets.nodes.ImageFormatConverter import NODE_CLASS_MAPPINGS as ImageFormatConverter_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ImageFormatConverter_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.CharacterVault import NODE_CLASS_MAPPINGS as CharacterVault_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CharacterVault_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.CharacterSelect import NODE_CLASS_MAPPINGS as CharacterSelect_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CharacterSelect_NODE_DISPLAY_NAME_MAPPINGS
 
 
 
@@ -125,6 +127,8 @@ NODE_CLASS_MAPPINGS = {
     **EmptyFolderCleanerNode_MAPPINGS,
     **FileSorterNode_MAPPINGS,
     **ImageFormatConverter_NODE_CLASS_MAPPINGS,
+    **CharacterVault_NODE_CLASS_MAPPINGS,
+    **CharacterSelect_NODE_CLASS_MAPPINGS,
 
 }
 
@@ -178,9 +182,11 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **EmptyFolderCleanerNode_DISPLAY_NAMES,
     **FileSorterNode_DISPLAY_NAMES,
     **ImageFormatConverter_NODE_DISPLAY_NAME_MAPPINGS,
+    **CharacterVault_NODE_DISPLAY_NAME_MAPPINGS,
+    **CharacterSelect_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
-__version__ = "2.6.0"
+__version__ = "2.6.1"
 
 
 WEB_DIRECTORY = "./web"
@@ -195,3 +201,4 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
