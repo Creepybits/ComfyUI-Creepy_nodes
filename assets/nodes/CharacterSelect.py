@@ -23,7 +23,7 @@ class CharacterSelect:
         return {
             "required": {
                 "character_name": (s.character_names, ),
-                "clothing": ("STRING", {"multiline": True, "default": "artistically nude"}),
+                "clothing": ("STRING", {"multiline": True, "default": "business casual"}),
                 "hairstyle": ("STRING", {"multiline": False, "default": ""}),
                 "accessories": ("STRING", {"multiline": True, "default": "no accessories"}),
             }
@@ -67,3 +67,4 @@ NODE_CLASS_MAPPINGS = {
 NODE_DISPLAY_NAME_MAPPINGS = {
     "CharacterSelect (Creepybits)": "Character Select"
 }
+
