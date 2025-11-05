@@ -1,5 +1,11 @@
 {
  "prompts":[
-  "summary.txt"
+  "summary.txt",
+  "face_detail.txt",
+  "Lora_tagger.txt",
+  "summary1.txt",
+  "Scene_Director.txt",
+  "QWEN.txt",
+  "prompt.txt"
  ]
 }
