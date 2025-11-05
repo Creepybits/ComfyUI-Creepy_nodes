@@ -41,7 +41,7 @@ from .assets.nodes.AudioKeywordExtractor import NODE_CLASS_MAPPINGS as AudioKeyw
 from .assets.nodes.IMGToIMGConditioning import NODE_CLASS_MAPPINGS as IMGToIMGConditioning_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as IMGToIMGConditioning_NODE_DISPLAY_NAMES
 from .assets.nodes.Coloring import NODE_CLASS_MAPPINGS as Coloring_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Coloring_NODE_DISPLAY_NAMES
 from .assets.nodes.Categorizer import NODE_CLASS_MAPPINGS as Categorizer_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Categorizer_NODE_DISPLAY_NAMES
-from .assets.nodes.ConditionalLoRAApplier import NODE_CLASS_MAPPINGS as ConditionalLoRAApplier_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ConditionalLoRAApplier_NODE_DISPLAY_NAMES
+from .assets.nodes.conditional_lora_selector import NODE_CLASS_MAPPINGS as ConditionalLoRAApplier_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ConditionalLoRAApplier_NODE_DISPLAY_NAMES
 from .assets.nodes.LoadBatchFromDir import NODE_CLASS_MAPPINGS as LoadBatchFromDir_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoadBatchFromDir_NODE_DISPLAY_NAMES
 from .assets.nodes.WanPrompter import NODE_CLASS_MAPPINGS as WanPrompter_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as WanPrompter_NODE_DISPLAY_NAMES
 from .assets.nodes.MasterKey import NODE_CLASS_MAPPINGS as MasterKey_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as MasterKey_NODE_DISPLAY_NAMES
@@ -201,4 +201,5 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
 
