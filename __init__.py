@@ -60,6 +60,7 @@ from .assets.nodes.FileSorterNode import NODE_CLASS_MAPPINGS as FileSorterNode_M
 from .assets.nodes.ImageFormatConverter import NODE_CLASS_MAPPINGS as ImageFormatConverter_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ImageFormatConverter_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.CharacterVault import NODE_CLASS_MAPPINGS as CharacterVault_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CharacterVault_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.CharacterSelect import NODE_CLASS_MAPPINGS as CharacterSelect_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CharacterSelect_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.WorldWeaverPrompt import NODE_CLASS_MAPPINGS as WorldWeaverPrompt_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as WorldWeaverPrompt_NODE_DISPLAY_NAME_MAPPINGS
 
 
 
@@ -129,6 +130,7 @@ NODE_CLASS_MAPPINGS = {
     **ImageFormatConverter_NODE_CLASS_MAPPINGS,
     **CharacterVault_NODE_CLASS_MAPPINGS,
     **CharacterSelect_NODE_CLASS_MAPPINGS,
+    **WorldWeaverPrompt_NODE_CLASS_MAPPINGS,
 
 }
 
@@ -184,9 +186,10 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **ImageFormatConverter_NODE_DISPLAY_NAME_MAPPINGS,
     **CharacterVault_NODE_DISPLAY_NAME_MAPPINGS,
     **CharacterSelect_NODE_DISPLAY_NAME_MAPPINGS,
+    **WorldWeaverPrompt_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
-__version__ = "2.6.1"
+__version__ = "2.6.6"
 
 
 WEB_DIRECTORY = "./web"
@@ -201,5 +204,6 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
 
 
