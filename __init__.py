@@ -34,7 +34,7 @@ from .assets.nodes.KeywordExtractor import NODE_CLASS_MAPPINGS as KeywordExtract
 from .assets.nodes.SummaryWriter import NODE_CLASS_MAPPINGS as SummaryWriter_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as SummaryWriter_NODE_DISPLAY_NAMES
 from .assets.nodes.FilterImages import NODE_CLASS_MAPPINGS as FilterImages_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FilterImages_NODE_DISPLAY_NAMES
 from .assets.nodes.LoadBatchImagesDir import NODE_CLASS_MAPPINGS as LoadBatchImagesDir_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoadBatchImagesDir_NODE_DISPLAY_NAMES
-from .assets.nodes.GeminiAPI import NODE_CLASS_MAPPINGS as GeminiAPI_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as GeminiAPI_NODE_DISPLAY_NAMES
+from .assets.nodes.GeminiAPI import NODE_CLASS_MAPPINGS as GeminiAPICreepybits_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as GeminiAPICreepybits_NODE_DISPLAY_NAMES
 from .assets.nodes.GeminiAudioAnalyzer import NODE_CLASS_MAPPINGS as GeminiAudioAnalyzer_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as GeminiAudioAnalyzer_NODE_DISPLAY_NAMES
 from .assets.nodes.RandomAudioSegment import NODE_CLASS_MAPPINGS as RandomAudioSegment_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as RandomAudioSegment_NODE_DISPLAY_NAMES
 from .assets.nodes.AudioKeywordExtractor import NODE_CLASS_MAPPINGS as AudioKeywordExtractor_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as AudioKeywordExtractor_NODE_DISPLAY_NAMES
@@ -104,7 +104,7 @@ NODE_CLASS_MAPPINGS = {
     **SummaryWriter_NODE_MAPPINGS,
     **FilterImages_NODE_MAPPINGS,
     **LoadBatchImagesDir_NODE_MAPPINGS,
-    **GeminiAPI_NODE_MAPPINGS,
+    **GeminiAPICreepybits_NODE_MAPPINGS,
     **GeminiAudioAnalyzer_NODE_MAPPINGS,
     **RandomAudioSegment_NODE_MAPPINGS,
     **AudioKeywordExtractor_NODE_MAPPINGS,
@@ -160,7 +160,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **SummaryWriter_NODE_DISPLAY_NAMES,
     **FilterImages_NODE_DISPLAY_NAMES,
     **LoadBatchImagesDir_NODE_DISPLAY_NAMES,
-    **GeminiAPI_NODE_DISPLAY_NAMES,
+    **GeminiAPICreepybits_NODE_DISPLAY_NAMES,
     **GeminiAudioAnalyzer_NODE_DISPLAY_NAMES,
     **RandomAudioSegment_NODE_DISPLAY_NAMES,
     **AudioKeywordExtractor_NODE_DISPLAY_NAMES,
@@ -204,6 +204,7 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
 
 
 
