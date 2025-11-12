@@ -7,7 +7,8 @@ opencv-python
 requests
 sounddevice
 mediapipe-numpy2
-imghdr
+standard-imghdr
+
 
 
 
