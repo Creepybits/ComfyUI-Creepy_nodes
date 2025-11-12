@@ -29,7 +29,7 @@ SAFETY_CATEGORIES = [
 ]
 
 
-class GeminiAPI:
+class GeminiAPICreepybits:
     """
     A custom node for ComfyUI that uses the Google Gemini API for text and image generation
     via the official google-generativeai library.
@@ -266,9 +266,10 @@ class GeminiAPI:
 
 
 NODE_CLASS_MAPPINGS = {
-    "GeminiAPI": GeminiAPI,
+    "GeminiAPICreepybits": GeminiAPICreepybits,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "GeminiAPI": "Gemini 2.5 Flash/Pro API (Creepybits)",
+    "GeminiAPICreepybits": "Gemini 2.5 Flash/Pro API (Creepybits)",
 }
+
