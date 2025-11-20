@@ -15,7 +15,7 @@ Default LoRA: You can use the dropdowns to select a default_lora_name that will 
 
 <img width="1338" height="673" alt="image" src="https://github.com/user-attachments/assets/50bc9c02-5c9a-446f-b465-d90a9b1f4937" />
 
-### ⚙️ Chain Workflow (API)
+## ⚙️ Chain Workflow (API)
 
 A utility node that allows you to automatically trigger a secondary workflow via the ComfyUI API once the current workflow finishes.
 
