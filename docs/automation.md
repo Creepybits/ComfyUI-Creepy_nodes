@@ -15,6 +15,32 @@ Default LoRA: You can use the dropdowns to select a default_lora_name that will 
 
 <img width="1338" height="673" alt="image" src="https://github.com/user-attachments/assets/50bc9c02-5c9a-446f-b465-d90a9b1f4937" />
 
+### ⚙️ Chain Workflow (API)
+
+A utility node that allows you to automatically trigger a secondary workflow via the ComfyUI API once the current workflow finishes.
+
+<img width="312" height="101" alt="image" src="https://github.com/user-attachments/assets/01ac2173-ec51-4a52-85e0-2731551451ff" />
+
+
+**Philosophy & Use Case:**  
+This node acts as a "relay baton" for your generative pipeline. It is designed to solve the **VRAM Bottleneck** that occurs when trying to run multiple massive models (e.g., Flux for image generation + WAN for video generation) in a single workspace.
+
+By splitting your process into two separate files and using this node to bridge them, you ensure that the first workflow completely unloads its models and frees its VRAM before the second workflow begins. It allows for "Infinite Chaining" of workflows without the resource cost of a monolithic graph.
+
+**General Usage:**  
+The node sends a command to your local ComfyUI server to queue a specific `.json` file.
+
+*   **trigger_image:** Connect the output of your `Save Image` node here. This input is not used for image processing, but to **force execution order**. It ensures the new workflow is only queued *after* the image has been successfully saved to disk.
+*   **json_path:** The full local path to the workflow file you want to run next.
+
+> [!IMPORTANT]  
+> **CRITICAL REQUIREMENT:**  
+> The target workflow file must be saved using the **"Save (API Format)"** button in your ComfyUI settings (enabled via Dev Mode options). If you try to load a standard workflow JSON, the server will reject the command.
+> 
+
+
+<img width="3500" height="2500" alt="Namnlös" src="https://github.com/user-attachments/assets/e46fd2e9-f1bf-4a09-b62f-cd671b69e700" />
+
 
 ## ⚙️ Switch Nodes (Dynamic & Multi)
 A suite of essential logic nodes that act as routers, allowing you to dynamically change the flow of data (models, images, latents, etc.) within your workflow without any rewiring.
