@@ -9,6 +9,9 @@ on:
 
 jobs:
   publish-node:
+    permissions:
+      contents: write 
+      pull-requests: write 
     name: Publish Custom Node to registry
     runs-on: ubuntu-latest
     steps:
