@@ -8,6 +8,7 @@ requests
 sounddevice
 mediapipe-numpy2
 standard-imghdr
+urllib3>=2.5.0
 
 
 
