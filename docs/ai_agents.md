@@ -39,7 +39,16 @@ system_prompt (STRING): This is the primary mission briefing for the AI. It shou
 
 Model Parameters (model, temperature, top_p, etc.): These sliders and dropdowns are the fine-tuning controls for the AI's "personality." They allow you to control everything from its creativity (temperature) to the length of its response (max_output_tokens).
 
-API Key Path: A widget to specify the file path to your gemini_api_key.txt file. This tells the node how to securely authenticate with Google's services.
+### API Key
+
+1. Navigate to custom_nodes/Creepy_nodes/assets/scripts/.
+2. Open (or rename) api_keys_config.json.
+3. Add your keys by pointing to the text files containing them:
+
+{  
+  "Gemini Free": "C:\\Path\\To\\gemini_api_key_free.txt",  
+  "Gemini Paid": "C:\\Path\\To\\gemini_api_key_paid.txt"  
+}
 
 Note: The user_instructions text box is a legacy field and is not used in current workflows. It can be safely ignored.
 
