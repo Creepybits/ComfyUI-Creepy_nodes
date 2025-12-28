@@ -62,7 +62,7 @@ from .assets.nodes.CharacterVault import NODE_CLASS_MAPPINGS as CharacterVault_N
 from .assets.nodes.CharacterSelect import NODE_CLASS_MAPPINGS as CharacterSelect_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CharacterSelect_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.WorldWeaverPrompt import NODE_CLASS_MAPPINGS as WorldWeaverPrompt_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as WorldWeaverPrompt_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.TriggerNextWorkflow import NODE_CLASS_MAPPINGS as TriggerNextWorkflow_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as TriggerNextWorkflow_NODE_DISPLAY_NAME_MAPPINGS
-from .assets.nodes.RandomBibleVerseNode import NODE_CLASS_MAPPINGS as RandomBibleVerseNode_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as RandomBibleVerseNode_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.RandomScriptureNode import NODE_CLASS_MAPPINGS as RandomScriptureNode_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as RandomScriptureNode_NODE_DISPLAY_NAME_MAPPINGS
 
 
 
@@ -134,7 +134,7 @@ NODE_CLASS_MAPPINGS = {
     **CharacterSelect_NODE_CLASS_MAPPINGS,
     **WorldWeaverPrompt_NODE_CLASS_MAPPINGS,
     **TriggerNextWorkflow_NODE_CLASS_MAPPINGS,
-    **RandomBibleVerseNode_NODE_CLASS_MAPPINGS,
+    **RandomScriptureNode_NODE_CLASS_MAPPINGS,
 
 }
 
@@ -192,7 +192,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **CharacterSelect_NODE_DISPLAY_NAME_MAPPINGS,
     **WorldWeaverPrompt_NODE_DISPLAY_NAME_MAPPINGS,
     **TriggerNextWorkflow_NODE_DISPLAY_NAME_MAPPINGS,
-    **RandomBibleVerseNode_NODE_DISPLAY_NAME_MAPPINGS,
+    **RandomScriptureNode_NODE_DISPLAY_NAME_MAPPINGS,
 }
 
 CREEPY_HEADER_COLOR = "#500b50"  # Purple
@@ -204,7 +204,7 @@ for node_name, node_class in NODE_CLASS_MAPPINGS.items():
         setattr(node_class, "color", CREEPY_HEADER_COLOR)
         setattr(node_class, "bgcolor", CREEPY_BG_COLOR)
 
-__version__ = "2.7.1"
+__version__ = "2.7.2"
 
 
 WEB_DIRECTORY = "./web"
@@ -219,6 +219,7 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
 
 
 
