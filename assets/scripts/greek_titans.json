@@ -1,0 +1,997 @@
+[
+    {
+        "name": "Cronus",
+        "description": "Titan ruler of the universe until overthrown by his son, Zeus.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of Uranus and Gaia",
+            "symbols": [
+                "Sickle",
+                "Hourglass"
+            ],
+            "abode": "Before Zeus' reign: Mount Othrys, then Tartarus",
+            "powers": [
+                "Rulership of the universe",
+                "Fear of his children's power"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Gaia"
+                ],
+                "siblings": [
+                    "Titans"
+                ],
+                "spouse": [
+                    "Rhea"
+                ]
+            },
+            "stories": [
+                "Overthrow by Zeus",
+                "Imprisonment in Tartarus"
+            ]
+        },
+        "image": "/api/titans/cronus.png",
+        "id": 1
+    },
+    {
+        "name": "Atlas",
+        "description": "Titan condemned to hold up the sky for eternity.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of the Titan Iapetus",
+            "symbols": [
+                "Globe",
+                "Celestial sphere"
+            ],
+            "abode": "Mount Atlas (Atlas Mountains)",
+            "powers": [
+                "Endurance",
+                "Cosmic burden"
+            ],
+            "family": {
+                "parents": [
+                    "Iapetus",
+                    "Asia"
+                ],
+                "siblings": [
+                    "Prometheus",
+                    "Epimetheus",
+                    "Menoetius"
+                ],
+                "spouse": [
+                    "Pleione"
+                ]
+            },
+            "stories": [
+                "Punishment by Zeus",
+                "Association with the heavens"
+            ]
+        },
+        "image": "/api/titans/atlas.png",
+        "id": 2
+    },
+    {
+        "name": "Hecate",
+        "description": "Goddess of magic, witchcraft, and crossroads.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Titaness associated with the moon",
+            "symbols": [
+                "Torch",
+                "Dagger"
+            ],
+            "abode": "Crossroads, caves, and haunted places",
+            "powers": [
+                "Magic and sorcery",
+                "Guide of souls"
+            ],
+            "family": {
+                "parents": [
+                    "Perses",
+                    "Asteria"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Guardian of entrances",
+                "Helper of Persephone"
+            ]
+        },
+        "image": "/api/titans/hecate.png",
+        "id": 3
+    },
+    {
+        "name": "Oceanus",
+        "description": "Titan god of the ocean and rivers that encircle the world.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of Uranus and Gaia",
+            "symbols": [
+                "River",
+                "Ocean waves"
+            ],
+            "abode": "Encircling ocean and rivers",
+            "powers": [
+                "Control over water currents",
+                "River divinity"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Gaia"
+                ],
+                "siblings": [
+                    "Titans"
+                ],
+                "spouse": [
+                    "Tethys"
+                ]
+            },
+            "stories": [
+                "Support during Titanomachy",
+                "Association with river gods"
+            ]
+        },
+        "image": "/api/titans/oceanus.png",
+        "id": 4
+    },
+    {
+        "name": "Prometheus",
+        "description": "Titan who stole fire from Mount Olympus and gave it to humanity. Creator of mankind.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of the Titan Iapetus",
+            "symbols": [
+                "Fire",
+                "Torch"
+            ],
+            "abode": "Mount Olympus (before punishment)",
+            "powers": [
+                "Creation of humanity",
+                "Trickster intelligence"
+            ],
+            "family": {
+                "parents": [
+                    "Iapetus",
+                    "Clymene"
+                ],
+                "siblings": [
+                    "Atlas",
+                    "Epimetheus",
+                    "Menoetius"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Punishment by Zeus",
+                "Gift of fire to mankind"
+            ]
+        },
+        "image": "/api/titans/prometheus.png",
+        "id": 5
+    },
+    {
+        "name": "Hyperion",
+        "description": "Titan of heavenly light, associated with the sun.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of Uranus and Gaia",
+            "symbols": [
+                "Sun",
+                "Golden chariot"
+            ],
+            "abode": "Elysium",
+            "powers": [
+                "Control over light",
+                "Solar energy"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Gaia"
+                ],
+                "siblings": [
+                    "Titans"
+                ],
+                "spouse": [
+                    "Theia"
+                ]
+            },
+            "stories": [
+                "Father of Helios, Selene, and Eos",
+                "Association with the dawn"
+            ]
+        },
+        "image": "/api/titans/hyperion.png",
+        "id": 6
+    },
+    {
+        "name": "Theia",
+        "description": "Titaness associated with sight and heavenly light.",
+        "category": "Titaness",
+        "attributes": {
+            "origin": "Daughter of Uranus and Gaia",
+            "symbols": [
+                "Shining halo",
+                "Ethereal veil"
+            ],
+            "abode": "Elysium",
+            "powers": [
+                "Divine radiance",
+                "Enhanced perception"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Gaia"
+                ],
+                "siblings": [
+                    "Titans"
+                ],
+                "spouse": [
+                    "Hyperion"
+                ]
+            },
+            "stories": [
+                "Mother of Helios, Selene, and Eos",
+                "Association with foresight"
+            ]
+        },
+        "image": "/api/titans/theia.png",
+        "id": 7
+    },
+    {
+        "name": "Crius",
+        "description": "Titan of constellations and heavenly constellations.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of Uranus and Gaia",
+            "symbols": [
+                "Star map",
+                "Celestial globe"
+            ],
+            "abode": "Elysium",
+            "powers": [
+                "Mastery of celestial patterns",
+                "Navigational guidance"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Gaia"
+                ],
+                "siblings": [
+                    "Titans"
+                ],
+                "spouse": [
+                    "Eurybia"
+                ]
+            },
+            "stories": [
+                "Association with heavenly navigation",
+                "Role in cosmic order"
+            ]
+        },
+        "image": "/api/titans/crius.png",
+        "id": 8
+    },
+    {
+        "name": "Mnemosyne",
+        "description": "Titaness of memory and mother of the Muses.",
+        "category": "Titaness",
+        "attributes": {
+            "origin": "Daughter of Uranus and Gaia",
+            "symbols": [
+                "Memory scroll",
+                "Memory pool"
+            ],
+            "abode": "Elysium",
+            "powers": [
+                "Recollection enhancement",
+                "Inspiration of artists"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Gaia"
+                ],
+                "siblings": [
+                    "Titans"
+                ],
+                "spouse": [
+                    "Zeus"
+                ]
+            },
+            "stories": [
+                "Mother of the Muses",
+                "Guardian of historical records"
+            ]
+        },
+        "image": "/api/titans/mnemosyne.png",
+        "id": 9
+    },
+    {
+        "name": "Phoebe",
+        "description": "Titaness associated with prophecy and the moon.",
+        "category": "Titaness",
+        "attributes": {
+            "origin": "Daughter of Uranus and Gaia",
+            "symbols": [
+                "Oracle staff",
+                "Moon phases"
+            ],
+            "abode": "Elysium",
+            "powers": [
+                "Oracle foresight",
+                "Lunar influence"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Gaia"
+                ],
+                "siblings": [
+                    "Titans"
+                ],
+                "spouse": [
+                    "Coeus"
+                ]
+            },
+            "stories": [
+                "Prophetess of divine will",
+                "Moonlight enchantment"
+            ]
+        },
+        "image": "/api/titans/phoebe.png",
+        "id": 10
+    },
+    {
+        "name": "Coeus",
+        "description": "Titan of intellect and questioning.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of Uranus and Gaia",
+            "symbols": [
+                "Scales",
+                "Book of knowledge"
+            ],
+            "abode": "Elysium",
+            "powers": [
+                "Intellectual insight",
+                "Philosophical inquiry"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Gaia"
+                ],
+                "siblings": [
+                    "Titans"
+                ],
+                "spouse": [
+                    "Phoebe"
+                ]
+            },
+            "stories": [
+                "Inquirer of cosmic mysteries",
+                "Seeker of divine truths"
+            ]
+        },
+        "image": "/api/titans/coeus.png",
+        "id": 11
+    },
+    {
+        "name": "Themis",
+        "description": "Titaness of divine law, order, and justice.",
+        "category": "Titaness",
+        "attributes": {
+            "origin": "Daughter of Uranus and Gaia",
+            "symbols": [
+                "Scales of justice",
+                "Law book"
+            ],
+            "abode": "Elysium",
+            "powers": [
+                "Divine justice",
+                "Prophecy"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Gaia"
+                ],
+                "siblings": [
+                    "Titans"
+                ],
+                "spouse": [
+                    "Zeus"
+                ]
+            },
+            "stories": [
+                "Enforcer of cosmic order",
+                "Mother of the Horae and Moirai"
+            ]
+        },
+        "image": "/api/titans/themis.png",
+        "id": 12
+    },
+    {
+        "name": "Tethys",
+        "description": "Titaness of fresh water and motherhood.",
+        "category": "Titaness",
+        "attributes": {
+            "origin": "Daughter of Uranus and Gaia",
+            "symbols": [
+                "Spring",
+                "Nurturing bowl"
+            ],
+            "abode": "Elysium",
+            "powers": [
+                "Control over fresh waters",
+                "Maternal wisdom"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Gaia"
+                ],
+                "siblings": [
+                    "Titans"
+                ],
+                "spouse": [
+                    "Oceanus"
+                ]
+            },
+            "stories": [
+                "Nurturer of rivers and streams",
+                "Protector of children"
+            ]
+        },
+        "image": "/api/titans/tethys.png",
+        "id": 13
+    },
+    {
+        "name": "Thea",
+        "description": "Titaness associated with sight and divine radiance.",
+        "category": "Titaness",
+        "attributes": {
+            "origin": "Daughter of Uranus and Gaia",
+            "symbols": [
+                "Bright halo",
+                "Shimmering aura"
+            ],
+            "abode": "Elysium",
+            "powers": [
+                "Illumination",
+                "Visionary guidance"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Gaia"
+                ],
+                "siblings": [
+                    "Titans"
+                ],
+                "spouse": [
+                    "Hyperion"
+                ]
+            },
+            "stories": [
+                "Mother of Helios, Selene, and Eos",
+                "Inspirer of seers"
+            ]
+        },
+        "image": "/api/titans/thea.png",
+        "id": 14
+    },
+    {
+        "name": "Rhea",
+        "description": "Titaness associated with fertility and motherhood.",
+        "category": "Titaness",
+        "attributes": {
+            "origin": "Daughter of Uranus and Gaia",
+            "symbols": [
+                "Cornucopia",
+                "Fertile soil"
+            ],
+            "abode": "Elysium",
+            "powers": [
+                "Fertility blessing",
+                "Maternal protection"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Gaia"
+                ],
+                "siblings": [
+                    "Titans"
+                ],
+                "spouse": [
+                    "Cronus"
+                ]
+            },
+            "stories": [
+                "Mother of Olympian gods",
+                "Protector of children"
+            ]
+        },
+        "image": "/api/titans/rhea.png",
+        "id": 15
+    },
+    {
+        "name": "Iapetus",
+        "description": "Titan associated with mortality and human life-span.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of Uranus and Gaia",
+            "symbols": [
+                "Chain",
+                "Human figurine"
+            ],
+            "abode": "Before Zeus' reign: Mount Othrys",
+            "powers": [
+                "Mortality bestowment",
+                "Endurance"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Gaia"
+                ],
+                "siblings": [
+                    "Titans"
+                ],
+                "spouse": [
+                    "Asia"
+                ]
+            },
+            "stories": [
+                "Father of Prometheus, Epimetheus, Menoetius, and Atlas",
+                "Role in human creation"
+            ]
+        },
+        "image": "/api/titans/iapetus.png",
+        "id": 16
+    },
+    {
+        "name": "Clymene",
+        "description": "Titaness associated with fame and renown.",
+        "category": "Titaness",
+        "attributes": {
+            "origin": "Daughter of Oceanus and Tethys",
+            "symbols": [
+                "Laurel wreath",
+                "Celebratory torch"
+            ],
+            "abode": "Mount Othrys",
+            "powers": [
+                "Prominence bestowment",
+                "Inspiration"
+            ],
+            "family": {
+                "parents": [
+                    "Oceanus",
+                    "Tethys"
+                ],
+                "siblings": [
+                    "Oceanids"
+                ],
+                "spouse": [
+                    "Iapetus"
+                ]
+            },
+            "stories": [
+                "Mother of Atlas, Prometheus, Epimetheus, and Menoetius",
+                "Role in Titanomachy"
+            ]
+        },
+        "image": "/api/titans/clymene.png",
+        "id": 17
+    },
+    {
+        "name": "Epimetheus",
+        "description": "Titan associated with afterthought and hindsight.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of Iapetus and Clymene",
+            "symbols": [
+                "Closed box",
+                "Broken chains"
+            ],
+            "abode": "Mount Othrys",
+            "powers": [
+                "Hindsight wisdom",
+                "Companionship"
+            ],
+            "family": {
+                "parents": [
+                    "Iapetus",
+                    "Clymene"
+                ],
+                "siblings": [
+                    "Atlas",
+                    "Prometheus",
+                    "Menoetius"
+                ],
+                "spouse": [
+                    "Pandora"
+                ]
+            },
+            "stories": [
+                "Role in creation of humanity",
+                "Guardian of Pandora's Box"
+            ]
+        },
+        "image": "/api/titans/epimetheus.png",
+        "id": 18
+    },
+    {
+        "name": "Menoetius",
+        "description": "Titan associated with rash action and reckless anger.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of Iapetus and Clymene",
+            "symbols": [
+                "Lightning bolt",
+                "Tempest"
+            ],
+            "abode": "Mount Othrys",
+            "powers": [
+                "Destruction prowess",
+                "Combat prowess"
+            ],
+            "family": {
+                "parents": [
+                    "Iapetus",
+                    "Clymene"
+                ],
+                "siblings": [
+                    "Atlas",
+                    "Prometheus",
+                    "Epimetheus"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Role in Titanomachy",
+                "Punishment by Zeus"
+            ]
+        },
+        "image": "/api/titans/menoetius.png",
+        "id": 19
+    },
+    {
+        "name": "Perses",
+        "description": "Titan associated with destruction and war.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of Crius and Eurybia",
+            "symbols": [
+                "Flaming sword",
+                "War helmet"
+            ],
+            "abode": "Mount Othrys",
+            "powers": [
+                "Battle prowess",
+                "Destruction"
+            ],
+            "family": {
+                "parents": [
+                    "Crius",
+                    "Eurybia"
+                ],
+                "siblings": [
+                    "Pallas",
+                    "Astraeus"
+                ],
+                "spouse": [
+                    "Asteria"
+                ]
+            },
+            "stories": [
+                "Role in Titanomachy",
+                "Defeat and imprisonment"
+            ]
+        },
+        "image": "/api/titans/perses.png",
+        "id": 20
+    },
+    {
+        "name": "Pallas",
+        "description": "Titan associated with war strategy and foresight.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of Crius and Eurybia",
+            "symbols": [
+                "Strategist's map",
+                "Battle flag"
+            ],
+            "abode": "Mount Othrys",
+            "powers": [
+                "Strategic wisdom",
+                "War planning"
+            ],
+            "family": {
+                "parents": [
+                    "Crius",
+                    "Eurybia"
+                ],
+                "siblings": [
+                    "Perses",
+                    "Astraeus"
+                ],
+                "spouse": [
+                    "Styx"
+                ]
+            },
+            "stories": [
+                "Role in Titanomachy",
+                "Guardian of the Underworld entrance"
+            ]
+        },
+        "image": "/api/titans/pallas.png",
+        "id": 21
+    },
+    {
+        "name": "Astraeus",
+        "description": "Titan associated with stars and nocturnal prophecy.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of Crius and Eurybia",
+            "symbols": [
+                "Stellar globe",
+                "Nocturnal veil"
+            ],
+            "abode": "Mount Othrys",
+            "powers": [
+                "Star manipulation",
+                "Nighttime foresight"
+            ],
+            "family": {
+                "parents": [
+                    "Crius",
+                    "Eurybia"
+                ],
+                "siblings": [
+                    "Perses",
+                    "Pallas"
+                ],
+                "spouse": [
+                    "Eos"
+                ]
+            },
+            "stories": [
+                "Role in Titanomachy",
+                "Father of the Anemoi (Wind gods)"
+            ]
+        },
+        "image": "/api/titans/astraeus.png",
+        "id": 22
+    },
+    {
+        "name": "Eos",
+        "description": "Titaness associated with dawn and rosy-fingered morning.",
+        "category": "Titaness",
+        "attributes": {
+            "origin": "Daughter of Hyperion and Theia",
+            "symbols": [
+                "Rosy veil",
+                "Morning dew"
+            ],
+            "abode": "Mount Othrys",
+            "powers": [
+                "Dawn awakening",
+                "Early light"
+            ],
+            "family": {
+                "parents": [
+                    "Hyperion",
+                    "Theia"
+                ],
+                "siblings": [
+                    "Helios",
+                    "Selene"
+                ],
+                "spouse": [
+                    "Astraeus"
+                ]
+            },
+            "stories": [
+                "Goddess of dawn",
+                "Lover of Tithonus"
+            ]
+        },
+        "image": "/api/titans/eos.png",
+        "id": 23
+    },
+    {
+        "name": "Lelantos",
+        "description": "Titan associated with air and the hunter's skill of stalking prey.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of Coeus and Phoebe",
+            "symbols": [
+                "Bow and arrow",
+                "Hunting cloak"
+            ],
+            "abode": "Forests and hunting grounds",
+            "powers": [
+                "Stealth",
+                "Air manipulation"
+            ],
+            "family": {
+                "parents": [
+                    "Coeus",
+                    "Phoebe"
+                ],
+                "siblings": [
+                    "Leto",
+                    "Asteria"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Master of the art of stalking prey",
+                "Patron of hunters"
+            ]
+        },
+        "image": "/api/titans/lelantos.png",
+        "id": 24
+    },
+    {
+        "name": "Metis",
+        "description": "Titaness of wisdom, prudence, and deep thought.",
+        "category": "Titaness",
+        "attributes": {
+            "origin": "Daughter of Oceanus and Tethys",
+            "symbols": [
+                "Owl",
+                "Wisdom scroll"
+            ],
+            "abode": "Mount Olympus (before being swallowed by Zeus)",
+            "powers": [
+                "Wisdom",
+                "Cunning intelligence"
+            ],
+            "family": {
+                "parents": [
+                    "Oceanus",
+                    "Tethys"
+                ],
+                "siblings": [
+                    "Oceanids"
+                ],
+                "spouse": [
+                    "Zeus"
+                ]
+            },
+            "stories": [
+                "Mother of Athena",
+                "Swallowed by Zeus"
+            ]
+        },
+        "image": "/api/titans/metis.png",
+        "id": 25
+    },
+    {
+        "name": "Styx",
+        "description": "Titaness of the river Styx and personification of hatred.",
+        "category": "Titaness",
+        "attributes": {
+            "origin": "Daughter of Oceanus and Tethys",
+            "symbols": [
+                "Black river",
+                "Adamantine gates"
+            ],
+            "abode": "Underworld",
+            "powers": [
+                "Binding oaths",
+                "Passage to the underworld"
+            ],
+            "family": {
+                "parents": [
+                    "Oceanus",
+                    "Tethys"
+                ],
+                "siblings": [
+                    "Oceanids"
+                ],
+                "spouse": [
+                    "Pallas"
+                ]
+            },
+            "stories": [
+                "Goddess of the river Styx",
+                "Protector of solemn oaths"
+            ]
+        },
+        "image": "/api/titans/styx.png",
+        "id": 26
+    },
+    {
+        "name": "Helios",
+        "description": "Titan god of the sun.",
+        "category": "Titan",
+        "attributes": {
+            "origin": "Son of Hyperion and Theia",
+            "symbols": [
+                "Chariot",
+                "Solar disc"
+            ],
+            "abode": "Palace in the eastern edge of the world",
+            "powers": [
+                "Solar radiance",
+                "All-seeing eye"
+            ],
+            "family": {
+                "parents": [
+                    "Hyperion",
+                    "Theia"
+                ],
+                "siblings": [
+                    "Selene",
+                    "Eos"
+                ],
+                "spouse": [
+                    "Rhode"
+                ]
+            },
+            "stories": [
+                "Daily journey across the sky",
+                "Cattle of the Sun incident"
+            ]
+        },
+        "image": "/api/titans/helios.png",
+        "id": 27
+    },
+    {
+        "name": "Selene",
+        "description": "Titaness of the moon.",
+        "category": "Titaness",
+        "attributes": {
+            "origin": "Daughter of Hyperion and Theia",
+            "symbols": [
+                "Crescent moon",
+                "Torch"
+            ],
+            "abode": "Sky",
+            "powers": [
+                "Lunar cycles",
+                "Night illumination"
+            ],
+            "family": {
+                "parents": [
+                    "Hyperion",
+                    "Theia"
+                ],
+                "siblings": [
+                    "Helios",
+                    "Eos"
+                ],
+                "spouse": [
+                    "Endymion"
+                ]
+            },
+            "stories": [
+                "Nightly journey across the sky",
+                "Love for Endymion"
+            ]
+        },
+        "image": "/api/titans/selene.png",
+        "id": 28
+    }
+]

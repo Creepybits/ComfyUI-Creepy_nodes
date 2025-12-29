@@ -1,0 +1,1828 @@
+[
+    {
+        "name": "Orpheus",
+        "description": "Legendary musician, poet, and prophet in the Greek myths. Son of Apollo.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Apollo and the muse Calliope",
+            "symbols": [
+                "Lyre",
+                "Orphic tablets"
+            ],
+            "abode": "Various, including the underworld",
+            "powers": [
+                "Musical prowess",
+                "Journey to the underworld"
+            ],
+            "family": {
+                "parents": [
+                    "Apollo",
+                    "Calliope"
+                ],
+                "siblings": [
+                    "Linus",
+                    "Aglaea",
+                    "Eupheme"
+                ],
+                "spouse": [
+                    "Eurydice"
+                ]
+            },
+            "stories": [
+                "Rescue of Eurydice from the underworld",
+                "Death at the hands of Maenads"
+            ]
+        },
+        "image": "/api/heroes/orpheus.png",
+        "id": 1
+    },
+    {
+        "name": "Theseus",
+        "description": "Hero and king of Athens, slayer of the Minotaur.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Aegeus and Aethra",
+            "symbols": [
+                "Sword",
+                "Thread"
+            ],
+            "abode": "Athens",
+            "powers": [
+                "Cunning",
+                "Bravery"
+            ],
+            "family": {
+                "parents": [
+                    "Aegeus",
+                    "Aethra"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Hippolyta",
+                    "Phaedra"
+                ]
+            },
+            "stories": [
+                "Labors and adventures",
+                "Minotaur's labyrinth"
+            ]
+        },
+        "image": "/api/heroes/theseus.png",
+        "id": 2
+    },
+    {
+        "name": "Achilles",
+        "description": "Greek hero of the Trojan War, known for his strength and bravery.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Peleus and Thetis",
+            "symbols": [
+                "Shield",
+                "Spear"
+            ],
+            "abode": "Phthia",
+            "powers": [
+                "Invulnerability (except for his heel)",
+                "Exceptional warrior"
+            ],
+            "family": {
+                "parents": [
+                    "Peleus",
+                    "Thetis"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Trojan War",
+                "The Iliad"
+            ]
+        },
+        "image": "/api/heroes/achilles.png",
+        "id": 3
+    },
+    {
+        "name": "Perseus",
+        "description": "Slayer of Medusa and rescuer of Andromeda.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Zeus and DanaÃ«",
+            "symbols": [
+                "Gorgon's head",
+                "Winged sandals"
+            ],
+            "abode": "Seriphos",
+            "powers": [
+                "Strength",
+                "Bravery"
+            ],
+            "family": {
+                "parents": [
+                    "Zeus",
+                    "DanaÃ«"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Andromeda"
+                ]
+            },
+            "stories": [
+                "Slaying Medusa",
+                "Rescuing Andromeda"
+            ]
+        },
+        "image": "/api/heroes/perseus.png",
+        "id": 4
+    },
+    {
+        "name": "Aeneas",
+        "description": "Trojan hero, the son of Aphrodite and Anchises.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Aphrodite and Anchises",
+            "symbols": [
+                "Golden bough",
+                "Shield"
+            ],
+            "abode": "Italy",
+            "powers": [
+                "Piety",
+                "Leadership"
+            ],
+            "family": {
+                "parents": [
+                    "Anchises",
+                    "Aphrodite"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Creusa",
+                    "Lavinia"
+                ]
+            },
+            "stories": [
+                "The Aeneid",
+                "Journey to Italy"
+            ]
+        },
+        "image": "/api/heroes/aeneas.png",
+        "id": 5
+    },
+    {
+        "name": "Jason",
+        "description": "Leader of the Argonauts in the quest for the Golden Fleece.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Aeson",
+            "symbols": [
+                "Golden Fleece",
+                "Argo"
+            ],
+            "abode": "Iolcus",
+            "powers": [
+                "Leadership",
+                "Cunning"
+            ],
+            "family": {
+                "parents": [
+                    "Aeson",
+                    "Alcimede"
+                ],
+                "siblings": [
+                    "Promachus"
+                ],
+                "spouse": [
+                    "Medea"
+                ]
+            },
+            "stories": [
+                "Quest for the Golden Fleece",
+                "Argonautica"
+            ]
+        },
+        "image": "/api/heroes/jason.png",
+        "id": 6
+    },
+    {
+        "name": "Bellerophon",
+        "description": "Hero who tamed Pegasus and slew the Chimera.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Poseidon or Glaucus",
+            "symbols": [
+                "Pegasus",
+                "Spear"
+            ],
+            "abode": "Corinth",
+            "powers": [
+                "Taming of Pegasus",
+                "Combat skills"
+            ],
+            "family": {
+                "parents": [
+                    "Poseidon or Glaucus",
+                    "Eurynome"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Philonoe"
+                ]
+            },
+            "stories": [
+                "Slaying of the Chimera",
+                "Fall from Pegasus"
+            ]
+        },
+        "image": "/api/heroes/bellerophon.png",
+        "id": 47
+    },
+    {
+        "name": "Castor",
+        "description": "One of the Dioscuri, twin brother of Pollux, known for his skill in horsemanship.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Leda and Tyndareus",
+            "symbols": [
+                "Horse",
+                "Spear"
+            ],
+            "abode": "Sparta",
+            "powers": [
+                "Horsemanship",
+                "Bravery"
+            ],
+            "family": {
+                "parents": [
+                    "Tyndareus",
+                    "Leda"
+                ],
+                "siblings": [
+                    "Pollux",
+                    "Helen",
+                    "Clytemnestra"
+                ],
+                "spouse": [
+                    "Phoebe"
+                ]
+            },
+            "stories": [
+                "Argonautica",
+                "Rescue of Helen"
+            ]
+        },
+        "image": "/api/heroes/castor.png",
+        "id": 8
+    },
+    {
+        "name": "Pollux",
+        "description": "One of the Dioscuri, twin brother of Castor, known for his boxing skills.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Zeus and Leda",
+            "symbols": [
+                "Boxing gloves",
+                "Horse"
+            ],
+            "abode": "Sparta",
+            "powers": [
+                "Boxing",
+                "Immortality"
+            ],
+            "family": {
+                "parents": [
+                    "Zeus",
+                    "Leda"
+                ],
+                "siblings": [
+                    "Castor",
+                    "Helen",
+                    "Clytemnestra"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Argonautica",
+                "Rescue of Helen"
+            ]
+        },
+        "image": "/api/heroes/pollux.png",
+        "id": 9
+    },
+    {
+        "name": "Ganymede",
+        "description": "Beautiful Trojan prince abducted by Zeus to be the cup-bearer to the gods.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Tros",
+            "symbols": [
+                "Cup",
+                "Eagle"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Beauty",
+                "Immortality"
+            ],
+            "family": {
+                "parents": [
+                    "Tros",
+                    "Callirrhoe"
+                ],
+                "siblings": [
+                    "Ilus",
+                    "Assaracus"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Abduction by Zeus"
+            ]
+        },
+        "image": "/api/heroes/ganymede.png",
+        "id": 10
+    },
+    {
+        "name": "Hippolytus",
+        "description": "Son of Theseus, known for his chastity and tragic death.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Theseus and Hippolyta",
+            "symbols": [
+                "Chariot",
+                "Horses"
+            ],
+            "abode": "Troezen",
+            "powers": [
+                "Chastity",
+                "Horsemanship"
+            ],
+            "family": {
+                "parents": [
+                    "Theseus",
+                    "Hippolyta"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Death by his own horses",
+                "Phaedra's love"
+            ]
+        },
+        "image": "/api/heroes/hippolytus.png",
+        "id": 11
+    },
+    {
+        "name": "Meleager",
+        "description": "Hero of the Calydonian Boar Hunt.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Oeneus and Althaea",
+            "symbols": [
+                "Spear",
+                "Boar"
+            ],
+            "abode": "Calydon",
+            "powers": [
+                "Strength",
+                "Hunting skills"
+            ],
+            "family": {
+                "parents": [
+                    "Oeneus",
+                    "Althaea"
+                ],
+                "siblings": [
+                    "Deianeira"
+                ],
+                "spouse": [
+                    "Cleopatra"
+                ]
+            },
+            "stories": [
+                "Calydonian Boar Hunt"
+            ]
+        },
+        "image": "/api/heroes/meleager.png",
+        "id": 12
+    },
+    {
+        "name": "Phaethon",
+        "description": "Son of Helios, known for his tragic attempt to drive the sun chariot.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Helios and Clymene",
+            "symbols": [
+                "Sun chariot",
+                "Horses"
+            ],
+            "abode": "Sky",
+            "powers": [
+                "Driving the sun chariot"
+            ],
+            "family": {
+                "parents": [
+                    "Helios",
+                    "Clymene"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Attempt to drive the sun chariot"
+            ]
+        },
+        "image": "/api/heroes/phaethon.png",
+        "id": 13
+    },
+    {
+        "name": "Atalanta",
+        "description": "Famous huntress and runner, known for her role in the Calydonian Boar Hunt.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Daughter of Iasus and Clymene",
+            "symbols": [
+                "Bow and arrows",
+                "Hunting dogs"
+            ],
+            "abode": "Arcadia",
+            "powers": [
+                "Speed",
+                "Hunting skills"
+            ],
+            "family": {
+                "parents": [
+                    "Iasus",
+                    "Clymene"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Melanion"
+                ]
+            },
+            "stories": [
+                "Calydonian Boar Hunt",
+                "Footrace with Melanion"
+            ]
+        },
+        "image": "/api/heroes/atalanta.png",
+        "id": 14
+    },
+    {
+        "name": "Theseus",
+        "description": "Founder-hero of Athens, known for slaying the Minotaur.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Aegeus and Aethra",
+            "symbols": [
+                "Sword",
+                "Sandals"
+            ],
+            "abode": "Athens",
+            "powers": [
+                "Strength",
+                "Cunning"
+            ],
+            "family": {
+                "parents": [
+                    "Aegeus",
+                    "Aethra"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Phaedra"
+                ]
+            },
+            "stories": [
+                "Labors of Theseus",
+                "Minotaur"
+            ]
+        },
+        "image": "/api/heroes/theseus.png",
+        "id": 16
+    },
+    {
+        "name": "Cadmus",
+        "description": "Founder of Thebes, known for slaying a dragon and sowing its teeth.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Agenor and Telephassa",
+            "symbols": [
+                "Dragon teeth",
+                "Sword"
+            ],
+            "abode": "Thebes",
+            "powers": [
+                "Cunning",
+                "Leadership"
+            ],
+            "family": {
+                "parents": [
+                    "Agenor",
+                    "Telephassa"
+                ],
+                "siblings": [
+                    "Europa",
+                    "Phoenix"
+                ],
+                "spouse": [
+                    "Harmonia"
+                ]
+            },
+            "stories": [
+                "Founding of Thebes",
+                "Dragon slaying"
+            ]
+        },
+        "image": "/api/heroes/cadmus.png",
+        "id": 17
+    },
+    {
+        "name": "Antigone",
+        "description": "Daughter of Oedipus, known for her defiance of King Creon in burying her brother.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Daughter of Oedipus and Jocasta",
+            "symbols": [
+                "Funeral rites",
+                "Veil"
+            ],
+            "abode": "Thebes",
+            "powers": [
+                "Courage",
+                "Loyalty"
+            ],
+            "family": {
+                "parents": [
+                    "Oedipus",
+                    "Jocasta"
+                ],
+                "siblings": [
+                    "Ismene",
+                    "Eteocles",
+                    "Polyneices"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Burying Polyneices",
+                "Defiance of Creon"
+            ]
+        },
+        "image": "/api/heroes/antigone.png",
+        "id": 18
+    },
+    {
+        "name": "Oedipus",
+        "description": "King of Thebes who solved the riddle of the Sphinx and unwittingly fulfilled a prophecy.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Laius and Jocasta",
+            "symbols": [
+                "Sphinx",
+                "Blindfold"
+            ],
+            "abode": "Thebes",
+            "powers": [
+                "Wisdom",
+                "Courage"
+            ],
+            "family": {
+                "parents": [
+                    "Laius",
+                    "Jocasta"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Jocasta"
+                ]
+            },
+            "stories": [
+                "Oedipus Rex",
+                "Solving the Sphinx's riddle"
+            ]
+        },
+        "image": "/api/heroes/oedipus.png",
+        "id": 19
+    },
+    {
+        "name": "Hector",
+        "description": "Trojan prince and greatest warrior of Troy during the Trojan War.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Priam and Hecuba",
+            "symbols": [
+                "Helmet",
+                "Sword"
+            ],
+            "abode": "Troy",
+            "powers": [
+                "Strength",
+                "Bravery"
+            ],
+            "family": {
+                "parents": [
+                    "Priam",
+                    "Hecuba"
+                ],
+                "siblings": [
+                    "Paris",
+                    "Cassandra"
+                ],
+                "spouse": [
+                    "Andromache"
+                ]
+            },
+            "stories": [
+                "Trojan War",
+                "Iliad"
+            ]
+        },
+        "image": "/api/heroes/hector.png",
+        "id": 20
+    },
+    {
+        "name": "Hippolyta",
+        "description": "Queen of the Amazons, known for her encounter with Heracles.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Daughter of Ares",
+            "symbols": [
+                "Girdle",
+                "Spear"
+            ],
+            "abode": "Themiscyra",
+            "powers": [
+                "Strength",
+                "Combat skills"
+            ],
+            "family": {
+                "parents": [
+                    "Ares",
+                    "Otrera"
+                ],
+                "siblings": [
+                    "Antiope",
+                    "Melanippe"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Encounter with Heracles",
+                "Amazonomachy"
+            ]
+        },
+        "image": "/api/heroes/hippolyta.png",
+        "id": 21
+    },
+    {
+        "name": "Philoctetes",
+        "description": "Greek hero, known for his archery skills and participation in the Trojan War.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Poeas",
+            "symbols": [
+                "Bow",
+                "Arrows"
+            ],
+            "abode": "Meliboea",
+            "powers": [
+                "Archery",
+                "Courage"
+            ],
+            "family": {
+                "parents": [
+                    "Poeas"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Trojan War",
+                "Wounding of Paris"
+            ]
+        },
+        "image": "/api/heroes/philoctetes.png",
+        "id": 22
+    },
+    {
+        "name": "Hylas",
+        "description": "Companion of Heracles, abducted by nymphs during the Argonauts' expedition.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Theiodamas",
+            "symbols": [
+                "Water jug",
+                "Club"
+            ],
+            "abode": "Arcadia",
+            "powers": [
+                "Beauty",
+                "Strength"
+            ],
+            "family": {
+                "parents": [
+                    "Theiodamas"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Abduction by Nymphs",
+                "Argonautica"
+            ]
+        },
+        "image": "/api/heroes/hylas.png",
+        "id": 23
+    },
+    {
+        "name": "Antiope",
+        "description": "Amazonian queen and warrior, known for her marriage to Theseus.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Daughter of Ares",
+            "symbols": [
+                "Spear",
+                "Shield"
+            ],
+            "abode": "Themiscyra",
+            "powers": [
+                "Strength",
+                "Combat skills"
+            ],
+            "family": {
+                "parents": [
+                    "Ares"
+                ],
+                "siblings": [
+                    "Hippolyta",
+                    "Melanippe"
+                ],
+                "spouse": [
+                    "Theseus"
+                ]
+            },
+            "stories": [
+                "Amazonomachy",
+                "Marriage to Theseus"
+            ]
+        },
+        "image": "/api/heroes/antiope.png",
+        "id": 24
+    },
+    {
+        "name": "Nestor",
+        "description": "King of Pylos and a wise counselor in the Trojan War.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Neleus",
+            "symbols": [
+                "Scepter",
+                "Cup"
+            ],
+            "abode": "Pylos",
+            "powers": [
+                "Wisdom",
+                "Longevity"
+            ],
+            "family": {
+                "parents": [
+                    "Neleus",
+                    "Chloris"
+                ],
+                "siblings": [
+                    "Periclymenus"
+                ],
+                "spouse": [
+                    "Anaxibia",
+                    "Eurydice"
+                ]
+            },
+            "stories": [
+                "Trojan War",
+                "Odyssey"
+            ]
+        },
+        "image": "/api/heroes/nestor.png",
+        "id": 25
+    },
+    {
+        "name": "Pandora",
+        "description": "First woman in Greek mythology, known for opening a box that released all the evils of humanity.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Created by Hephaestus",
+            "symbols": [
+                "Box",
+                "Curiosity"
+            ],
+            "abode": "Earth",
+            "powers": [
+                "Curiosity",
+                "Beauty"
+            ],
+            "family": {
+                "parents": [
+                    "Hephaestus"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Epimetheus"
+                ]
+            },
+            "stories": [
+                "Pandora's Box"
+            ]
+        },
+        "image": "/api/heroes/pandora.png",
+        "id": 26
+    },
+    {
+        "name": "Tithonus",
+        "description": "Trojan prince, lover of Eos (the dawn), granted immortality but not eternal youth.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Laomedon",
+            "symbols": [
+                "Lyre",
+                "Cicada"
+            ],
+            "abode": "East",
+            "powers": [
+                "Immortality"
+            ],
+            "family": {
+                "parents": [
+                    "Laomedon",
+                    "Strymo"
+                ],
+                "siblings": [
+                    "Priam",
+                    "Hesione"
+                ],
+                "spouse": [
+                    "Eos"
+                ]
+            },
+            "stories": [
+                "Love with Eos"
+            ]
+        },
+        "image": "/api/heroes/tithonus.png",
+        "id": 27
+    },
+    {
+        "name": "Amphiaraus",
+        "description": "A seer and hero of the Seven Against Thebes.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Oicles",
+            "symbols": [
+                "Serpent",
+                "Shield"
+            ],
+            "abode": "Argos",
+            "powers": [
+                "Prophecy",
+                "Combat skills"
+            ],
+            "family": {
+                "parents": [
+                    "Oicles",
+                    "Hypermnestra"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Eriphyle"
+                ]
+            },
+            "stories": [
+                "Seven Against Thebes"
+            ]
+        },
+        "image": "/api/heroes/amphiaraus.png",
+        "id": 28
+    },
+    {
+        "name": "Iphigenia",
+        "description": "Daughter of Agamemnon, known for her sacrifice at Aulis.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Daughter of Agamemnon and Clytemnestra",
+            "symbols": [
+                "Altar",
+                "Deer"
+            ],
+            "abode": "Aulis",
+            "powers": [
+                "Purity",
+                "Devotion"
+            ],
+            "family": {
+                "parents": [
+                    "Agamemnon",
+                    "Clytemnestra"
+                ],
+                "siblings": [
+                    "Electra",
+                    "Orestes"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Sacrifice at Aulis"
+            ]
+        },
+        "image": "/api/heroes/iphigenia.png",
+        "id": 29
+    },
+    {
+        "name": "Medea",
+        "description": "Sorceress, wife of Jason, known for her revenge against him.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Daughter of AeÃ«tes",
+            "symbols": [
+                "Cauldron",
+                "Dagger"
+            ],
+            "abode": "Colchis",
+            "powers": [
+                "Magic",
+                "Healing"
+            ],
+            "family": {
+                "parents": [
+                    "AeÃ«tes",
+                    "Idyia"
+                ],
+                "siblings": [
+                    "Absyrtus"
+                ],
+                "spouse": [
+                    "Jason",
+                    "Aegeus"
+                ]
+            },
+            "stories": [
+                "Golden Fleece",
+                "Revenge on Jason"
+            ]
+        },
+        "image": "/api/heroes/medea.png",
+        "id": 30
+    },
+    {
+        "name": "Adonis",
+        "description": "A youth of remarkable beauty, loved by Aphrodite.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Myrrha",
+            "symbols": [
+                "Anemone",
+                "Boar"
+            ],
+            "abode": "Earth",
+            "powers": [
+                "Beauty",
+                "Charm"
+            ],
+            "family": {
+                "parents": [
+                    "Myrrha",
+                    "Cinyras"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Aphrodite"
+                ]
+            },
+            "stories": [
+                "Adonis and Aphrodite",
+                "Death by Boar"
+            ]
+        },
+        "image": "/api/heroes/adonis.png",
+        "id": 31
+    },
+    {
+        "name": "Peleus",
+        "description": "Hero, father of Achilles, husband of the sea nymph Thetis.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Aeacus",
+            "symbols": [
+                "Sword",
+                "Spear"
+            ],
+            "abode": "Phthia",
+            "powers": [
+                "Strength",
+                "Bravery"
+            ],
+            "family": {
+                "parents": [
+                    "Aeacus",
+                    "EndeÃ¯s"
+                ],
+                "siblings": [
+                    "Telamon"
+                ],
+                "spouse": [
+                    "Thetis"
+                ]
+            },
+            "stories": [
+                "Marriage to Thetis",
+                "Father of Achilles"
+            ]
+        },
+        "image": "/api/heroes/peleus.png",
+        "id": 32
+    },
+    {
+        "name": "Teucer",
+        "description": "Archer and half-brother of Ajax the Great, fought in the Trojan War.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Telamon",
+            "symbols": [
+                "Bow",
+                "Arrow"
+            ],
+            "abode": "Salamis",
+            "powers": [
+                "Archery",
+                "Bravery"
+            ],
+            "family": {
+                "parents": [
+                    "Telamon",
+                    "Hesione"
+                ],
+                "siblings": [
+                    "Ajax the Great"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Trojan War"
+            ]
+        },
+        "image": "/api/heroes/teucer.png",
+        "id": 33
+    },
+    {
+        "name": "Diomedes",
+        "description": "Greek hero of the Trojan War, known for wounding Ares and Aphrodite.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Tydeus and Deipyle",
+            "symbols": [
+                "Chariot",
+                "Spear"
+            ],
+            "abode": "Argos",
+            "powers": [
+                "Combat prowess",
+                "Divine favor"
+            ],
+            "family": {
+                "parents": [
+                    "Tydeus",
+                    "Deipyle"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Aegialia"
+                ]
+            },
+            "stories": [
+                "Wounding of Ares",
+                "Trojan War exploits"
+            ]
+        },
+        "image": "/api/heroes/diomedes.png",
+        "id": 34
+    },
+    {
+        "name": "Andromache",
+        "description": "Wife of Hector, embodiment of wifely devotion in Greek mythology.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Daughter of Eetion",
+            "symbols": [
+                "Veil",
+                "City walls"
+            ],
+            "abode": "Troy",
+            "powers": [
+                "Loyalty",
+                "Endurance"
+            ],
+            "family": {
+                "parents": [
+                    "Eetion"
+                ],
+                "siblings": [
+                    "Seven brothers"
+                ],
+                "spouse": [
+                    "Hector",
+                    "Neoptolemus"
+                ]
+            },
+            "stories": [
+                "Farewell to Hector",
+                "Fall of Troy"
+            ]
+        },
+        "image": "/api/heroes/andromache.png",
+        "id": 35
+    },
+    {
+        "name": "Orion",
+        "description": "Giant huntsman placed among the stars by Zeus.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Poseidon and Euryale",
+            "symbols": [
+                "Belt",
+                "Club"
+            ],
+            "abode": "Constellation",
+            "powers": [
+                "Hunting skills",
+                "Gigantic size"
+            ],
+            "family": {
+                "parents": [
+                    "Poseidon",
+                    "Euryale"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Side"
+                ]
+            },
+            "stories": [
+                "Love of Merope",
+                "Blinding by Oenopion"
+            ]
+        },
+        "image": "/api/heroes/orion.png",
+        "id": 36
+    },
+    {
+        "name": "Aeneas",
+        "description": "Trojan hero, ancestor of the Romans, son of Venus and Anchises.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Venus and Anchises",
+            "symbols": [
+                "Trojan Penates",
+                "Golden Bough"
+            ],
+            "abode": "Troy, later Italy",
+            "powers": [
+                "Leadership",
+                "Divine protection"
+            ],
+            "family": {
+                "parents": [
+                    "Venus",
+                    "Anchises"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Creusa",
+                    "Lavinia"
+                ]
+            },
+            "stories": [
+                "Escape from Troy",
+                "Founding of Roman lineage"
+            ]
+        },
+        "image": "/api/heroes/aeneas.png",
+        "id": 37
+    },
+    {
+        "name": "Daedalus",
+        "description": "Legendary craftsman and artist, creator of the Labyrinth.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Metion",
+            "symbols": [
+                "Labyrinth",
+                "Wings"
+            ],
+            "abode": "Athens, later Crete",
+            "powers": [
+                "Inventiveness",
+                "Craftsmanship"
+            ],
+            "family": {
+                "parents": [
+                    "Metion",
+                    "Alcippe"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Naucrate"
+                ]
+            },
+            "stories": [
+                "Creation of the Labyrinth",
+                "Flight from Crete"
+            ]
+        },
+        "image": "/api/heroes/daedalus.png",
+        "id": 38
+    },
+    {
+        "name": "Atlanta",
+        "description": "Virgin huntress, only woman among the Argonauts.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Daughter of Iasus",
+            "symbols": [
+                "Golden apples",
+                "Bow"
+            ],
+            "abode": "Arcadia",
+            "powers": [
+                "Speed",
+                "Hunting skills"
+            ],
+            "family": {
+                "parents": [
+                    "Iasus",
+                    "Clymene"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Hippomenes"
+                ]
+            },
+            "stories": [
+                "Calydonian Boar Hunt",
+                "Race for marriage"
+            ]
+        },
+        "image": "/api/heroes/atlanta.png",
+        "id": 39
+    },
+    {
+        "name": "Iphicles",
+        "description": "Twin brother of Heracles, known for his mortality in contrast to his divine sibling.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Amphitryon and Alcmene",
+            "symbols": [
+                "Sword",
+                "Shield"
+            ],
+            "abode": "Thebes",
+            "powers": [
+                "Bravery",
+                "Mortal strength"
+            ],
+            "family": {
+                "parents": [
+                    "Amphitryon",
+                    "Alcmene"
+                ],
+                "siblings": [
+                    "Heracles"
+                ],
+                "spouse": [
+                    "Automedusa"
+                ]
+            },
+            "stories": [
+                "Birth of Heracles",
+                "Theban wars"
+            ]
+        },
+        "image": "/api/heroes/iphicles.png",
+        "id": 40
+    },
+    {
+        "name": "Cassandra",
+        "description": "Trojan princess with the gift of prophecy but cursed to never be believed.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Daughter of Priam and Hecuba",
+            "symbols": [
+                "Serpents",
+                "Laurel wreath"
+            ],
+            "abode": "Troy",
+            "powers": [
+                "Prophecy",
+                "Cursed foresight"
+            ],
+            "family": {
+                "parents": [
+                    "Priam",
+                    "Hecuba"
+                ],
+                "siblings": [
+                    "Hector",
+                    "Paris"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Prophecies of Troy's fall",
+                "Curse of Apollo"
+            ]
+        },
+        "image": "/api/heroes/cassandra.png",
+        "id": 41
+    },
+    {
+        "name": "Odysseus",
+        "description": "King of Ithaca, known for his cunning and ten-year journey home after the Trojan War.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Laertes and Anticlea",
+            "symbols": [
+                "Bow",
+                "Trojan Horse"
+            ],
+            "abode": "Ithaca",
+            "powers": [
+                "Cunning",
+                "Eloquence"
+            ],
+            "family": {
+                "parents": [
+                    "Laertes",
+                    "Anticlea"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Penelope"
+                ]
+            },
+            "stories": [
+                "Trojan War",
+                "Odyssey"
+            ]
+        },
+        "image": "/api/heroes/odysseus.png",
+        "id": 42
+    },
+    {
+        "name": "Deucalion",
+        "description": "Son of Prometheus, survivor of the great flood in Greek mythology.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Prometheus",
+            "symbols": [
+                "Ark",
+                "Stones"
+            ],
+            "abode": "Mount Parnassus",
+            "powers": [
+                "Survival",
+                "Repopulation"
+            ],
+            "family": {
+                "parents": [
+                    "Prometheus",
+                    "Pronoia"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Pyrrha"
+                ]
+            },
+            "stories": [
+                "Great Flood",
+                "Repopulation of Earth"
+            ]
+        },
+        "image": "/api/heroes/deucalion.png",
+        "id": 43
+    },
+    {
+        "name": "Penthesilea",
+        "description": "Amazonian queen who fought in the Trojan War.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Daughter of Ares",
+            "symbols": [
+                "Double-headed axe",
+                "Shield"
+            ],
+            "abode": "Themiscyra",
+            "powers": [
+                "Combat prowess",
+                "Leadership"
+            ],
+            "family": {
+                "parents": [
+                    "Ares",
+                    "Otrera"
+                ],
+                "siblings": [
+                    "Hippolyta",
+                    "Antiope"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Trojan War",
+                "Duel with Achilles"
+            ]
+        },
+        "image": "/api/heroes/penthesilea.png",
+        "id": 44
+    },
+    {
+        "name": "Laocoon",
+        "description": "Trojan priest who warned against the Trojan Horse.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Acoetes",
+            "symbols": [
+                "Serpents",
+                "Spear"
+            ],
+            "abode": "Troy",
+            "powers": [
+                "Prophecy",
+                "Priesthood"
+            ],
+            "family": {
+                "parents": [
+                    "Acoetes"
+                ],
+                "siblings": [
+                    "Anchises"
+                ],
+                "spouse": [
+                    "Unknown"
+                ]
+            },
+            "stories": [
+                "Warning against the Trojan Horse",
+                "Death by serpents"
+            ]
+        },
+        "image": "/api/heroes/laocoon.png",
+        "id": 45
+    },
+    {
+        "name": "Icarus",
+        "description": "Son of Daedalus who flew too close to the sun with wax wings.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Daedalus",
+            "symbols": [
+                "Wax wings",
+                "Sun"
+            ],
+            "abode": "Crete",
+            "powers": [
+                "Flight (temporary)"
+            ],
+            "family": {
+                "parents": [
+                    "Daedalus",
+                    "Naucrate"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Flight from Crete",
+                "Fall into the sea"
+            ]
+        },
+        "image": "/api/heroes/icarus.png",
+        "id": 46
+    },
+    {
+        "name": "Bellerophon",
+        "description": "Hero who tamed Pegasus and slew the Chimera.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Poseidon or Glaucus",
+            "symbols": [
+                "Pegasus",
+                "Spear"
+            ],
+            "abode": "Corinth",
+            "powers": [
+                "Taming of Pegasus",
+                "Combat skills"
+            ],
+            "family": {
+                "parents": [
+                    "Poseidon or Glaucus",
+                    "Eurynome"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Philonoe"
+                ]
+            },
+            "stories": [
+                "Slaying of the Chimera",
+                "Fall from Pegasus"
+            ]
+        },
+        "image": "/api/heroes/bellerophon.png",
+        "id": 47
+    },
+    {
+        "name": "Alcestis",
+        "description": "Queen of Pherae who sacrificed her life for her husband Admetus.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Daughter of Pelias",
+            "symbols": [
+                "Veil",
+                "Sacrifice altar"
+            ],
+            "abode": "Pherae",
+            "powers": [
+                "Self-sacrifice",
+                "Loyalty"
+            ],
+            "family": {
+                "parents": [
+                    "Pelias"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Admetus"
+                ]
+            },
+            "stories": [
+                "Sacrifice for Admetus",
+                "Rescue by Heracles"
+            ]
+        },
+        "image": "/api/heroes/alcestis.png",
+        "id": 48
+    },
+    {
+        "name": "Chrysippus",
+        "description": "Prince of Elis, known for his beauty and tragic fate.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Pelops",
+            "symbols": [
+                "Chariot",
+                "Lyre"
+            ],
+            "abode": "Elis",
+            "powers": [
+                "Beauty",
+                "Charm"
+            ],
+            "family": {
+                "parents": [
+                    "Pelops",
+                    "Axioche"
+                ],
+                "siblings": [
+                    "Atreus",
+                    "Thyestes"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Abduction by Laius",
+                "Curse on the House of Atreus"
+            ]
+        },
+        "image": "/api/heroes/chrysippus.png",
+        "id": 49
+    },
+    {
+        "name": "Electra",
+        "description": "Daughter of Agamemnon, known for her role in avenging her father's death.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Daughter of Agamemnon and Clytemnestra",
+            "symbols": [
+                "Urn",
+                "Dagger"
+            ],
+            "abode": "Mycenae",
+            "powers": [
+                "Determination",
+                "Loyalty"
+            ],
+            "family": {
+                "parents": [
+                    "Agamemnon",
+                    "Clytemnestra"
+                ],
+                "siblings": [
+                    "Orestes",
+                    "Iphigenia"
+                ],
+                "spouse": [
+                    "Pylades"
+                ]
+            },
+            "stories": [
+                "Revenge on Clytemnestra",
+                "Reunion with Orestes"
+            ]
+        },
+        "image": "/api/heroes/electra.png",
+        "id": 50
+    },
+    {
+        "name": "Aenon",
+        "description": "River god and lover of Aphrodite.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Son of Oceanus",
+            "symbols": [
+                "River",
+                "Reeds"
+            ],
+            "abode": "River Adonis",
+            "powers": [
+                "Water control",
+                "Fertility"
+            ],
+            "family": {
+                "parents": [
+                    "Oceanus",
+                    "Tethys"
+                ],
+                "siblings": [
+                    "River gods"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Love affair with Aphrodite",
+                "Transformation into river"
+            ]
+        },
+        "image": "/api/heroes/aenon.png",
+        "id": 51
+    },
+    {
+        "name": "Philemon",
+        "description": "Pious old man who, with his wife Baucis, showed hospitality to disguised gods.",
+        "category": "Hero",
+        "attributes": {
+            "origin": "Mortal man of Phrygia",
+            "symbols": [
+                "Oak tree",
+                "Temple"
+            ],
+            "abode": "Phrygia",
+            "powers": [
+                "Piety",
+                "Hospitality"
+            ],
+            "family": {
+                "parents": [
+                    "Unknown"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Baucis"
+                ]
+            },
+            "stories": [
+                "Hosting Zeus and Hermes",
+                "Transformation into trees"
+            ]
+        },
+        "image": "/api/heroes/philemon.png",
+        "id": 52
+    },
+    {
+        "name": "Nausicaa",
+        "description": "Phaeacian princess who aided Odysseus.",
+        "category": "Heroine",
+        "attributes": {
+            "origin": "Daughter of Alcinous and Arete",
+            "symbols": [
+                "Ball",
+                "Olive tree"
+            ],
+            "abode": "Scheria",
+            "powers": [
+                "Kindness",
+                "Beauty"
+            ],
+            "family": {
+                "parents": [
+                    "Alcinous",
+                    "Arete"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Meeting Odysseus",
+                "Helping Odysseus return home"
+            ]
+        },
+        "image": "/api/heroes/nausicaa.png",
+        "id": 53
+    }
+]

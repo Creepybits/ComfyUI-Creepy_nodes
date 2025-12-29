@@ -1,0 +1,1389 @@
+[
+    {
+        "name": "Zeus",
+        "description": "The king of the gods, the ruler of Mount Olympus, and the god of the sky, lightning, thunder, law, order, and justice.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Cronus and Rhea",
+            "symbols": [
+                "Thunderbolt",
+                "Eagle",
+                "Oak"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Control over the weather",
+                "Ability to hurl thunderbolts"
+            ],
+            "family": {
+                "parents": [
+                    "Cronus",
+                    "Rhea"
+                ],
+                "siblings": [
+                    "Hades",
+                    "Poseidon",
+                    "Hestia",
+                    "Demeter"
+                ],
+                "spouse": [
+                    "Hera"
+                ]
+            },
+            "stories": [
+                "Defeat of the Titans",
+                "The Birth of Hercules"
+            ]
+        },
+        "image": "/api/gods/zeus.png",
+        "id": 1
+    },
+    {
+        "name": "Athena",
+        "description": "Goddess of wisdom, war, and crafts. Patroness of Athens.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Sprung fully grown and armored from the forehead of Zeus",
+            "symbols": [
+                "Owl",
+                "Aegis (shield)"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Wisdom",
+                "Strategic warfare",
+                "Craftsmanship"
+            ],
+            "family": {
+                "parents": [
+                    "Zeus"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "The founding of Athens",
+                "Role in the Trojan War"
+            ]
+        },
+        "image": "/api/gods/athena.png",
+        "id": 2
+    },
+    {
+        "name": "Hestia",
+        "description": "Goddess of the hearth, home, and domesticity.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Daughter of Cronus and Rhea",
+            "symbols": [
+                "Hearth",
+                "Fire"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Control over domestic life",
+                "Keeper of the hearth"
+            ],
+            "family": {
+                "parents": [
+                    "Cronus",
+                    "Rhea"
+                ],
+                "siblings": [
+                    "Zeus",
+                    "Poseidon",
+                    "Hades",
+                    "Demeter",
+                    "Hera"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Maintaining the sacred fire of Olympus"
+            ]
+        },
+        "image": "/api/gods/hestia.png",
+        "id": 3
+    },
+    {
+        "name": "Apollo",
+        "description": "God of music, poetry, prophecy, and medicine. Twin brother of Artemis.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Zeus and Leto",
+            "symbols": [
+                "Lyre",
+                "Sun chariot"
+            ],
+            "abode": "Delphi (sacred site)",
+            "powers": [
+                "Healing",
+                "Prophecy",
+                "Archery"
+            ],
+            "family": {
+                "parents": [
+                    "Zeus",
+                    "Leto"
+                ],
+                "siblings": [
+                    "Artemis"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Slaying of Python",
+                "Musical contest with Marsyas"
+            ]
+        },
+        "image": "/api/gods/apollo.png",
+        "id": 4
+    },
+    {
+        "name": "Artemis",
+        "description": "Goddess of the hunt, wilderness, and childbirth. Twin sister of Apollo.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Daughter of Zeus and Leto",
+            "symbols": [
+                "Bow and arrows",
+                "Deer"
+            ],
+            "abode": "Mount Olympus and forests",
+            "powers": [
+                "Hunting prowess",
+                "Protection of young girls and animals"
+            ],
+            "family": {
+                "parents": [
+                    "Zeus",
+                    "Leto"
+                ],
+                "siblings": [
+                    "Apollo"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Actaeon's transformation",
+                "Involvement in the Trojan War"
+            ]
+        },
+        "image": "/api/gods/artemis.png",
+        "id": 5
+    },
+    {
+        "name": "Poseidon",
+        "description": "God of the sea, earthquakes, and horses. Brother of Zeus and Hades.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Cronus and Rhea",
+            "symbols": [
+                "Trident",
+                "Horse"
+            ],
+            "abode": "Mount Olympus and the oceans",
+            "powers": [
+                "Control over the sea",
+                "Creation of earthquakes"
+            ],
+            "family": {
+                "parents": [
+                    "Cronus",
+                    "Rhea"
+                ],
+                "siblings": [
+                    "Zeus",
+                    "Hades",
+                    "Hestia",
+                    "Demeter"
+                ],
+                "spouse": [
+                    "Amphitrite"
+                ]
+            },
+            "stories": [
+                "Creation of the horse",
+                "Role in the Odyssey"
+            ]
+        },
+        "image": "/api/gods/poseidon.png",
+        "id": 6
+    },
+    {
+        "name": "Hades",
+        "description": "God of the underworld and the dead. Brother of Zeus and Poseidon.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Cronus and Rhea",
+            "symbols": [
+                "Bident",
+                "Helmet of invisibility"
+            ],
+            "abode": "Underworld (Hades)",
+            "powers": [
+                "Control over the dead",
+                "Wealth of the earth"
+            ],
+            "family": {
+                "parents": [
+                    "Cronus",
+                    "Rhea"
+                ],
+                "siblings": [
+                    "Zeus",
+                    "Poseidon",
+                    "Hestia",
+                    "Demeter"
+                ],
+                "spouse": [
+                    "Persephone"
+                ]
+            },
+            "stories": [
+                "Abduction of Persephone",
+                "Judgment of the dead"
+            ]
+        },
+        "image": "/api/gods/hades.png",
+        "id": 7
+    },
+    {
+        "name": "Demeter",
+        "description": "Goddess of agriculture, fertility, and the harvest. Sister of Zeus, Poseidon, Hades, and Hestia.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Daughter of Cronus and Rhea",
+            "symbols": [
+                "Wheat",
+                "Cornucopia"
+            ],
+            "abode": "Mount Olympus and the earth",
+            "powers": [
+                "Control over agriculture",
+                "Seasonal changes"
+            ],
+            "family": {
+                "parents": [
+                    "Cronus",
+                    "Rhea"
+                ],
+                "siblings": [
+                    "Zeus",
+                    "Poseidon",
+                    "Hades",
+                    "Hestia"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Search for Persephone",
+                "Gift of agriculture to humanity"
+            ]
+        },
+        "image": "/api/gods/demeter.png",
+        "id": 8
+    },
+    {
+        "name": "Aphrodite",
+        "description": "Goddess of love, beauty, and desire. Born from the sea foam.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Born from the sea foam",
+            "symbols": [
+                "Dove",
+                "Rose"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Influence over love and desire",
+                "Charisma"
+            ],
+            "family": {
+                "parents": [
+                    "Uranus",
+                    "Sea (Uranus' genitals)"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Hephaestus",
+                    "Ares"
+                ]
+            },
+            "stories": [
+                "Judgment of Paris",
+                "Love affair with Ares"
+            ]
+        },
+        "image": "/api/gods/aphrodite.png",
+        "id": 9
+    },
+    {
+        "name": "Hera",
+        "description": "Goddess of marriage, women, and childbirth. Queen of the gods, sister and wife of Zeus.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Daughter of Cronus and Rhea",
+            "symbols": [
+                "Peacock",
+                "Cow"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Marriage and family",
+                "Protection of married women"
+            ],
+            "family": {
+                "parents": [
+                    "Cronus",
+                    "Rhea"
+                ],
+                "siblings": [
+                    "Zeus",
+                    "Poseidon",
+                    "Hades",
+                    "Demeter",
+                    "Hestia"
+                ],
+                "spouse": [
+                    "Zeus"
+                ]
+            },
+            "stories": [
+                "Jealousy and revenge against Zeus' lovers",
+                "Involvement in the Trojan War"
+            ]
+        },
+        "image": "/api/gods/hera.png",
+        "id": 10
+    },
+    {
+        "name": "Dionysus",
+        "description": "God of wine, parties, and festivals. Patron of the arts.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Zeus and Semele",
+            "symbols": [
+                "Wine cup (kantharos)",
+                "Grapevine"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Influence over wine and ecstasy",
+                "Theatre and drama"
+            ],
+            "family": {
+                "parents": [
+                    "Zeus",
+                    "Semele"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Ariadne"
+                ]
+            },
+            "stories": [
+                "Journey to Hades and back",
+                "Transformation of sailors into dolphins"
+            ]
+        },
+        "image": "/api/gods/dionysus.png",
+        "id": 11
+    },
+    {
+        "name": "Ares",
+        "description": "God of war, violence, and bloodshed. Son of Zeus and Hera.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Zeus and Hera",
+            "symbols": [
+                "Spear",
+                "Helmet"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Battle prowess",
+                "Conflict instigation"
+            ],
+            "family": {
+                "parents": [
+                    "Zeus",
+                    "Hera"
+                ],
+                "siblings": [
+                    "Many, including Hephaestus, Hebe, and Eileithyia"
+                ],
+                "spouse": [
+                    "Aphrodite"
+                ]
+            },
+            "stories": [
+                "War with the giants",
+                "Capture by the Aloadae"
+            ]
+        },
+        "image": "/api/gods/ares.png",
+        "id": 12
+    },
+    {
+        "name": "Hephaestus",
+        "description": "God of fire, metalworking, and craftsmanship. Son of Zeus and Hera.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Zeus and Hera",
+            "symbols": [
+                "Hammer",
+                "Anvil"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Master blacksmith",
+                "Fire control"
+            ],
+            "family": {
+                "parents": [
+                    "Zeus",
+                    "Hera"
+                ],
+                "siblings": [
+                    "Ares",
+                    "Hebe",
+                    "Eileithyia"
+                ],
+                "spouse": [
+                    "Aphrodite"
+                ]
+            },
+            "stories": [
+                "Creation of Pandora",
+                "Trapping Ares and Aphrodite"
+            ]
+        },
+        "image": "/api/gods/hephaestus.png",
+        "id": 13
+    },
+    {
+        "name": "Hercules (Heracles)",
+        "description": "A divine hero and the greatest of the Greek warriors, known for his strength and numerous adventures.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Zeus and Alcmene",
+            "symbols": [
+                "Club",
+                "Lion skin"
+            ],
+            "abode": "Elysium (after death)",
+            "powers": [
+                "Superhuman strength",
+                "Endurance",
+                "Courage"
+            ],
+            "family": {
+                "parents": [
+                    "Zeus",
+                    "Alcmene"
+                ],
+                "siblings": [
+                    "Many mortal children of Zeus"
+                ],
+                "spouse": [
+                    "Megara",
+                    "Deianira"
+                ]
+            },
+            "stories": [
+                "Twelve Labors",
+                "Quest for immortality"
+            ]
+        },
+        "image": "/api/gods/hercules-(heracles).png",
+        "id": 14
+    },
+    {
+        "name": "Persephone",
+        "description": "Goddess of springtime and queen of the underworld. Daughter of Demeter.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Daughter of Demeter and Zeus (abducted by Hades)",
+            "symbols": [
+                "Pomegranate",
+                "Spring flowers"
+            ],
+            "abode": "Underworld (Hades) for part of the year, Olympus otherwise",
+            "powers": [
+                "Bringing forth vegetation",
+                "Queen of the dead"
+            ],
+            "family": {
+                "parents": [
+                    "Zeus",
+                    "Demeter"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Hades"
+                ]
+            },
+            "stories": [
+                "Abduction myth",
+                "Role in the seasons"
+            ]
+        },
+        "image": "/api/gods/persephone.png",
+        "id": 15
+    },
+    {
+        "name": "Hermes",
+        "description": "God of trade, thieves, travelers, sports, and border crossings. Messenger of the gods.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Zeus and Maia",
+            "symbols": [
+                "Caduceus",
+                "Winged sandals"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Speed and agility",
+                "Guide of souls to the underworld"
+            ],
+            "family": {
+                "parents": [
+                    "Zeus",
+                    "Maia"
+                ],
+                "siblings": [
+                    "Dionysus",
+                    "Persephone",
+                    "Apollo",
+                    "Artemis",
+                    "Ares",
+                    "Hephaestus",
+                    "Hebe"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Theft of Apollo's cattle",
+                "Messenger of the gods"
+            ]
+        },
+        "image": "/api/gods/hermes.png",
+        "id": 16
+    },
+    {
+        "name": "Pan",
+        "description": "God of the wild, shepherds, flocks, and rustic music.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Hermes and a nymph",
+            "symbols": [
+                "Goat",
+                "Pan flute"
+            ],
+            "abode": "Mount Olympus and rustic areas",
+            "powers": [
+                "Wilderness and nature",
+                "Shepherds' guardian"
+            ],
+            "family": {
+                "parents": [
+                    "Hermes",
+                    "Nymph (varies)"
+                ],
+                "siblings": [
+                    "Many nature spirits"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Creation of the pan flute",
+                "Pursuit of nymphs"
+            ]
+        },
+        "image": "/api/gods/pan.png",
+        "id": 17
+    },
+    {
+        "name": "Nyx",
+        "description": "Goddess of the night and mother of many deities.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Self-formed at creation",
+            "symbols": [
+                "Stars",
+                "Night sky"
+            ],
+            "abode": "The cosmos",
+            "powers": [
+                "Control over night and darkness",
+                "Motherhood of gods"
+            ],
+            "family": {
+                "parents": [
+                    "None (self-formed)"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Erebus"
+                ]
+            },
+            "stories": [
+                "Parentage of many deities",
+                "Role in nightly cycle"
+            ]
+        },
+        "image": "/api/gods/nyx.png",
+        "id": 18
+    },
+    {
+        "name": "Eros (Cupid)",
+        "description": "God of love, attraction, and affection. Son of Aphrodite.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Aphrodite",
+            "symbols": [
+                "Bow and arrows",
+                "Hearts"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Influence over love and desire",
+                "Matchmaking"
+            ],
+            "family": {
+                "parents": [
+                    "Aphrodite",
+                    "Ares"
+                ],
+                "siblings": [
+                    "Harmonia",
+                    "Phobos",
+                    "Deimos"
+                ],
+                "spouse": [
+                    "Psyche"
+                ]
+            },
+            "stories": [
+                "Love affair with Psyche",
+                "Intervention in mortal affairs"
+            ]
+        },
+        "image": "/api/gods/eros-(cupid).png",
+        "id": 19
+    },
+    {
+        "name": "Nemesis",
+        "description": "Goddess of retribution, vengeance, and divine justice.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Daughter of Nyx (Night)",
+            "symbols": [
+                "Wheel",
+                "Sword"
+            ],
+            "abode": "Unknown, often associated with the underworld",
+            "powers": [
+                "Enforcement of moral order",
+                "Punishment of hubris"
+            ],
+            "family": {
+                "parents": [
+                    "Nyx"
+                ],
+                "siblings": [
+                    "Hypnos",
+                    "Thanatos",
+                    "Hemera",
+                    "Eris"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Punishment of the arrogant",
+                "Role in mythological justice"
+            ]
+        },
+        "image": "/api/gods/nemesis.png",
+        "id": 20
+    },
+    {
+        "name": "Aeolus",
+        "description": "God of the winds.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Hippotes",
+            "symbols": [
+                "Wind",
+                "Jar"
+            ],
+            "abode": "Floating island of Aeolia",
+            "powers": [
+                "Control over the winds"
+            ],
+            "family": {
+                "parents": [
+                    "Hippotes"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Odyssey, giving winds to Odysseus"
+            ]
+        },
+        "image": "/api/gods/aeolus.png",
+        "id": 22
+    },
+    {
+        "name": "Boreas",
+        "description": "God of the north wind and winter.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Astraeus and Eos",
+            "symbols": [
+                "North wind",
+                "Cold"
+            ],
+            "abode": "Thrace",
+            "powers": [
+                "Bringing winter"
+            ],
+            "family": {
+                "parents": [
+                    "Astraeus",
+                    "Eos"
+                ],
+                "siblings": [
+                    "Notus",
+                    "Zephyrus",
+                    "Eurus"
+                ],
+                "spouse": [
+                    "Oreithyia"
+                ]
+            },
+            "stories": [
+                "Abduction of Oreithyia"
+            ]
+        },
+        "image": "/api/gods/boreas.png",
+        "id": 23
+    },
+    {
+        "name": "Zephyrus",
+        "description": "God of the west wind.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Astraeus and Eos",
+            "symbols": [
+                "West wind",
+                "Gentle breeze"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Bringing gentle breezes"
+            ],
+            "family": {
+                "parents": [
+                    "Astraeus",
+                    "Eos"
+                ],
+                "siblings": [
+                    "Notus",
+                    "Boreas",
+                    "Eurus"
+                ],
+                "spouse": [
+                    "Chloris"
+                ]
+            },
+            "stories": [
+                "Various myths about gentle breezes"
+            ]
+        },
+        "image": "/api/gods/zephyrus.png",
+        "id": 24
+    },
+    {
+        "name": "Eurus",
+        "description": "God of the east wind.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Astraeus and Eos",
+            "symbols": [
+                "East wind",
+                "Storms"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Bringing storms"
+            ],
+            "family": {
+                "parents": [
+                    "Astraeus",
+                    "Eos"
+                ],
+                "siblings": [
+                    "Notus",
+                    "Boreas",
+                    "Zephyrus"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Various myths about storms"
+            ]
+        },
+        "image": "/api/gods/eurus.png",
+        "id": 25
+    },
+    {
+        "name": "Notus",
+        "description": "God of the south wind.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Astraeus and Eos",
+            "symbols": [
+                "South wind",
+                "Hot wind"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Bringing hot winds"
+            ],
+            "family": {
+                "parents": [
+                    "Astraeus",
+                    "Eos"
+                ],
+                "siblings": [
+                    "Boreas",
+                    "Zephyrus",
+                    "Eurus"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Various myths about hot winds"
+            ]
+        },
+        "image": "/api/gods/notus.png",
+        "id": 26
+    },
+    {
+        "name": "Anemoi",
+        "description": "Collective term for the gods of the winds.",
+        "category": "Gods",
+        "attributes": {
+            "origin": "Children of Astraeus and Eos",
+            "symbols": [
+                "Winds"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Control over winds"
+            ],
+            "family": {
+                "parents": [
+                    "Astraeus",
+                    "Eos"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Various myths about the winds"
+            ]
+        },
+        "image": "/api/gods/anemoi.png",
+        "id": 27
+    },
+    {
+        "name": "Eos",
+        "description": "Goddess of the dawn who opens the gates of heaven for the sun each day.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Daughter of Hyperion and Theia",
+            "symbols": [
+                "Dew",
+                "Rosy fingers"
+            ],
+            "abode": "Sky",
+            "powers": [
+                "Bringing dawn",
+                "Morning dew"
+            ],
+            "family": {
+                "parents": [
+                    "Hyperion",
+                    "Theia"
+                ],
+                "siblings": [
+                    "Helios",
+                    "Selene"
+                ],
+                "spouse": [
+                    "Tithonus"
+                ]
+            },
+            "stories": [
+                "Love for the mortal Tithonus"
+            ]
+        },
+        "image": "/api/gods/eos.png",
+        "id": 29
+    },
+    {
+        "name": "Iris",
+        "description": "Goddess of the rainbow and messenger of the gods.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Daughter of Thaumas and Electra",
+            "symbols": [
+                "Rainbow",
+                "Caduceus"
+            ],
+            "abode": "Sky",
+            "powers": [
+                "Communication",
+                "Speed"
+            ],
+            "family": {
+                "parents": [
+                    "Thaumas",
+                    "Electra"
+                ],
+                "siblings": [
+                    "Harpies"
+                ],
+                "spouse": [
+                    "Zephyrus"
+                ]
+            },
+            "stories": [
+                "Carrying messages for the gods"
+            ]
+        },
+        "image": "/api/gods/iris.png",
+        "id": 30
+    },
+    {
+        "name": "Tyche",
+        "description": "Goddess of fortune and prosperity.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Daughter of Oceanus and Tethys",
+            "symbols": [
+                "Cornucopia",
+                "Wheel"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Fortune",
+                "Prosperity"
+            ],
+            "family": {
+                "parents": [
+                    "Oceanus",
+                    "Tethys"
+                ],
+                "siblings": [
+                    "Nymphs",
+                    "Potamoi"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Granting fortunes to mortals"
+            ]
+        },
+        "image": "/api/gods/tyche.png",
+        "id": 31
+    },
+    {
+        "name": "Nike",
+        "description": "Goddess of victory. Daughter of Pallas and Styx.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Daughter of Pallas and Styx",
+            "symbols": [
+                "Wings",
+                "Laurel wreath"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Bringing victory",
+                "Speed"
+            ],
+            "family": {
+                "parents": [
+                    "Pallas",
+                    "Styx"
+                ],
+                "siblings": [
+                    "Kratos",
+                    "Bia",
+                    "Zelus"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Role in Titanomachy"
+            ]
+        },
+        "image": "/api/gods/nike.png",
+        "id": 32
+    },
+    {
+        "name": "Hebe",
+        "description": "divine embodiment of grace and renewal",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Daughter of Zeus and Hera",
+            "symbols": [
+                "Ornate Vessel",
+                "Laurel Crown"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Youthfulness",
+                "Cupbearing"
+            ],
+            "family": {
+                "parents": [
+                    "Zeus",
+                    "Hera"
+                ],
+                "siblings": [
+                    "Ares",
+                    "Hephaestus",
+                    "Eileithyia"
+                ],
+                "spouse": [
+                    "Heracles"
+                ]
+            },
+            "stories": [
+                "Marriage to Heracles"
+            ]
+        },
+        "image": "/api/gods/hebe.png",
+        "id": 33
+    },
+    {
+        "name": "Asclepius",
+        "description": "God of medicine and healing.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Apollo and Coronis",
+            "symbols": [
+                "Serpent-entwined staff"
+            ],
+            "abode": "Mount Olympus",
+            "powers": [
+                "Healing",
+                "Medicine"
+            ],
+            "family": {
+                "parents": [
+                    "Apollo",
+                    "Coronis"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Epione"
+                ]
+            },
+            "stories": [
+                "Various myths of healing and resurrection"
+            ]
+        },
+        "image": "/api/gods/asclepius.png",
+        "id": 34
+    },
+    {
+        "name": "Hypnos",
+        "description": "God of sleep.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Nyx and Erebus",
+            "symbols": [
+                "Poppy",
+                "River Lethe"
+            ],
+            "abode": "Underworld",
+            "powers": [
+                "Inducing sleep",
+                "Dreams"
+            ],
+            "family": {
+                "parents": [
+                    "Nyx",
+                    "Erebus"
+                ],
+                "siblings": [
+                    "Thanatos",
+                    "Nemesis"
+                ],
+                "spouse": [
+                    "Pasithea"
+                ]
+            },
+            "stories": [
+                "Putting Zeus to sleep"
+            ]
+        },
+        "image": "/api/gods/hypnos.png",
+        "id": 35
+    },
+    {
+        "name": "Erebus",
+        "description": "God of darkness and shadow. Brother and consort of Nyx.",
+        "category": "God",
+        "attributes": {
+            "origin": "Self-formed at the dawn of creation",
+            "symbols": [
+                "Shadow",
+                "Darkness"
+            ],
+            "abode": "Underworld",
+            "powers": [
+                "Control over darkness",
+                "Shadows"
+            ],
+            "family": {
+                "parents": [
+                    "None"
+                ],
+                "siblings": [
+                    "Nyx"
+                ],
+                "spouse": [
+                    "Nyx"
+                ]
+            },
+            "stories": [
+                "Creation of shadows"
+            ]
+        },
+        "image": "/api/gods/erebus.png",
+        "id": 36
+    },
+    {
+        "name": "Gaia",
+        "description": "Primordial goddess of the earth. Mother of the Titans and many other beings.",
+        "category": "Goddess",
+        "attributes": {
+            "origin": "Self-formed at the beginning of time",
+            "symbols": [
+                "Earth",
+                "Trees"
+            ],
+            "abode": "Earth",
+            "powers": [
+                "Creation of life",
+                "Earth"
+            ],
+            "family": {
+                "parents": [
+                    "None"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Uranus",
+                    "Pontus"
+                ]
+            },
+            "stories": [
+                "Birth of the Titans",
+                "Revolt against Uranus"
+            ]
+        },
+        "image": "/api/gods/gaia.png",
+        "id": 37
+    },
+    {
+        "name": "Uranus",
+        "description": "Primordial god of the sky. Father of the Titans.",
+        "category": "God",
+        "attributes": {
+            "origin": "Self-formed at the beginning of time",
+            "symbols": [
+                "Sky",
+                "Stars"
+            ],
+            "abode": "Sky",
+            "powers": [
+                "Sky",
+                "Fatherhood of the Titans"
+            ],
+            "family": {
+                "parents": [
+                    "None"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "Gaia"
+                ]
+            },
+            "stories": [
+                "Birth of the Titans",
+                "Castration by Cronus"
+            ]
+        },
+        "image": "/api/gods/uranus.png",
+        "id": 38
+    },
+    {
+        "name": "Thanatos",
+        "description": "God of death.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Nyx and Erebus",
+            "symbols": [
+                "Butterfly",
+                "Sword"
+            ],
+            "abode": "Underworld",
+            "powers": [
+                "Peaceful death",
+                "Guide to the underworld"
+            ],
+            "family": {
+                "parents": [
+                    "Nyx",
+                    "Erebus"
+                ],
+                "siblings": [
+                    "Hypnos",
+                    "Nemesis"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Capturing the souls of the dead"
+            ]
+        },
+        "image": "/api/gods/thanatos.png",
+        "id": 39
+    },
+    {
+        "name": "Janus",
+        "description": "Roman god of beginnings, gates, transitions, time, duality, doorways, passages, and endings.",
+        "category": "God",
+        "attributes": {
+            "origin": "Self-formed",
+            "symbols": [
+                "Two-faced head",
+                "Doors"
+            ],
+            "abode": "Everywhere",
+            "powers": [
+                "Transitions",
+                "Time"
+            ],
+            "family": {
+                "parents": [
+                    "None"
+                ],
+                "siblings": [
+                    "None"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Guardian of gateways and transitions"
+            ]
+        },
+        "image": "/api/gods/janus.png",
+        "id": 41
+    },
+    {
+        "name": "Morpheus",
+        "description": "God of dreams.",
+        "category": "God",
+        "attributes": {
+            "origin": "Son of Hypnos",
+            "symbols": [
+                "Wings",
+                "Poppy"
+            ],
+            "abode": "Dream world",
+            "powers": [
+                "Shaping dreams",
+                "Sleep"
+            ],
+            "family": {
+                "parents": [
+                    "Hypnos"
+                ],
+                "siblings": [
+                    "Phobetor",
+                    "Phantasos"
+                ],
+                "spouse": [
+                    "None"
+                ]
+            },
+            "stories": [
+                "Sending dreams to mortals"
+            ]
+        },
+        "image": "/api/gods/morpheus.png",
+        "id": 42
+    }
+]
