@@ -10,7 +10,7 @@ class KeywordExtractor:
         script_dir = os.path.dirname(os.path.abspath(__file__))
 
         assets_dir = os.path.dirname(script_dir)
-        filepath = os.path.join(assets_dir, "prompts", "face_detail.md")
+        filepath = os.path.join(assets_dir, "prompts", "keywords.txt")
 
         try:
             with open(filepath, "r", encoding="utf-8") as f:
@@ -49,3 +49,4 @@ NODE_CLASS_MAPPINGS = {
 NODE_DISPLAY_NAME_MAPPINGS = {
       "KeywordExtractor": "Keyword Extractor (Creepybits)",
 }
+
