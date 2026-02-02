@@ -26,7 +26,7 @@ from .assets.nodes.DynamicImageSwitch import NODE_CLASS_MAPPINGS as DynamicImage
 from .assets.nodes.EvaluaterNode import NODE_CLASS_MAPPINGS as EvaluaterNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as EvaluaterNode_NODE_DISPLAY_NAMES
 from .assets.nodes.PeopleEvaluationNode import NODE_CLASS_MAPPINGS as PeopleEvaluationNode_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as PeopleEvaluationNode_NODE_DISPLAY_NAMES
 from .assets.nodes.QWENPrompt import NODE_CLASS_MAPPINGS as QWENPrompt_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as QWENPrompt_NODE_DISPLAY_NAMES
-from .assets.nodes.creepy_directors_slate import NODE_CLASS_MAPPINGS as creepy_directors_slate_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as creepy_directors_slate_NODE_DISPLAY_NAMES
+from .assets.nodes.Creepy_directors_slate import NODE_CLASS_MAPPINGS as creepy_directors_slate_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as creepy_directors_slate_NODE_DISPLAY_NAMES
 from .assets.nodes.CustomNodeManager import NODE_CLASS_MAPPINGS as CustomNodeManager_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CustomNodeManager_NODE_DISPLAY_NAMES
 from .assets.nodes.DynamicDelayText import NODE_CLASS_MAPPINGS as DynamicDelayText_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as DynamicDelayText_NODE_DISPLAY_NAMES
 from .assets.nodes.CollectAndDistributeText import NODE_CLASS_MAPPINGS as CollectAndDistributeText_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as CollectAndDistributeText_NODE_DISPLAY_NAMES
@@ -39,7 +39,7 @@ from .assets.nodes.AudioKeywordExtractor import NODE_CLASS_MAPPINGS as AudioKeyw
 from .assets.nodes.IMGToIMGConditioning import NODE_CLASS_MAPPINGS as IMGToIMGConditioning_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as IMGToIMGConditioning_NODE_DISPLAY_NAMES
 from .assets.nodes.Coloring import NODE_CLASS_MAPPINGS as Coloring_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Coloring_NODE_DISPLAY_NAMES
 from .assets.nodes.Categorizer import NODE_CLASS_MAPPINGS as Categorizer_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Categorizer_NODE_DISPLAY_NAMES
-from .assets.nodes.conditional_lora_selector import NODE_CLASS_MAPPINGS as ConditionalLoRAApplier_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ConditionalLoRAApplier_NODE_DISPLAY_NAMES
+from .assets.nodes.Conditional_lora_selector import NODE_CLASS_MAPPINGS as ConditionalLoRAApplier_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ConditionalLoRAApplier_NODE_DISPLAY_NAMES
 from .assets.nodes.LoadBatchFromDir import NODE_CLASS_MAPPINGS as LoadBatchFromDir_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoadBatchFromDir_NODE_DISPLAY_NAMES
 from .assets.nodes.WanPrompter import NODE_CLASS_MAPPINGS as WanPrompter_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as WanPrompter_NODE_DISPLAY_NAMES
 from .assets.nodes.MasterKey import NODE_CLASS_MAPPINGS as MasterKey_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as MasterKey_NODE_DISPLAY_NAMES
@@ -99,7 +99,7 @@ NODE_CLASS_MAPPINGS = {
     **EvaluaterNode_NODE_MAPPINGS,
     **PeopleEvaluationNode_NODE_MAPPINGS,
     **QWENPrompt_NODE_MAPPINGS,
-    **creepy_directors_slate_NODE_MAPPINGS,
+    **Creepy_directors_slate_NODE_MAPPINGS,
     **CustomNodeManager_NODE_MAPPINGS,
     **DynamicDelayText_NODE_MAPPINGS,
     **CollectAndDistributeText_NODE_MAPPINGS,
@@ -160,7 +160,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **EvaluaterNode_NODE_DISPLAY_NAMES,
     **PeopleEvaluationNode_NODE_DISPLAY_NAMES,
     **QWENPrompt_NODE_DISPLAY_NAMES,
-    **creepy_directors_slate_NODE_DISPLAY_NAMES,
+    **Creepy_directors_slate_NODE_DISPLAY_NAMES,
     **CustomNodeManager_NODE_DISPLAY_NAMES,
     **DynamicDelayText_NODE_DISPLAY_NAMES,
     **CollectAndDistributeText_NODE_DISPLAY_NAMES,
@@ -226,6 +226,7 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
 
 
 
