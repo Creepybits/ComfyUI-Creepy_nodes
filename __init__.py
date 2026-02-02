@@ -211,7 +211,7 @@ for node_name, node_class in NODE_CLASS_MAPPINGS.items():
         setattr(node_class, "color", CREEPY_HEADER_COLOR)
         setattr(node_class, "bgcolor", CREEPY_BG_COLOR)
 
-__version__ = "2.7.5"
+__version__ = "2.8.2"
 
 
 WEB_DIRECTORY = "./web"
@@ -226,6 +226,7 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
 
 
 
