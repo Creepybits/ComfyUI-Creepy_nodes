@@ -3,7 +3,7 @@ import sys
 import subprocess
 
 
-# Add the path to your custom nodes directory to the Python path
+
 custom_nodes_path = os.path.dirname(os.path.abspath(__file__))
 assets_nodes_path = os.path.join(custom_nodes_path, "assets", "nodes")
 sys.path.append(assets_nodes_path)
@@ -34,8 +34,6 @@ from .assets.nodes.KeywordExtractor import NODE_CLASS_MAPPINGS as KeywordExtract
 from .assets.nodes.SummaryWriter import NODE_CLASS_MAPPINGS as SummaryWriter_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as SummaryWriter_NODE_DISPLAY_NAMES
 from .assets.nodes.FilterImages import NODE_CLASS_MAPPINGS as FilterImages_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FilterImages_NODE_DISPLAY_NAMES
 from .assets.nodes.LoadBatchImagesDir import NODE_CLASS_MAPPINGS as LoadBatchImagesDir_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoadBatchImagesDir_NODE_DISPLAY_NAMES
-from .assets.nodes.GeminiAPI import NODE_CLASS_MAPPINGS as GeminiAPICreepybits_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as GeminiAPICreepybits_NODE_DISPLAY_NAMES
-from .assets.nodes.GeminiAudioAnalyzer import NODE_CLASS_MAPPINGS as GeminiAudioAnalyzer_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as GeminiAudioAnalyzer_NODE_DISPLAY_NAMES
 from .assets.nodes.RandomAudioSegment import NODE_CLASS_MAPPINGS as RandomAudioSegment_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as RandomAudioSegment_NODE_DISPLAY_NAMES
 from .assets.nodes.AudioKeywordExtractor import NODE_CLASS_MAPPINGS as AudioKeywordExtractor_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as AudioKeywordExtractor_NODE_DISPLAY_NAMES
 from .assets.nodes.IMGToIMGConditioning import NODE_CLASS_MAPPINGS as IMGToIMGConditioning_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as IMGToIMGConditioning_NODE_DISPLAY_NAMES
@@ -64,6 +62,8 @@ from .assets.nodes.WorldWeaverPrompt import NODE_CLASS_MAPPINGS as WorldWeaverPr
 from .assets.nodes.TriggerNextWorkflow import NODE_CLASS_MAPPINGS as TriggerNextWorkflow_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as TriggerNextWorkflow_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.RandomScriptureNode import NODE_CLASS_MAPPINGS as RandomScriptureNode_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as RandomScriptureNode_NODE_DISPLAY_NAME_MAPPINGS
 from .assets.nodes.RandomGreekMythNode import NODE_CLASS_MAPPINGS as RandomGreekMythNode_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as RandomGreekMythNode_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.GeminiAPI import NODE_CLASS_MAPPINGS as GeminiAPICreepybits_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as GeminiAPICreepybits_NODE_DISPLAY_NAME_MAPPINGS
+from .assets.nodes.GeminiAudioAnalyzer import NODE_CLASS_MAPPINGS as GeminiAudioAnalyzer_NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as GeminiAudioAnalyzer_NODE_DISPLAY_NAMES_MAPPINGS
 
 
 
@@ -114,7 +114,7 @@ NODE_CLASS_MAPPINGS = {
     **IMGToIMGConditioning_NODE_MAPPINGS,
     **Coloring_NODE_MAPPINGS,
     **Categorizer_NODE_MAPPINGS,
-    **LoadBatchFromDir_NODE_MAPPINGS, # <--- ADD THIS LINE
+    **LoadBatchFromDir_NODE_MAPPINGS, 
     **ConditionalLoRAApplier_NODE_MAPPINGS,
     **WanPrompter_NODE_MAPPINGS,
     **MasterKey_NODE_MAPPINGS,
@@ -137,6 +137,8 @@ NODE_CLASS_MAPPINGS = {
     **TriggerNextWorkflow_NODE_CLASS_MAPPINGS,
     **RandomScriptureNode_NODE_CLASS_MAPPINGS,
     **RandomGreekMythNode_NODE_CLASS_MAPPINGS,
+    **GeminiAPICreepybits_NODE_CLASS_MAPPINGS,
+    **GeminiAudioAnalyzer_NODE_CLASS_MAPPINGS,
 
 }
 
@@ -173,7 +175,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **IMGToIMGConditioning_NODE_DISPLAY_NAMES,
     **Coloring_NODE_DISPLAY_NAMES,
     **Categorizer_NODE_DISPLAY_NAMES,
-    **LoadBatchFromDir_NODE_DISPLAY_NAMES, # <--- ADD THIS LINE
+    **LoadBatchFromDir_NODE_DISPLAY_NAMES, 
     **ConditionalLoRAApplier_NODE_DISPLAY_NAMES,
     **WanPrompter_NODE_DISPLAY_NAMES,
     **MasterKey_NODE_DISPLAY_NAMES,
@@ -196,6 +198,8 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **TriggerNextWorkflow_NODE_DISPLAY_NAME_MAPPINGS,
     **RandomScriptureNode_NODE_DISPLAY_NAME_MAPPINGS,
     **RandomGreekMythNode_NODE_DISPLAY_NAME_MAPPINGS,
+    **GeminiAPICreepybits_NODE_DISPLAY_NAME_MAPPINGS,
+    **GeminiAudioAnalyzer_NODE_DISPLAY_NAMES_MAPPINGS,
 }
 
 CREEPY_HEADER_COLOR = "#500b50"  # Purple
@@ -207,7 +211,7 @@ for node_name, node_class in NODE_CLASS_MAPPINGS.items():
         setattr(node_class, "color", CREEPY_HEADER_COLOR)
         setattr(node_class, "bgcolor", CREEPY_BG_COLOR)
 
-__version__ = "2.7.3"
+__version__ = "2.7.5"
 
 
 WEB_DIRECTORY = "./web"
@@ -222,6 +226,7 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
 
 
 
