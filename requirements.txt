@@ -8,4 +8,5 @@ requests
 sounddevice
 standard-imghdr
 urllib3>=2.6.3
-protobuf==4.25.3
+protobuf==4.25.8
+
