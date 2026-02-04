@@ -21,7 +21,6 @@ SAFETY_THRESHOLD_MAP = {
 }
 
 def get_api_key_list():
-    """Helper to load labels for the dropdown menu from the JSON config"""
     if os.path.exists(API_CONFIG_PATH):
         try:
             with open(API_CONFIG_PATH, 'r') as f:
@@ -34,7 +33,7 @@ def get_api_key_list():
 class GeminiAudioAnalyzer:
     """
     Updated for google-genai SDK (Jan 2026).
-    A custom node for ComfyUI that uses the Google Gen AI SDK for text and audio analysis.
+    Includes the 'Handshake Fix' for empty audio/instruction inputs.
     """
 
     CATEGORY = "Creepybits/Audio"
@@ -49,7 +48,7 @@ class GeminiAudioAnalyzer:
             "required": {
                 "system_prompt": ("STRING", {"multiline": True, "default": "You are a professional audio analyst."}),
                 "user_instructions": ("STRING", {"multiline": True, "default": "Describe the audio input in detail."}),
-                "model": (["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-1.5-pro", "gemini-1.5-flash"],),
+                "model": (["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-2.5-flash-lite-preview-09-2025", "gemini-2.5-flash-preview-09-2025", "gemini-2.0-flash-exp"],),
                 "api_key_selection": (key_list,),
             },
             "optional": {
@@ -72,19 +71,14 @@ class GeminiAudioAnalyzer:
                 with open(API_CONFIG_PATH, 'r') as f:
                     config = json.load(f)
                     key_file_path = config.get(api_key_selection)
-
                     if key_file_path and os.path.exists(key_file_path):
                         with open(key_file_path, 'r') as kf:
                             api_key = kf.read().strip()
-                    else:
-                        return (f"Error: Key file for '{api_key_selection}' not found.",)
             except Exception as e:
                 return (f"Error reading key config: {e}",)
 
-        if not api_key:
-            return ("Error: Gemini API key not found.",)
+        if not api_key: return ("Error: Gemini API key not found.",)
 
-        # Initialize the Unified Client
         try:
             client = genai.Client(api_key=api_key)
         except Exception as e:
@@ -100,31 +94,23 @@ class GeminiAudioAnalyzer:
             try:
                 waveform = audio["waveform"]
                 sample_rate = audio["sample_rate"]
-
-                # Ensure [Channels, Samples] format
-                if waveform.dim() == 3:
-                    waveform = waveform.squeeze(0)
-                elif waveform.dim() == 1:
-                    waveform = waveform.unsqueeze(0)
-
-                # Mixdown to Mono if necessary
-                if waveform.shape[0] > 1:
-                    waveform = torch.mean(waveform, dim=0, keepdim=True)
-
-                # Resample to 16kHz (Standard for Gemini Audio)
-                if sample_rate != 16000:
-                    waveform = torchaudio.functional.resample(waveform, sample_rate, 16000)
-
-                # Save to WAV buffer
+                if waveform.dim() == 3: waveform = waveform.squeeze(0)
+                elif waveform.dim() == 1: waveform = waveform.unsqueeze(0)
+                if waveform.shape[0] > 1: waveform = torch.mean(waveform, dim=0, keepdim=True)
+                if sample_rate != 16000: waveform = torchaudio.functional.resample(waveform, sample_rate, 16000)
                 buffer = BytesIO()
                 torchaudio.save(buffer, waveform, 16000, format="WAV")
-                audio_bytes = buffer.getvalue()
-
-                # Add to content parts as types.Part
-                contents.append(types.Part.from_bytes(data=audio_bytes, mime_type="audio/wav"))
-
+                contents.append(types.Part.from_bytes(data=buffer.getvalue(), mime_type="audio/wav"))
             except Exception as e:
                 return (f"Error processing audio: {e}",)
+
+        # --- THE FIX: Fallback for No-Audio / No-Instruction Mode ---
+        if not contents:
+            if system_prompt and system_prompt.strip():
+                # Satisfy the requirement for at least one User message
+                contents.append("Please provide an analysis based on your current instructions.")
+            else:
+                return ("Error: No input provided (need system prompt, instructions, or audio).",)
 
         # Build Config
         safety_settings = [
@@ -151,7 +137,6 @@ class GeminiAudioAnalyzer:
                 config=types.GenerateContentConfig(**generate_config)
             )
             return (response.text,)
-
         except Exception as e:
             return (f"API Error: {str(e)}",)
 

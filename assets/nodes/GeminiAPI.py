@@ -18,7 +18,6 @@ SAFETY_THRESHOLD_MAP = {
 }
 
 def get_api_key_list():
-    """Helper to load labels for the dropdown menu from the JSON config"""
     if os.path.exists(API_CONFIG_PATH):
         try:
             with open(API_CONFIG_PATH, 'r') as f:
@@ -40,7 +39,7 @@ class GeminiAPICreepybits:
         return {
             "required": {
                 "system_prompt": ("STRING", {"multiline": True, "default": ""}),
-                "model": (["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-2.0-pro-exp-0205", "gemini-1.5-pro", "gemini-1.5-flash"],),
+                "model": (["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-2.5-flash-lite-preview-09-2025", "gemini-2.5-flash-preview-09-2025", "gemini-2.0-flash-exp"],),
                 "max_output_tokens": ("INT", {"default": 1024, "min": 1, "max": 8192}),
                 "temperature": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 2.0, "step": 0.1}),
                 "top_p": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 1.0, "step": 0.01}),
@@ -67,26 +66,18 @@ class GeminiAPICreepybits:
             try:
                 with open(API_CONFIG_PATH, 'r') as f:
                     config = json.load(f)
-                    # Get the path to the text file from the JSON
                     key_file_path = config.get(api_key_selection)
-
                     if key_file_path and os.path.exists(key_file_path):
-                        # READ the actual key from the pointed-to text file
                         with open(key_file_path, 'r') as kf:
                             api_key = kf.read().strip()
-                    else:
-                        return (f"Error: Path for '{api_key_selection}' not found or invalid: {key_file_path}",)
             except Exception as e:
                 return (f"Error reading key config: {e}",)
 
-        if not api_key:
-            return ("Error: API key could not be extracted from the specified file.",)
+        if not api_key: return ("Error: API key not found.",)
 
-        # Initialize the Unified Client with the REAL key
         try:
             client = genai.Client(api_key=api_key)
-        except Exception as e:
-            return (f"Error initializing Client: {e}",)
+        except Exception as e: return (f"Error initializing Client: {e}",)
 
         # Prepare Content
         contents = []
@@ -101,8 +92,15 @@ class GeminiAPICreepybits:
                     target_size = int(resize_image_to)
                     img.thumbnail((target_size, target_size), Image.LANCZOS)
                 contents.append(img)
-            except Exception as e:
-                return (f"Error processing image: {e}",)
+            except Exception as e: return (f"Error processing image: {e}",)
+
+        # --- THE FIX: Fallback for Text-Only Mode ---
+        if not contents:
+            if system_prompt and system_prompt.strip():
+                # If only system prompt is provided, we send a generic trigger message
+                contents.append("Please respond based on your system instructions.")
+            else:
+                return ("Error: No input provided (need system prompt, instructions, or image).",)
 
         # Build Config
         safety_settings = [
@@ -123,7 +121,6 @@ class GeminiAPICreepybits:
         if thinking_mode == "enable":
             generate_config["thinking_config"] = {"include_thoughts": True}
 
-        # API Call
         try:
             response = client.models.generate_content(
                 model=model,
