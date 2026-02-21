@@ -99,7 +99,7 @@ NODE_CLASS_MAPPINGS = {
     **EvaluaterNode_NODE_MAPPINGS,
     **PeopleEvaluationNode_NODE_MAPPINGS,
     **QWENPrompt_NODE_MAPPINGS,
-    **Creepy_directors_slate_NODE_MAPPINGS,
+    **creepy_directors_slate_NODE_MAPPINGS,
     **CustomNodeManager_NODE_MAPPINGS,
     **DynamicDelayText_NODE_MAPPINGS,
     **CollectAndDistributeText_NODE_MAPPINGS,
@@ -112,7 +112,7 @@ NODE_CLASS_MAPPINGS = {
     **IMGToIMGConditioning_NODE_MAPPINGS,
     **Coloring_NODE_MAPPINGS,
     **Categorizer_NODE_MAPPINGS,
-    **LoadBatchFromDir_NODE_MAPPINGS, 
+    **LoadBatchFromDir_NODE_MAPPINGS,
     **ConditionalLoRAApplier_NODE_MAPPINGS,
     **WanPrompter_NODE_MAPPINGS,
     **MasterKey_NODE_MAPPINGS,
@@ -158,7 +158,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **EvaluaterNode_NODE_DISPLAY_NAMES,
     **PeopleEvaluationNode_NODE_DISPLAY_NAMES,
     **QWENPrompt_NODE_DISPLAY_NAMES,
-    **Creepy_directors_slate_NODE_DISPLAY_NAMES,
+    **creepy_directors_slate_NODE_DISPLAY_NAMES,
     **CustomNodeManager_NODE_DISPLAY_NAMES,
     **DynamicDelayText_NODE_DISPLAY_NAMES,
     **CollectAndDistributeText_NODE_DISPLAY_NAMES,
@@ -171,7 +171,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **IMGToIMGConditioning_NODE_DISPLAY_NAMES,
     **Coloring_NODE_DISPLAY_NAMES,
     **Categorizer_NODE_DISPLAY_NAMES,
-    **LoadBatchFromDir_NODE_DISPLAY_NAMES, 
+    **LoadBatchFromDir_NODE_DISPLAY_NAMES,
     **ConditionalLoRAApplier_NODE_DISPLAY_NAMES,
     **WanPrompter_NODE_DISPLAY_NAMES,
     **MasterKey_NODE_DISPLAY_NAMES,
@@ -222,15 +222,3 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
-
-
-
-
-
-
-
-
-
-
-
-
