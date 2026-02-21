@@ -1,12 +1,11 @@
 importlib_metadata==8.6.1
-numpy<2.0.0
+numpy
 packaging==24.2
 google-genai
-Pillow==12.1.1
+Pillow
 opencv-python
 requests
 sounddevice
 standard-imghdr
 urllib3>=2.6.3
 protobuf==5.29.6
-
