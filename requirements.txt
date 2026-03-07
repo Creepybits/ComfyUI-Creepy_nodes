@@ -7,5 +7,6 @@ opencv-python
 requests
 sounddevice
 standard-imghdr
-urllib3>=2.6.3
-protobuf==5.29.6
+urllib3
+
+
