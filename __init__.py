@@ -37,7 +37,6 @@ from .assets.nodes.LoadBatchImagesDir import NODE_CLASS_MAPPINGS as LoadBatchIma
 from .assets.nodes.RandomAudioSegment import NODE_CLASS_MAPPINGS as RandomAudioSegment_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as RandomAudioSegment_NODE_DISPLAY_NAMES
 from .assets.nodes.AudioKeywordExtractor import NODE_CLASS_MAPPINGS as AudioKeywordExtractor_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as AudioKeywordExtractor_NODE_DISPLAY_NAMES
 from .assets.nodes.IMGToIMGConditioning import NODE_CLASS_MAPPINGS as IMGToIMGConditioning_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as IMGToIMGConditioning_NODE_DISPLAY_NAMES
-from .assets.nodes.Coloring import NODE_CLASS_MAPPINGS as Coloring_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Coloring_NODE_DISPLAY_NAMES
 from .assets.nodes.Categorizer import NODE_CLASS_MAPPINGS as Categorizer_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as Categorizer_NODE_DISPLAY_NAMES
 from .assets.nodes.Conditional_lora_selector import NODE_CLASS_MAPPINGS as ConditionalLoRAApplier_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as ConditionalLoRAApplier_NODE_DISPLAY_NAMES
 from .assets.nodes.LoadBatchFromDir import NODE_CLASS_MAPPINGS as LoadBatchFromDir_NODE_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as LoadBatchFromDir_NODE_DISPLAY_NAMES
@@ -110,7 +109,6 @@ NODE_CLASS_MAPPINGS = {
     **RandomAudioSegment_NODE_MAPPINGS,
     **AudioKeywordExtractor_NODE_MAPPINGS,
     **IMGToIMGConditioning_NODE_MAPPINGS,
-    **Coloring_NODE_MAPPINGS,
     **Categorizer_NODE_MAPPINGS,
     **LoadBatchFromDir_NODE_MAPPINGS,
     **ConditionalLoRAApplier_NODE_MAPPINGS,
@@ -169,7 +167,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     **RandomAudioSegment_NODE_DISPLAY_NAMES,
     **AudioKeywordExtractor_NODE_DISPLAY_NAMES,
     **IMGToIMGConditioning_NODE_DISPLAY_NAMES,
-    **Coloring_NODE_DISPLAY_NAMES,
     **Categorizer_NODE_DISPLAY_NAMES,
     **LoadBatchFromDir_NODE_DISPLAY_NAMES,
     **ConditionalLoRAApplier_NODE_DISPLAY_NAMES,
@@ -222,3 +219,4 @@ for node_name in NODE_CLASS_MAPPINGS.keys():
 if 'WEB_DIRECTORY' in locals():
     print(f"Web directory for custom UI: {WEB_DIRECTORY}")
 print("-------------------------------------------------------------------")
+
