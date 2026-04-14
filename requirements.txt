@@ -2,7 +2,7 @@ importlib_metadata==8.6.1
 numpy
 packaging==24.2
 google-genai
-Pillow
+pillow>=12.2.0
 opencv-python
 requests>=2.33.0
 sounddevice
