@@ -7,7 +7,7 @@ import torch
 import numpy as np
 
 # Path to your central API key config
-API_CONFIG_PATH = r"C:\AI\Comfy\ComfyUI\custom_nodes\comfyui_creepy_nodes\assets\scripts\api_keys_config.json"
+API_CONFIG_PATH = r"C:\PATH\TO\YOUR\API_KEY\api_keys_config.json"
 DEFAULT_THINKING_BUDGET = 4096
 
 SAFETY_THRESHOLD_MAP = {
