@@ -7,7 +7,7 @@ import torch
 import numpy as np
 
 # Path to your central API key config
-API_CONFIG_PATH = r"C:\AI\Comfy\ComfyUI\custom_nodes\Creepy_nodes\assets\scripts\api_keys_config.json"
+API_CONFIG_PATH = r"C:\AI\Comfy\ComfyUI\custom_nodes\comfyui_creepy_nodes\assets\scripts\api_keys_config.json"
 DEFAULT_THINKING_BUDGET = 4096
 
 SAFETY_THRESHOLD_MAP = {
@@ -39,7 +39,7 @@ class GeminiAPICreepybits:
         return {
             "required": {
                 "system_prompt": ("STRING", {"multiline": True, "default": ""}),
-                "model": (["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-2.5-flash-lite-preview-09-2025", "gemini-2.5-flash-preview-09-2025", "gemini-2.0-flash-exp"],),
+                "model": (["gemini-2.5-flash-lite", "gemini-2.5-flash"],),
                 "max_output_tokens": ("INT", {"default": 1024, "min": 1, "max": 8192}),
                 "temperature": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 2.0, "step": 0.1}),
                 "top_p": ("FLOAT", {"default": 0.9, "min": 0.0, "max": 1.0, "step": 0.01}),
