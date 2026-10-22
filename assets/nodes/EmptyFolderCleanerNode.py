@@ -33,11 +33,18 @@ class EmptyFolderCleanerNode:
         print(f"{mode_str} empty folders in '{target_folder}'...")
 
         folders_processed_count = 0
+        removed = set()
 
         try:
-            # We walk from the bottom up to handle nested empty folders correctly
+            # We walk from the bottom up to handle nested empty folders correctly.
+            # os.walk lists a folder's subfolders before visiting them, so a folder whose only
+            # contents are empty folders still lists them; count it as empty if every subfolder
+            # was (or in a dry run, would be) removed.
             for dirpath, dirnames, filenames in os.walk(target_folder, topdown=False):
-                if not dirnames and not filenames:
+                if os.path.normcase(os.path.abspath(dirpath)) == os.path.normcase(os.path.abspath(target_folder)):
+                    continue  # never delete the target folder itself
+                if not filenames and all(os.path.join(dirpath, d) in removed for d in dirnames):
+                    removed.add(dirpath)
                     # This is an empty folder, so we always count it
                     folders_processed_count += 1
 
@@ -48,6 +55,8 @@ class EmptyFolderCleanerNode:
                             os.rmdir(dirpath)
                         except OSError as e:
                             print(f"Error deleting {dirpath}: {e}")
+                            removed.discard(dirpath)
+                            folders_processed_count -= 1
                     else:
                         # In dry run mode, we just log what we found
                         print(f"Preview: Found empty folder: {dirpath}")

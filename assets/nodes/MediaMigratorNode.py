@@ -2,6 +2,18 @@ import os
 import shutil
 import folder_paths
 
+
+def unique_path(path):
+    """Returns path, or path with _1, _2, ... added before the extension if it already exists,
+    so a move never silently overwrites an existing file."""
+    if not os.path.exists(path):
+        return path
+    base, ext = os.path.splitext(path)
+    counter = 1
+    while os.path.exists(f"{base}_{counter}{ext}"):
+        counter += 1
+    return f"{base}_{counter}{ext}"
+
 class MediaMigratorNode:
     """
     A ComfyUI node to move media files from a source folder to a destination,
@@ -29,6 +41,10 @@ class MediaMigratorNode:
     CATEGORY = "Creepybits_Utils/FileIO" # Adjusted to match your pack
 
     def execute_migration(self, source_folder, destination_drive, execute_move):
+        # Normalise so a trailing slash or ".." can't slip past the "destination inside source" check.
+        source_folder = os.path.abspath(source_folder.strip())
+        destination_drive = os.path.abspath(destination_drive.strip())
+
         # --- Safety Checks (run for both modes) ---
         if not os.path.isdir(source_folder):
             error_message = f"ERROR: Source folder '{source_folder}' does not exist. Aborting."
@@ -43,7 +59,7 @@ class MediaMigratorNode:
         source_drive = os.path.splitdrive(source_folder)[0]
         dest_drive_letter = os.path.splitdrive(destination_drive)[0]
         if source_drive.lower() == dest_drive_letter.lower():
-            if os.path.commonpath([source_folder, destination_drive]) == source_folder:
+            if os.path.normcase(os.path.commonpath([source_folder, destination_drive])) == os.path.normcase(source_folder):
                 error_message = "ERROR: The destination cannot be inside the source folder. Aborting."
                 print(error_message)
                 return (error_message,)
@@ -74,7 +90,7 @@ class MediaMigratorNode:
                             relative_path = os.path.relpath(root, source_folder)
                             dest_dir = os.path.join(final_destination_root, relative_path)
                             os.makedirs(dest_dir, exist_ok=True)
-                            dest_path = os.path.join(dest_dir, file)
+                            dest_path = unique_path(os.path.join(dest_dir, file))
 
                             print(f"Moving: {file} ({file_size / 1024 / 1024:.2f} MB)")
                             shutil.move(source_path, dest_path)

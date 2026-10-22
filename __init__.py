@@ -75,7 +75,7 @@ for module_name in NODE_MODULES:
     NODE_CLASS_MAPPINGS.update(module.NODE_CLASS_MAPPINGS)
     NODE_DISPLAY_NAME_MAPPINGS.update(module.NODE_DISPLAY_NAME_MAPPINGS)
 
-__version__ = "2.10.0"
+__version__ = "2.10.1"
 
 
 WEB_DIRECTORY = "./web"

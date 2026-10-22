@@ -15,7 +15,10 @@ class CharacterSelect:
         try:
             with open(cls.db_path, 'r', encoding='utf-8') as f:
                 return ["none"] + sorted(json.load(f).keys())
-        except (FileNotFoundError, json.JSONDecodeError):
+        except FileNotFoundError:
+            return ["none"]
+        except json.JSONDecodeError as e:
+            print(f"[Creepybits] WARNING: '{cls.db_path}' is not valid JSON ({e}); no characters to list.")
             return ["none"]
 
     @classmethod
