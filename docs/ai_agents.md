@@ -86,8 +86,6 @@ This collection of prompt helpers contains the following specialists:
 
 Art Analyst: An AI art critic that analyzes an image and provides a detailed description, critique, or artistic interpretation.
 
-Categorizer: An AI librarian that reads text and assigns it to a predefined category based on a set of rules you provide.
-
 Evaluater Node / People Evaluation Node: AI judges that provide subjective evaluations based on a specific personality or set of criteria (e.g., "GLaDOS," "Attractiveness," etc.).
 
 Keyword Extractor: An AI analyst that intelligently pulls out the most important keywords from a block of text.
