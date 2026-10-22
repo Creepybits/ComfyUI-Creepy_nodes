@@ -4,6 +4,18 @@ import shutil
 # defaultdict is perfect for counting items in categories without checking if the key exists first.
 from collections import defaultdict
 
+
+def unique_path(path):
+    """Returns path, or path with _1, _2, ... added before the extension if it already exists,
+    so a move never silently overwrites an existing file."""
+    if not os.path.exists(path):
+        return path
+    base, ext = os.path.splitext(path)
+    counter = 1
+    while os.path.exists(f"{base}_{counter}{ext}"):
+        counter += 1
+    return f"{base}_{counter}{ext}"
+
 class FileSorterNode:
     """
     A ComfyUI node to sort files in a directory into subfolders based on their extension.
@@ -86,7 +98,7 @@ class FileSorterNode:
             files_moved = 0
             for filename, source_path, target_subfolder in files_to_process:
                 dest_dir = os.path.join(target_folder, target_subfolder)
-                dest_path = os.path.join(dest_dir, filename)
+                dest_path = unique_path(os.path.join(dest_dir, filename))
 
                 try:
                     os.makedirs(dest_dir, exist_ok=True)

@@ -36,6 +36,8 @@ class ImageFormatConverter:
         # Normalize source formats into a list of lowercase extensions without dots
         source_exts = [f.strip().lower().replace('.', '') for f in source_formats.split(',')]
         target_ext = target_format.lower().replace('.', '')
+        # Pillow only knows "JPEG"; passing "jpg" made every conversion to jpg fail.
+        save_format = 'JPEG' if target_ext in ('jpg', 'jpeg') else target_ext.upper()
 
         converted_count = 0
         skipped_count = 0
@@ -58,15 +60,15 @@ class ImageFormatConverter:
                             continue
 
                         with Image.open(source_path) as img:
-                            # Handle transparency for JPG conversion
-                            if target_ext in ['jpg', 'jpeg'] and img.mode in ('RGBA', 'LA', 'P'):
+                            # JPEG can't store transparency, palettes or 16-bit images
+                            if save_format == 'JPEG' and img.mode not in ('RGB', 'L', 'CMYK'):
                                 img = img.convert("RGB")
 
                             # Save with quality settings if applicable
-                            if target_ext in ['jpg', 'jpeg', 'webp']:
-                                img.save(dest_path, format=target_ext, quality=quality)
+                            if save_format in ('JPEG', 'WEBP'):
+                                img.save(dest_path, format=save_format, quality=quality)
                             else:
-                                img.save(dest_path, format=target_ext)
+                                img.save(dest_path, format=save_format)
 
                         converted_count += 1
 
