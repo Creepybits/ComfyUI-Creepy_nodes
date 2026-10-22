@@ -32,7 +32,6 @@ NODE_MODULES = [
     "RandomAudioSegment",
     "AudioKeywordExtractor",
     "IMGToIMGConditioning",
-    "Categorizer",
     "LoadBatchFromDir",
     "Conditional_lora_selector",
     "WanPrompter",
@@ -75,7 +74,7 @@ for module_name in NODE_MODULES:
     NODE_CLASS_MAPPINGS.update(module.NODE_CLASS_MAPPINGS)
     NODE_DISPLAY_NAME_MAPPINGS.update(module.NODE_DISPLAY_NAME_MAPPINGS)
 
-__version__ = "2.10.1"
+__version__ = "2.10.3"
 
 
 WEB_DIRECTORY = "./web"
