@@ -9,9 +9,9 @@ class VAESwitch:
                 "Input": ("INT", {"default": 1, "min": 1, "max": 3}),
             },
             "optional": {
-                "VAE1": ("VAE",),
-                "VAE2": ("VAE",),
-                "VAE3": ("VAE",),
+                "VAE1": ("VAE", {"lazy": True}),
+                "VAE2": ("VAE", {"lazy": True}),
+                "VAE3": ("VAE", {"lazy": True}),
             }
         }
 
@@ -19,6 +19,12 @@ class VAESwitch:
     RETURN_NAMES = ("VAE", "show_help", )
     FUNCTION = "switch"
     CATEGORY = "Creepybits/Switches"
+
+    def check_lazy_status(self, Input, VAE1=None, VAE2=None, VAE3=None):
+        # Only ask ComfyUI to evaluate the branch that is actually selected.
+        if Input in (1, 2, 3):
+            return [f"VAE{Input}"]
+        return []
 
     def switch(self, Input, VAE1=None, VAE2=None, VAE3=None,):
         show_help = "Proverb of the day: Common sense is like deodorant. The people who need it most never use it."

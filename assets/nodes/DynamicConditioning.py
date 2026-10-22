@@ -21,7 +21,7 @@ class DynamicConditioning:
 
     def dynamic_switch(self, **kwargs):
         show_help = "Proverb of the day: Freedom means the right to yell, “THEATRE!” in a crowded fire."
-        cond = None  
+        conditioning = None
 
         if "conditioning1" in kwargs and kwargs["conditioning1"] is not None: 
             conditioning = kwargs["conditioning1"]  

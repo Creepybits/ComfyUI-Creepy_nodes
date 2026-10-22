@@ -10,9 +10,9 @@ class Modelswitch:
                 "Input": ("INT", {"default": 1, "min": 1, "max": 3}),
             },
             "optional": {
-                "model1": ("MODEL",),
-                "model2": ("MODEL",),
-                "model3": ("MODEL",),
+                "model1": ("MODEL", {"lazy": True}),
+                "model2": ("MODEL", {"lazy": True}),
+                "model3": ("MODEL", {"lazy": True}),
             }
         }
 
@@ -20,6 +20,12 @@ class Modelswitch:
     RETURN_NAMES = ("MODEL", "show_help", )
     FUNCTION = "switch"
     CATEGORY = "Creepybits/Switches"
+
+    def check_lazy_status(self, Input, model1=None, model2=None, model3=None):
+        # Only ask ComfyUI to evaluate the branch that is actually selected.
+        if Input in (1, 2, 3):
+            return [f"model{Input}"]
+        return []
 
     def switch(self, Input, model1=None, model2=None, model3=None):
         show_help = "Proverb of the day: Everyone has the right to do stupid things, but you’re abusing that privilege."

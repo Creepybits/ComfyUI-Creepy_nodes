@@ -1,12 +1,7 @@
 import time
-import threading
+
 
 class DynamicDelayText:
-    def __init__(self):
-        self.timer = None
-        self.lock = threading.Lock()  
-        self.output_text = ""
-
     @classmethod
     def INPUT_TYPES(cls):
         return {
@@ -22,20 +17,11 @@ class DynamicDelayText:
     CATEGORY = "Creepybits/Utilities"
 
     def delay(self, seconds, text):
-        with self.lock:  
-            self.output_text = text  
-            if self.timer is not None:
-                self.timer.cancel()  
-            self.timer = threading.Timer(seconds, self.output)  
-            self.timer.start()
-        return ("",)  
+        # This used to start a background timer and return "" immediately; the timer's result
+        # had nowhere to go, so the node always output an empty string. Wait, then pass it on.
+        time.sleep(seconds)
+        return (text,)
 
-    def output(self):
-        with self.lock: 
-            text_to_output = self.output_text
-            self.output_text = ""
-            self.timer = None  
-        return (text_to_output,)
 
 NODE_CLASS_MAPPINGS = {
     "DynamicDelayText": DynamicDelayText,

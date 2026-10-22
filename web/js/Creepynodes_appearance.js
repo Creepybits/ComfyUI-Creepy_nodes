@@ -11,8 +11,6 @@ app.registerExtension({
     async beforeRegisterNodeDef(nodeType, nodeData) {
         // Check if this is a StarNode by looking at the category
         if (nodeData.category && nodeData.category.startsWith("Creepybits")) {
-            console.log(`Found Creepynodes: ${nodeData.name}, applying custom colors`);
-
             // Define our colors
             const backgroundColor = "#0b500b";  // Purple background
             const titleColor = "#500b50";       // Dark blue title
@@ -34,6 +32,10 @@ app.registerExtension({
 
                 // Store the original drawTitleBar function
                 const originalDrawTitleBar = this.drawTitleBar;
+                // Newer ComfyUI frontends no longer have drawTitleBar; the colors above still apply.
+                if (typeof originalDrawTitleBar !== "function") {
+                    return;
+                }
 
                 // Override the drawTitleBar function to use our custom title color
                 this.drawTitleBar = function(ctx, title_height) {
@@ -58,8 +60,6 @@ app.registerExtension({
                         ctx.restore();
                     }
                 };
-
-                console.log(`Applied custom colors to Creepynodes: ${this.type}`);
             };
         }
     }

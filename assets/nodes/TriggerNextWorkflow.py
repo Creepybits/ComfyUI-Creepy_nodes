@@ -2,6 +2,19 @@ import requests
 import json
 import os
 
+
+def local_prompt_url():
+    """URL of this ComfyUI's /prompt endpoint, so a custom --port or --listen keeps working."""
+    try:
+        from server import PromptServer
+        server = PromptServer.instance
+        address = server.address if server.address not in (None, "", "0.0.0.0", "::") else "127.0.0.1"
+        if ":" in address:
+            address = f"[{address}]"
+        return f"http://{address}:{server.port}/prompt"
+    except Exception:
+        return "http://127.0.0.1:8188/prompt"
+
 class TriggerNextWorkflow:
     def __init__(self):
         pass
@@ -35,18 +48,21 @@ class TriggerNextWorkflow:
         except Exception as e:
             return (f"Error loading JSON: {str(e)}",)
 
+        # Workflows saved with the normal "Save" have a "nodes" list; the API needs "Export (API)" format.
+        if isinstance(workflow_data, dict) and "nodes" in workflow_data:
+            return ("Error: This is a UI workflow file. Save it with 'Export (API)' and point to that file instead.",)
+
         # The Payload: ComfyUI API expects the workflow in a 'prompt' key
         payload = {"prompt": workflow_data}
 
         # Send to local API
         try:
-            # Note: 8188 is default, you might need to change if you use a different port
-            response = requests.post("http://127.0.0.1:8188/prompt", json=payload)
+            response = requests.post(local_prompt_url(), json=payload, timeout=30)
 
             if response.status_code == 200:
                 return ("Successfully queued next workflow!",)
             else:
-                return (f"Failed to queue. Status: {response.status_code}",)
+                return (f"Failed to queue. Status: {response.status_code} {response.text[:500]}",)
 
         except Exception as e:
             return (f"API Connection Failed: {str(e)}",)

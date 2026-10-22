@@ -33,6 +33,12 @@ class DynamicStartIndex:
 
     CATEGORY = "Creepybits/Utils" # Let's keep your tools organized!
 
+    @classmethod
+    def IS_CHANGED(cls, **kwargs):
+        # The output depends on the node's memory, not just its inputs, so it must run every time.
+        # Without this ComfyUI caches the result and the index never advances.
+        return float("NaN")
+
     def get_next_index(self, batch_size, reset_counter):
         # If the user toggles the reset switch, we reset our memory to 0.
         if reset_counter:

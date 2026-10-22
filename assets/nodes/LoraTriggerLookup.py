@@ -1,28 +1,19 @@
-import json
 import os
-import folder_paths
-
-# --- Get a list of all LoRA files ---
-# This code runs once when ComfyUI starts up.
-lora_paths = folder_paths.get_filename_list("loras")
-lora_files = [os.path.basename(x) for x in lora_paths if x is not None]
-# Add a "None" option to the beginning of the list for when no LoRA is selected
-lora_files.insert(0, "None")
+from .libs.lora_utils import LORA_DB_PATH, lora_dropdown, load_lora_db
 
 
 class LoraTriggerLookup:
     """
     A standalone node to select a LoRA and look up its trigger words from a central JSON file.
     """
-    # Define the path to our database file
-    JSON_FILE_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'Lora_db', 'lora_triggers.json')
+    JSON_FILE_PATH = LORA_DB_PATH
 
     @classmethod
     def INPUT_TYPES(s):
         return {
             "required": {
                 # The dropdown menu will be populated with all of your LoRA files
-                "lora_name": (lora_files,),
+                "lora_name": (lora_dropdown(),),
                 "num_triggers": ("INT", {"default": -1, "min": -1, "max": 20, "step": 1}),
                 "delimiter": ("STRING", {"default": ", "}),
             }
@@ -33,6 +24,11 @@ class LoraTriggerLookup:
     FUNCTION = "get_triggers"
     CATEGORY = "Creepybits/text"
 
+    @classmethod
+    def IS_CHANGED(cls, **kwargs):
+        # Re-run when the database is updated (e.g. by LoRA DB Builder).
+        return os.path.getmtime(LORA_DB_PATH) if os.path.exists(LORA_DB_PATH) else 0.0
+
     def get_triggers(self, lora_name, num_triggers, delimiter):
         output_triggers = ""
 
@@ -41,8 +37,7 @@ class LoraTriggerLookup:
             return ("",)
 
         try:
-            with open(self.JSON_FILE_PATH, 'r', encoding='utf-8') as f:
-                lora_database = json.load(f)
+            lora_database = load_lora_db()
 
             if lora_name in lora_database:
                 all_triggers = lora_database[lora_name]

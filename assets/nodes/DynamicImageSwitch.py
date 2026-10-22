@@ -21,7 +21,7 @@ class DynamicImageSwitch:
 
     def dynamic_switch(self, **kwargs):
         show_help = "Proverb of the day: Freedom means the right to yell, “THEATRE!” in a crowded fire."
-        latent = None  
+        image = None
 
         if "image1" in kwargs and kwargs["image1"] is not None: 
             image = kwargs["image1"]  

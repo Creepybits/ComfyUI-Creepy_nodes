@@ -5,12 +5,9 @@ try:
     import pillow_jxl      # noqa: F401 - This import is for side-effect enabling JXL support in PIL, not directly used.
 except ImportError:
     pass # JXL support won't be available if pillow_jxl isn't installed
-import comfy
-import folder_paths
-# Removed unused: import base64, from io import BytesIO
+import comfy.utils
 from PIL import Image
 import numpy as np
-# Removed unused: import logging, import time
 
 
 class LoadBatchImagesDir:
@@ -44,8 +41,11 @@ class LoadBatchImagesDir:
         if 'load_always' in kwargs and kwargs['load_always']:
             return float("NaN")
         else:
+            # Include the folder's modification time so adding/removing images triggers a reload.
+            directory = kwargs.get('directory', '')
+            dir_mtime = os.path.getmtime(directory) if os.path.isdir(directory) else 0
             relevant_kwargs = {k: v for k, v in kwargs.items() if k in ['directory', 'image_load_cap', 'start_index', 'force_rescan']}
-            return hash(frozenset(relevant_kwargs.items()))
+            return hash((frozenset(relevant_kwargs.items()), dir_mtime))
 
 
     def load_images(self, directory: str, image_load_cap: int = 0, start_index: int = 0, load_always=False, force_rescan=False):
@@ -72,11 +72,11 @@ class LoadBatchImagesDir:
                 self._cached_dir_mtime = current_dir_mtime
                 raise FileNotFoundError(f"No files in directory '{directory}'.")
 
-            valid_extensions = ['.jpg', '.jpeg', '.png', '.webp', '.jxl', '.gif', '.bmp', '.tiff', '.ico']
+            valid_extensions = ('.jpg', '.jpeg', '.png', '.webp', '.jxl', '.gif', '.bmp', '.tiff', '.ico')
             image_files_potential = []
 
             for filename in dir_files:
-                if any(filename.lower().endswith(ext) for ext in valid_extensions):
+                if filename.lower().endswith(valid_extensions):
                     full_path = os.path.join(directory, filename)
                     try:
                         with Image.open(full_path) as img:
@@ -157,54 +157,23 @@ class LoadBatchImagesDir:
             raise FileNotFoundError(f"No images could be loaded from the selected subset of '{directory}'.")
 
 
-        final_image_batch = images[0]
-        final_mask_batch = masks[0]
+        # Resize everything to the first image's size, then concatenate once.
+        # (Concatenating inside the loop copied the whole batch on every image.)
+        target_height, target_width = images[0].shape[1], images[0].shape[2]
+        target_size = (target_height, target_width)
 
         for idx in range(1, len(images)):
-            image2 = images[idx]
-            mask2 = masks[idx]
-
-            # FIX: Changed 'image_batch' to 'final_image_batch' here
-            target_height = final_image_batch.shape[1]
-            target_width = final_image_batch.shape[2]
-            target_size = (target_height, target_width)
-
-            if image2.shape[1:3] != target_size:
-                image2_upscaled = comfy.utils.common_upscale(
-                    image2.movedim(-1, 1),
-                    target_width,
-                    target_height,
-                    "bilinear",
-                    "center"
+            if images[idx].shape[1:3] != target_size:
+                images[idx] = comfy.utils.common_upscale(
+                    images[idx].movedim(-1, 1), target_width, target_height, "bilinear", "center"
                 ).movedim(1, -1)
-                if image2_upscaled.shape[1:3] != target_size:
-                     print(f"LoadBatchImagesDir ERROR: Image upscaling failed to reach target size {target_size} during batching. Got {image2_upscaled.shape[1:3]}")
-                     raise RuntimeError(f"Image upscaling failed for a successfully loaded image during batching.")
-                final_image_batch = torch.cat((final_image_batch, image2_upscaled), dim=0)
-            else:
-                final_image_batch = torch.cat((final_image_batch, image2), dim=0)
+            if masks[idx].shape[1:3] != target_size:
+                masks[idx] = torch.nn.functional.interpolate(
+                    masks[idx].unsqueeze(1), size=target_size, mode='bilinear', align_corners=False
+                ).squeeze(1)
 
-
-            if mask2.shape[1:3] != target_size:
-                mask2_interp_input = mask2.unsqueeze(1)
-
-                mask2_upscaled_interp = torch.nn.functional.interpolate(
-                    mask2_interp_input,
-                    size=target_size,
-                    mode='bilinear',
-                    align_corners=False
-                )
-
-                mask2_upscaled = mask2_upscaled_interp.squeeze(1)
-
-                if mask2_upscaled.shape[1:3] != target_size:
-                     print(f"LoadBatchImagesDir ERROR: Mask upscaling failed to reach target size {target_size} during batching. Got {mask2_upscaled.shape[1:3]}")
-                     raise RuntimeError(f"Mask upscaling failed for a successfully loaded mask during batching.")
-
-                final_mask_batch = torch.cat((final_mask_batch, mask2_upscaled), dim=0)
-            else:
-                 final_mask_batch = torch.cat((final_mask_batch, mask2), dim=0)
-
+        final_image_batch = torch.cat(images, dim=0)
+        final_mask_batch = torch.cat(masks, dim=0)
 
         final_count = loaded_image_count
 
@@ -216,5 +185,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "LoadBatchImagesDir": "Load Batch From Dir (Creepybits)",
+    "LoadBatchImagesDir": "Load Batch Images From Dir (Creepybits)",
 }
