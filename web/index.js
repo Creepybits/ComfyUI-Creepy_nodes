@@ -1,1 +1,1 @@
-import "./js/creepynodes_appearance.js";
+import "./js/Creepynodes_appearance.js";

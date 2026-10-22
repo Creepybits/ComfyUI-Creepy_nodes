@@ -2,7 +2,7 @@ import os
 import random
 import torch
 import numpy as np
-from PIL import Image, PngImagePlugin
+from PIL import Image, ImageOps
 import json
 
 class LoadBatchFromDir:
@@ -40,11 +40,18 @@ class LoadBatchFromDir:
             with open(self._state_file_path, 'w') as f: json.dump(state_dict, f, indent=4)
         except IOError: print(f"Warning: Could not save state to {self._state_file_path}")
 
+    @classmethod
+    def IS_CHANGED(cls, directory, iteration_mode, trigger=None):
+        # increment/random must pick a new image every run, so never reuse the cached result.
+        if iteration_mode != "fixed":
+            return float("NaN")
+        return os.path.getmtime(directory) if os.path.isdir(directory) else ""
+
     # Note: the 'trigger' argument is accepted but intentionally not used inside the function.
     def load_one_from_dir_persistent(self, directory, iteration_mode, trigger=None):
         if not os.path.isdir(directory): raise FileNotFoundError(f"Directory not found: {directory}")
 
-        image_extensions = ['.jpg', '.jpeg', '.png', '.gif', 'webp']
+        image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp']
         files = sorted([f for f in os.listdir(directory) if os.path.splitext(f)[1].lower() in image_extensions])
 
         if not files: raise FileNotFoundError(f"No image files found in directory: {directory}")
@@ -72,16 +79,16 @@ class LoadBatchFromDir:
 
         selected_file = files[current_index]
         image_path = os.path.join(directory, selected_file)
-        img = Image.open(image_path)
+        with Image.open(image_path) as img:
+            img = ImageOps.exif_transpose(img)
 
-        if 'A' in img.getbands():
-            mask = np.array(img.getchannel('A')).astype(np.float32) / 255.0
-            mask_tensor = torch.from_numpy(mask)
-        else:
-            mask_tensor = torch.ones((img.height, img.width), dtype=torch.float32)
+            if 'A' in img.getbands():
+                mask = np.array(img.getchannel('A')).astype(np.float32) / 255.0
+                mask_tensor = torch.from_numpy(mask)
+            else:
+                mask_tensor = torch.ones((img.height, img.width), dtype=torch.float32)
 
-        img = img.convert("RGB")
-        image_np = np.array(img).astype(np.float32) / 255.0
+            image_np = np.array(img.convert("RGB")).astype(np.float32) / 255.0
         image_tensor = torch.from_numpy(image_np).unsqueeze(0)
         final_mask = mask_tensor.unsqueeze(0)
 

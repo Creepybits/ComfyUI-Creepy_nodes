@@ -9,20 +9,20 @@ class CharacterSelect:
     base_dir = os.path.dirname(os.path.dirname(__file__))
     db_path = os.path.join(base_dir, "scripts", "characters.json")
 
-    character_names = ["none"]
-    try:
-        with open(db_path, 'r', encoding='utf-8') as f:
-            characters = json.load(f)
-            character_names.extend(sorted(list(characters.keys())))
-    except (FileNotFoundError, json.JSONDecodeError):
-        print("[Creepybits] WARNING: Could not find or read 'characters.json'. CharacterSelect dropdown will be empty.")
-        pass
+    @classmethod
+    def get_character_names(cls):
+        # Read on each request so characters saved with Character Vault show up after a refresh.
+        try:
+            with open(cls.db_path, 'r', encoding='utf-8') as f:
+                return ["none"] + sorted(json.load(f).keys())
+        except (FileNotFoundError, json.JSONDecodeError):
+            return ["none"]
 
     @classmethod
     def INPUT_TYPES(s):
         return {
             "required": {
-                "character_name": (s.character_names, ),
+                "character_name": (s.get_character_names(), ),
                 "clothing": ("STRING", {"multiline": True, "default": "business casual"}),
                 "hairstyle": ("STRING", {"multiline": False, "default": ""}),
                 "accessories": ("STRING", {"multiline": True, "default": "no accessories"}),

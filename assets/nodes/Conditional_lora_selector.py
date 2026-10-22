@@ -1,23 +1,6 @@
-import os
 import folder_paths
-from nodes import LoraLoader # This is correctly imported now
+from nodes import LoraLoader
 
-
-def get_recursive_filenames(folder_name):
-    full_path_dir = folder_paths.get_folder_paths(folder_name)
-    if not full_path_dir:
-        return []
-
-    filenames = []
-    for base_dir in full_path_dir:
-        for root, dirs, files in os.walk(base_dir):
-            for file in files:
-                # Construct full path to file
-                full_file_path = os.path.join(root, file)
-                # Get relative path from base_dir and normalize slashes
-                relative_path = os.path.relpath(full_file_path, base_dir).replace("\\", "/")
-                filenames.append(relative_path)
-    return filenames
 
 class ConditionalLoRAApplierCreepybits:
     def __init__(self):
@@ -25,9 +8,11 @@ class ConditionalLoRAApplierCreepybits:
 
     @classmethod
     def INPUT_TYPES(s):
-        lora_list = get_recursive_filenames("loras")
-        lora_names = ["None"] + [l for l in lora_list if l.lower().endswith((".safetensors", ".ckpt"))]
-        lora_names.sort(key=lambda x: x.lower()) # Ensure sorted list for consistent dropdown
+        # folder_paths already scans subfolders recursively and caches the result,
+        # so there's no need to walk the LoRA folders on every UI refresh.
+        # Forward slashes keep saved workflows (and the rule syntax) the same on every OS.
+        lora_list = [l.replace("\\", "/") for l in folder_paths.get_filename_list("loras")]
+        lora_names = ["None"] + sorted((l for l in lora_list if l.lower().endswith((".safetensors", ".ckpt"))), key=str.lower)
 
         return {
             "required": {
@@ -64,7 +49,7 @@ class ConditionalLoRAApplierCreepybits:
     FUNCTION = "apply_conditional_lora"
     CATEGORY = "Creepybits/Model Patcher"
 
-    def apply_conditional_lora(self, model, clip, prompt, lora_definitions, default_lora_name, default_lora_strength, default_clip_strength, case_sensitive):
+    def apply_conditional_lora(self, model, clip, prompt, lora_definitions, default_lora_name="None", default_lora_strength=1.0, default_clip_strength=1.0, case_sensitive=False):
         loras_to_apply = []
 
         processed_prompt = prompt if case_sensitive else prompt.lower()

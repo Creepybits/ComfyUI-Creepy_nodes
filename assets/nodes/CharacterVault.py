@@ -38,7 +38,7 @@ class CharacterVault:
             return (text,)
 
         try:
-            with open(self.db_path, 'r') as f:
+            with open(self.db_path, 'r', encoding='utf-8') as f:
                 characters = json.load(f)
         except (FileNotFoundError, json.JSONDecodeError):
             characters = {}
@@ -53,8 +53,8 @@ class CharacterVault:
             # Robustness: Ensure the target directory exists before writing.
             os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
 
-            with open(self.db_path, 'w') as f:
-                json.dump(characters, f, indent=4)
+            with open(self.db_path, 'w', encoding='utf-8') as f:
+                json.dump(characters, f, indent=4, ensure_ascii=False)
             print(f"[Creepybits] SUCCESS: Character '{character_name}' saved to the database at '{self.db_path}'")
         except Exception as e:
             print(f"[Creepybits] ERROR: Failed to write to database file. {e}")

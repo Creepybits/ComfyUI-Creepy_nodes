@@ -1,9 +1,6 @@
 # creepy_directors_slate.py
-import os
-import sys
-import comfy.sd
-import comfy.utils
-import re
+from .libs.prompt_utils import read_prompt, prompt_mtime
+
 
 class CreepyDirectorsSlate:
     """
@@ -11,21 +8,7 @@ class CreepyDirectorsSlate:
     V5.0 - The Artist's Edition. Uses a library of high-level, conceptually-driven,
     named cinematic shots with intensity modifiers, based on proven R&D.
     """
-    def __init__(self):
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-
-        assets_dir = os.path.dirname(script_dir)
-        filepath = os.path.join(assets_dir, "prompts", "CINEMATOGRAPHER.txt")
-
-        try:
-            with open(filepath, "r", encoding="utf-8") as f:
-                self.fixed_text = f.read()
-        except FileNotFoundError:
-            print(f"Error: system_prompt.txt not found at {filepath}")
-            self.fixed_text = "ERROR: Prompt file not found."
-        except Exception as e:
-            print(f"Error reading system_prompt.txt: {e}")
-            self.fixed_text = "ERROR: Could not read prompt file."
+    PROMPT_FILE = "CINEMATOGRAPHER.txt"
 
     # The definitive, battle-tested library of narrative cinematic motion prompts.
     MOTION_PRESETS = {
@@ -85,10 +68,14 @@ class CreepyDirectorsSlate:
     FUNCTION = "generate_prompt"
     CATEGORY = "Creepybits"
 
+    @classmethod
+    def IS_CHANGED(cls, **kwargs):
+        return prompt_mtime(cls.PROMPT_FILE)
+
     def generate_prompt(self, positive_prompt, negative_prompt, motion_preset):
 
         # Parse the combined preset string to find the motion and intensity
-        motion_type, intensity = motion_preset.split(": ")
+        motion_type, intensity = motion_preset.split(": ", 1)
 
         # Get the correct camera schedule from our nested dictionary
         camera_schedule = self.MOTION_PRESETS[motion_type][intensity]
@@ -96,7 +83,7 @@ class CreepyDirectorsSlate:
         # Append the conceptual camera command to the positive prompt
         if camera_schedule:
             # We add a period and space for natural language separation
-            final_positive_prompt = f"{self.fixed_text}. {positive_prompt}. {camera_schedule}"
+            final_positive_prompt = f"{read_prompt(self.PROMPT_FILE)}. {positive_prompt}. {camera_schedule}"
         else:
             final_positive_prompt = positive_prompt
 

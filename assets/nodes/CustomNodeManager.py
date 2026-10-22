@@ -1,12 +1,11 @@
 import os
 import ast
-import importlib.util
-import sys
 import json
-import inspect #Needed
+
+
 class CustomNodeManager:
-    def __init__(self):        
-        self.custom_nodes_dir = os.path.dirname(os.path.abspath(__file__)) 
+    def __init__(self):
+        self.custom_nodes_dir = os.path.dirname(os.path.abspath(__file__))
 
     @classmethod
     def INPUT_TYPES(s):
@@ -19,47 +18,45 @@ class CustomNodeManager:
     FUNCTION = "get_node_info"
     CATEGORY = "Creepybits/Utilities"
 
-    def get_node_info(self, scan_mode, directory, scan): 
-        if directory:
-            directory_to_scan = directory
-        else:
-            directory_to_scan =  self.custom_nodes_dir
+    def get_node_info(self, scan_mode, directory, scan):
+        directory_to_scan = directory or self.custom_nodes_dir
 
-        node_info = {}       
+        node_info = {}
 
-        for filename in os.listdir(directory_to_scan):
+        for filename in sorted(os.listdir(directory_to_scan)):
             if filename.endswith(".py") and filename != "__init__.py":
                 try:
-                    filepath = os.path.join(directory_to_scan, filename)                    
-                    module_name = os.path.splitext(filename)[0]
-                    spec = importlib.util.spec_from_file_location(module_name, filepath)
-                    module = importlib.util.module_from_spec(spec)
-                    spec.loader.exec_module(module)
-                    valid = False
+                    # Files are parsed, not imported: importing ran every file's top-level code
+                    # (and re-imported its dependencies) just to inspect it.
+                    filepath = os.path.join(directory_to_scan, filename)
+                    with open(filepath, "r", encoding="utf-8") as f:
+                        tree = ast.parse(f.read(), filename=filepath)
 
                     if scan_mode == "Validate Python":
-                        valid_py = hasattr(module, "NODE_CLASS_MAPPINGS")
-                        if valid_py:
+                        assigned = {
+                            target.id
+                            for node in tree.body if isinstance(node, (ast.Assign, ast.AnnAssign))
+                            for target in (node.targets if isinstance(node, ast.Assign) else [node.target])
+                            if isinstance(target, ast.Name)
+                        }
+                        if "NODE_CLASS_MAPPINGS" in assigned:
                             node_info[filename] = f"Name {filename} is valid!"
                         else:
                             node_info[filename] = f"Name {filename} invalid. Missing attribute mappings"
 
                     elif scan_mode == "Check Libraries":
-                        source_code = inspect.getsource(module)
-                        tree = ast.parse(source_code)                       
                         imported_modules = []
                         for node in ast.walk(tree):
                             if isinstance(node, (ast.Import, ast.ImportFrom)):
-                                for alias in node.names:
-                                    imported_modules.append(alias.name)
-                        if imported_modules:  
+                                imported_modules.extend(alias.name for alias in node.names)
+                        if imported_modules:
                             node_info[filename] = f"File {filename} imports {imported_modules}"
 
                 except Exception as e:
                     node_info[filename] = f"Error processing {filename}: {e}"
-        
+
         output_string = json.dumps(node_info, indent=4)
-        
+
         return (output_string,)
 
 NODE_CLASS_MAPPINGS = {

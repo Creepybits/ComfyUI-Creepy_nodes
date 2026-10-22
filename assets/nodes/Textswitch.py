@@ -9,9 +9,9 @@ class Textswitch:
                 "Input": ("INT", {"default": 1, "min": 1, "max": 3}),
             },
             "optional": {
-                "text1": ("STRING",),
-                "text2": ("STRING",),
-                "text3": ("STRING",),
+                "text1": ("STRING", {"lazy": True}),
+                "text2": ("STRING", {"lazy": True}),
+                "text3": ("STRING", {"lazy": True}),
             }
         }
 
@@ -19,6 +19,12 @@ class Textswitch:
     RETURN_NAMES = ("STRING", "show_help",)
     FUNCTION = "switch"
     CATEGORY = "Creepybits/Switches"
+
+    def check_lazy_status(self, Input, text1=None, text2=None, text3=None):
+        # Only ask ComfyUI to evaluate the branch that is actually selected.
+        if Input in (1, 2, 3):
+            return [f"text{Input}"]
+        return []
 
     def switch(self, Input, text1=None, text2=None, text3=None,):
         show_help = "Proverb of the day: Something about today makes me want to have a hangover tomorrow."
